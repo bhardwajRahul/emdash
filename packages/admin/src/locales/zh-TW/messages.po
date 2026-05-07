@@ -30,8 +30,8 @@ msgstr "（預設）"
 msgid " (opens in new window)"
 msgstr "（在新視窗中開啟）"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:658
-#: packages/admin/src/components/MediaPickerModal.tsx:740
+#: packages/admin/src/components/MediaPickerModal.tsx:661
+#: packages/admin/src/components/MediaPickerModal.tsx:743
 msgid " (selected)"
 msgstr "（已選擇）"
 
@@ -46,7 +46,7 @@ msgid ": use"
 msgstr "：使用"
 
 #. placeholder {0}: providers?.find((p) => p.id === selectedItem.providerId)?.name
-#: packages/admin/src/components/MediaPickerModal.tsx:598
+#: packages/admin/src/components/MediaPickerModal.tsx:601
 msgid "(from {0})"
 msgstr "（來自 {0}）"
 
@@ -67,7 +67,7 @@ msgid "{0, plural, one {(# item)} other {(# items)}}"
 msgstr "{0, plural, one {(# 個項目)} other {(# 個項目)}}"
 
 #. placeholder {0}: seedInfo.collections
-#: packages/admin/src/components/SetupWizard.tsx:185
+#: packages/admin/src/components/SetupWizard.tsx:156
 msgid "{0, plural, one {# collection} other {# collections}}"
 msgstr "{0, plural, one {# 個合集} other {# 個合集}}"
 
@@ -97,7 +97,9 @@ msgid "{0, plural, one {# item matching \"{searchQuery}\"} other {# items matchi
 msgstr "{0, plural, one {# 個匹配 \"{searchQuery}\" 的項目} other {# 個匹配 \"{searchQuery}\" 的項目}}"
 
 #. placeholder {0}: items.length
-#: packages/admin/src/components/MediaPickerModal.tsx:473
+#. placeholder {0}: menu.itemCount ?? 0
+#: packages/admin/src/components/MediaPickerModal.tsx:476
+#: packages/admin/src/components/MenuList.tsx:216
 msgid "{0, plural, one {# item} other {# items}}"
 msgstr "{0, plural, one {# 個項目} other {# 個項目}}"
 
@@ -122,7 +124,7 @@ msgid "{0, plural, one {# menu will be imported} other {# menus will be imported
 msgstr "{0, plural, one {# 個菜單將導入} other {# 個菜單將導入}}"
 
 #. placeholder {0}: plugin.capabilities.length
-#: packages/admin/src/components/MarketplaceBrowse.tsx:293
+#: packages/admin/src/components/MarketplaceBrowse.tsx:294
 msgid "{0, plural, one {# permission} other {# permissions}}"
 msgstr "{0, plural, one {# 個權限} other {# 個權限}}"
 
@@ -161,6 +163,12 @@ msgstr "{0, plural, one {#{1} 個項目} other {#{2} 個項目}}"
 #. placeholder {0}: fields.length
 #: packages/admin/src/components/ContentTypeEditor.tsx:596
 msgid "{0, plural, one {field} other {fields}}"
+msgstr ""
+
+#. placeholder {0}: menu.name
+#. placeholder {1}: /** * Menu List component * * Displays all menus with ability to create, edit, and delete. */ import { Button, Dialog, Input, Toast, buttonVariants } from "@cloudflare/kumo"; import { plural } from "@lingui/core/macro"; import { Trans } from "@lingui/react/macro"; import { useLingui } from "@lingui/react/macro"; import { Plus, Pencil, Trash, List as ListIcon } from "@phosphor-icons/react"; import { X } from "@phosphor-icons/react"; import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"; import { Link, useNavigate } from "@tanstack/react-router"; import * as React from "react"; import { fetchMenus, createMenu, deleteMenu } from "../lib/api"; import { fetchManifest } from "../lib/api/client.js"; import { ConfirmDialog } from "./ConfirmDialog.js"; import { DialogError, getMutationError } from "./DialogError.js"; import { LocaleSwitcher, useI18nConfig } from "./LocaleSwitcher.js"; export function MenuList() { const { t } = useLingui(); const queryClient = useQueryClient(); const navigate = useNavigate(); const toastManager = Toast.useToastManager(); const [isCreateOpen, setIsCreateOpen] = React.useState(false); const [deleteMenuName, setDeleteMenuName] = React.useState<string | null>(null); const [createError, setCreateError] = React.useState<string | null>(null); const { data: manifest } = useQuery({ queryKey: ["manifest"], queryFn: fetchManifest, }); const i18n = useI18nConfig(manifest); const [activeLocale, setActiveLocale] = React.useState<string | undefined>(undefined); React.useEffect(() => { if (i18n && !activeLocale) setActiveLocale(i18n.defaultLocale); }, [i18n, activeLocale]); const { data: menus, isLoading } = useQuery({ queryKey: ["menus", activeLocale], queryFn: () => fetchMenus({ locale: activeLocale }), }); const createMutation = useMutation({ mutationFn: createMenu, onSuccess: (menu) => { void queryClient.invalidateQueries({ queryKey: ["menus"] }); setIsCreateOpen(false); toastManager.add({ title: t`Menu created`, description: t`Menu "${menu.label}" has been created.`, }); void navigate({ to: "/menus/$name", params: { name: menu.name }, search: { locale: menu.locale }, }); }, onError: (error: Error) => { setCreateError(error.message); }, }); const deleteMutation = useMutation({ mutationFn: (name: string) => deleteMenu(name, { locale: activeLocale }), onSuccess: () => { void queryClient.invalidateQueries({ queryKey: ["menus"] }); setDeleteMenuName(null); toastManager.add({ title: t`Menu deleted`, description: t`The menu has been deleted.`, }); }, }); const handleCreate = (e: React.FormEvent<HTMLFormElement>) => { e.preventDefault(); setCreateError(null); const formData = new FormData(e.currentTarget); const nameVal = formData.get("name"); const name = typeof nameVal === "string" ? nameVal : ""; const labelVal = formData.get("label"); const label = typeof labelVal === "string" ? labelVal : ""; createMutation.mutate({ name, label, locale: activeLocale }); }; if (isLoading) { return ( <div className="flex items-center justify-center h-64"> <div className="text-kumo-subtle">{t`Loading menus...`}</div> </div> ); } return ( <div className="space-y-6"> <div className="flex items-center justify-between gap-4 flex-wrap"> <div> <h1 className="text-3xl font-bold">{t`Menus`}</h1> <p className="text-kumo-subtle">{t`Manage navigation menus for your site`}</p> </div> <div className="flex items-center gap-2"> {i18n && activeLocale ? ( <LocaleSwitcher locales={i18n.locales} defaultLocale={i18n.defaultLocale} value={activeLocale} onChange={setActiveLocale} /> ) : null} </div> <Dialog.Root open={isCreateOpen} onOpenChange={(open) => { setIsCreateOpen(open); if (!open) setCreateError(null); }} > <Dialog.Trigger render={(props) => ( <Button {...props} icon={<Plus />}> {t`Create Menu`} </Button> )} /> <Dialog className="p-6" size="lg"> <div className="flex items-start justify-between gap-4 mb-4"> <Dialog.Title className="text-lg font-semibold leading-none tracking-tight"> {t`Create New Menu`} </Dialog.Title> <Dialog.Close aria-label={t`Close`} render={(props) => ( <Button {...props} variant="ghost" shape="square" aria-label={t`Close`} className="absolute end-4 top-4" > <X className="h-4 w-4" /> <span className="sr-only">{t`Close`}</span> </Button> )} /> </div> <form onSubmit={handleCreate} className="space-y-4"> <div> <Input label={t`Name`} name="name" required placeholder="primary" pattern="[a-z0-9\-]+" title={t`Only lowercase letters, numbers, and hyphens`} /> <p className="text-sm text-kumo-subtle mt-1"> {t`URL-friendly identifier (e.g., "primary", "footer")`} </p> </div> <div> <Input label={t`Label`} name="label" required placeholder={t`Primary Navigation`} /> <p className="text-sm text-kumo-subtle mt-1">{t`Display name for admin interface`}</p> </div> <DialogError message={createError || getMutationError(createMutation.error)} /> <div className="flex justify-end gap-2"> <Button type="button" variant="outline" onClick={() => setIsCreateOpen(false)}> {t`Cancel`} </Button> <Button type="submit" disabled={createMutation.isPending}> {createMutation.isPending ? t`Creating...` : t`Create`} </Button> </div> </form> </Dialog> </Dialog.Root> </div> {!menus || menus.length === 0 ? ( <div className="border rounded-lg p-12 text-center"> <ListIcon className="mx-auto h-12 w-12 text-kumo-subtle mb-4" /> <h3 className="text-lg font-semibold mb-2">{t`No menus yet`}</h3> <p className="text-kumo-subtle mb-4">{t`Create your first navigation menu to get started`}</p> <Button icon={<Plus />} onClick={() => setIsCreateOpen(true)}> {t`Create Menu`} </Button> </div> ) : ( <div className="grid gap-4"> {menus.map((menu) => ( <div key={menu.id} className="border rounded-lg p-6 flex items-center justify-between hover:bg-kumo-tint transition-colors" > <Link to="/menus/$name" params={{ name: menu.name }} search={{ locale: menu.locale }} className="flex-1" > <div> <h3 className="font-semibold text-lg"> {menu.label} {i18n ? ( <span className="ms-2 text-xs font-mono uppercase text-kumo-subtle"> {menu.locale} </span> ) : null} </h3> <p className="text-sm text-kumo-subtle"> <Trans> {menu.name} •{" "} {plural(menu.itemCount ?? 0, { one: "# item", other: "# items" })} </Trans> </p> </div> </Link> <div className="flex gap-2"> <Link to="/menus/$name" params={{ name: menu.name }} search={{ locale: menu.locale }} className={buttonVariants({ variant: "outline", size: "sm" })} > <Pencil className="me-2 h-4 w-4" aria-hidden="true" /> {t`Edit`} </Link> <Button variant="outline" size="sm" onClick={() => setDeleteMenuName(menu.name)} aria-label={t`Delete ${menu.name} menu`} > <Trash className="h-4 w-4" /> </Button> </div> </div> ))} </div> )} <ConfirmDialog open={deleteMenuName !== null} onClose={() => { setDeleteMenuName(null); deleteMutation.reset(); }} title={t`Delete Menu`} description={t`Are you sure you want to delete this menu? This will also delete all menu items. This action cannot be undone.`} confirmLabel={t`Delete`} pendingLabel={t`Deleting...`} isPending={deleteMutation.isPending} error={deleteMutation.error} onConfirm={() => deleteMenuName && deleteMutation.mutate(deleteMenuName)} /> </div> ); } 
+#: packages/admin/src/components/MenuList.tsx:214
+msgid "{0} • {1}"
 msgstr ""
 
 #. placeholder {0}: bestMatch?.detected.siteTitle || "WordPress site"
@@ -223,7 +231,7 @@ msgid "{0} system + {1} custom {2}"
 msgstr ""
 
 #. placeholder {0}: taxonomy.label
-#: packages/admin/src/components/TaxonomySidebar.tsx:313
+#: packages/admin/src/components/TaxonomySidebar.tsx:318
 msgid "{0} updated"
 msgstr "{0} 已更新"
 
@@ -235,8 +243,8 @@ msgstr "{0} 已更新至 v{1}"
 
 #. placeholder {0}: item.filename
 #. placeholder {1}: selected ? t` (selected)` : ""
-#: packages/admin/src/components/MediaPickerModal.tsx:658
-#: packages/admin/src/components/MediaPickerModal.tsx:740
+#: packages/admin/src/components/MediaPickerModal.tsx:661
+#: packages/admin/src/components/MediaPickerModal.tsx:743
 msgid "{0}{1}"
 msgstr "{0}{1}"
 
@@ -328,6 +336,14 @@ msgstr "{unchangedCount, plural, one {顯示 # 個未變更} other {顯示 # 個
 msgid "{uploaded} uploaded, {failed} failed"
 msgstr "{uploaded} 個已上傳，{failed} 個失敗"
 
+#: packages/admin/src/components/Redirects.tsx:137
+msgid "/new-page or /articles/[slug]"
+msgstr ""
+
+#: packages/admin/src/components/Redirects.tsx:129
+msgid "/old-page or /blog/[slug]"
+msgstr ""
+
 #: packages/admin/src/components/WordPressImport.tsx:1956
 msgid "• Files are downloaded from your WordPress site"
 msgstr "• 文件從您的 WordPress 站點下載"
@@ -340,9 +356,9 @@ msgstr "• 已上傳到您的 EmDash 媒體存儲"
 msgid "• URLs in your content are updated automatically"
 msgstr "• 您內容中的 URL 將自動更新"
 
-#: packages/admin/src/components/SetupWizard.tsx:254
-#: packages/admin/src/components/SetupWizard.tsx:306
-#: packages/admin/src/components/SetupWizard.tsx:361
+#: packages/admin/src/components/SetupWizard.tsx:225
+#: packages/admin/src/components/SetupWizard.tsx:277
+#: packages/admin/src/components/SetupWizard.tsx:332
 #: packages/admin/src/components/WordPressImport.tsx:1431
 msgid "← Back"
 msgstr "← 返回"
@@ -427,6 +443,10 @@ msgstr "90 天"
 msgid "A brief description of this content type"
 msgstr ""
 
+#: packages/admin/src/components/Sections.tsx:203
+msgid "A full-width hero banner with heading, text, and CTA button"
+msgstr ""
+
 #: packages/admin/src/components/settings/GeneralSettings.tsx:176
 msgid "A short description of your site"
 msgstr "您網站的簡短描述"
@@ -447,7 +467,7 @@ msgstr ""
 msgid "Access Denied"
 msgstr ""
 
-#: packages/admin/src/components/SetupWizard.tsx:383
+#: packages/admin/src/components/SetupWizard.tsx:354
 msgid "Account"
 msgstr "帳戶"
 
@@ -481,7 +501,7 @@ msgstr "活躍"
 #: packages/admin/src/components/MenuEditor.tsx:354
 #: packages/admin/src/components/TaxonomyManager.tsx:360
 #: packages/admin/src/components/TaxonomyManager.tsx:817
-#: packages/admin/src/components/TaxonomySidebar.tsx:436
+#: packages/admin/src/components/TaxonomySidebar.tsx:441
 msgid "Add"
 msgstr "添加"
 
@@ -490,7 +510,7 @@ msgstr "添加"
 msgid "Add {0}"
 msgstr "添加 {0}"
 
-#: packages/admin/src/components/TaxonomySidebar.tsx:235
+#: packages/admin/src/components/TaxonomySidebar.tsx:240
 msgid "Add {label}"
 msgstr "添加 {label}"
 
@@ -573,7 +593,7 @@ msgid "Add New"
 msgstr "添加新內容"
 
 #. placeholder {0}: (taxonomy.labelSingular || taxonomy.label).toLowerCase()
-#: packages/admin/src/components/TaxonomySidebar.tsx:446
+#: packages/admin/src/components/TaxonomySidebar.tsx:451
 msgid "Add new {0}"
 msgstr "添加新{0}"
 
@@ -605,7 +625,7 @@ msgstr ""
 msgid "Add Sub-Field"
 msgstr "添加子字段"
 
-#: packages/admin/src/components/TaxonomySidebar.tsx:234
+#: packages/admin/src/components/TaxonomySidebar.tsx:239
 msgid "Add tags..."
 msgstr "添加標籤..."
 
@@ -664,7 +684,7 @@ msgstr "全部"
 msgid "All bylines"
 msgstr ""
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:108
+#: packages/admin/src/components/MarketplaceBrowse.tsx:109
 msgid "All capabilities"
 msgstr "所有權限"
 
@@ -689,7 +709,7 @@ msgstr "所有語言"
 msgid "All roles"
 msgstr "所有角色"
 
-#: packages/admin/src/components/Sections.tsx:240
+#: packages/admin/src/components/Sections.tsx:242
 msgid "All Sources"
 msgstr "所有來源"
 
@@ -740,10 +760,10 @@ msgstr "替代文本已設置"
 msgid "Alternatively, you can export from WordPress (Tools → Export) and upload the file."
 msgstr "或者，您可以從 WordPress 導出（工具 → 導出）並上傳文件。"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:138
+#: packages/admin/src/components/MarketplaceBrowse.tsx:139
 #: packages/admin/src/components/PluginManager.tsx:90
 #: packages/admin/src/components/PluginManager.tsx:109
-#: packages/admin/src/components/TaxonomySidebar.tsx:318
+#: packages/admin/src/components/TaxonomySidebar.tsx:323
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:116
 #: packages/admin/src/router.tsx:339
 #: packages/admin/src/router.tsx:354
@@ -831,7 +851,7 @@ msgstr "您確定要刪除 \"{0}\" 嗎？這也將刪除該合集中的所有內
 msgid "Are you sure you want to delete the \"{0}\" field?"
 msgstr ""
 
-#: packages/admin/src/components/MenuList.tsx:247
+#: packages/admin/src/components/MenuList.tsx:252
 msgid "Are you sure you want to delete this menu? This will also delete all menu items. This action cannot be undone."
 msgstr "您確定要刪除此菜單嗎？這也將刪除所有菜單項。此操作無法撤銷。"
 
@@ -852,6 +872,10 @@ msgstr "認證錯誤：{0}"
 #: packages/admin/src/components/LoginPage.tsx:195
 msgid "Authentication error: {error}"
 msgstr "認證錯誤：{error}"
+
+#: packages/admin/src/components/auth/PasskeyLogin.tsx:256
+msgid "Authentication failed"
+msgstr ""
 
 #. placeholder {0}: manifest?.authMode
 #: packages/admin/src/components/settings/SecuritySettings.tsx:134
@@ -876,6 +900,10 @@ msgstr "作者映射"
 #: packages/admin/src/components/DeviceAuthorizePage.tsx:197
 msgid "Authorization denied"
 msgstr "授權已拒絕"
+
+#: packages/admin/src/components/DeviceAuthorizePage.tsx:105
+msgid "Authorization failed"
+msgstr ""
 
 #: packages/admin/src/components/DeviceAuthorizePage.tsx:259
 msgid "Authorize"
@@ -909,7 +937,11 @@ msgstr "從名稱自動生成（您可以編輯）"
 msgid "Autosave failed"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:537
+#: packages/admin/src/components/ContentEditor.tsx:616
+msgid "Autosave status"
+msgstr ""
+
+#: packages/admin/src/components/MediaPickerModal.tsx:540
 msgid "Available media"
 msgstr "可用媒體"
 
@@ -921,6 +953,7 @@ msgstr "可用提供商"
 msgid "Available Widgets"
 msgstr ""
 
+#: packages/admin/src/components/editor/BlockMenu.tsx:254
 #: packages/admin/src/components/MenuEditor.tsx:275
 #: packages/admin/src/components/WordPressImport.tsx:1340
 #: packages/admin/src/components/WordPressImport.tsx:2360
@@ -984,6 +1017,10 @@ msgstr "Bing 驗證"
 msgid "Bio"
 msgstr ""
 
+#: packages/admin/src/components/editor/DragHandleWrapper.tsx:125
+msgid "Block actions - drag to reorder, click for menu"
+msgstr ""
+
 #: packages/admin/src/components/PortableTextEditor.tsx:2441
 #: packages/admin/src/components/PortableTextEditor.tsx:2747
 msgid "Bold"
@@ -998,7 +1035,7 @@ msgstr "布爾值"
 msgid "Brief summary shown below the title in search results"
 msgstr "在搜索結果中標題下方顯示簡短摘要"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:87
+#: packages/admin/src/components/MarketplaceBrowse.tsx:88
 msgid "Browse and install plugins to extend your site."
 msgstr "瀏覽並安裝插件以擴展您的網站。"
 
@@ -1058,15 +1095,15 @@ msgstr "可以查看內容"
 #: packages/admin/src/components/editor/PluginBlockNode.tsx:406
 #: packages/admin/src/components/FieldEditor.tsx:645
 #: packages/admin/src/components/MediaDetailPanel.tsx:234
-#: packages/admin/src/components/MediaPickerModal.tsx:605
+#: packages/admin/src/components/MediaPickerModal.tsx:608
 #: packages/admin/src/components/MenuEditor.tsx:351
 #: packages/admin/src/components/MenuEditor.tsx:522
-#: packages/admin/src/components/MenuList.tsx:169
+#: packages/admin/src/components/MenuList.tsx:171
 #: packages/admin/src/components/PluginManager.tsx:571
 #: packages/admin/src/components/PortableTextEditor.tsx:2916
 #: packages/admin/src/components/Redirects.tsx:176
 #: packages/admin/src/components/SectionPickerModal.tsx:130
-#: packages/admin/src/components/Sections.tsx:207
+#: packages/admin/src/components/Sections.tsx:209
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:318
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:428
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:330
@@ -1089,7 +1126,7 @@ msgstr ""
 msgid "Cancel rename"
 msgstr "取消重命名"
 
-#: packages/admin/src/components/Sections.tsx:405
+#: packages/admin/src/components/Sections.tsx:407
 msgid "Cannot delete theme sections"
 msgstr "無法刪除主題區塊"
 
@@ -1177,7 +1214,7 @@ msgstr "正在檢查 {urlInput}..."
 msgid "Checking authentication..."
 msgstr "正在檢查認證..."
 
-#: packages/admin/src/components/SetupWizard.tsx:317
+#: packages/admin/src/components/SetupWizard.tsx:288
 msgid "Choose how to sign in"
 msgstr "選擇登錄方式"
 
@@ -1211,18 +1248,18 @@ msgstr "點擊郵件中的鏈接即可登錄。"
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:437
 #: packages/admin/src/components/MediaDetailPanel.tsx:131
 #: packages/admin/src/components/MediaDetailPanel.tsx:133
-#: packages/admin/src/components/MediaPickerModal.tsx:369
-#: packages/admin/src/components/MediaPickerModal.tsx:375
-#: packages/admin/src/components/MediaPickerModal.tsx:379
+#: packages/admin/src/components/MediaPickerModal.tsx:372
+#: packages/admin/src/components/MediaPickerModal.tsx:378
+#: packages/admin/src/components/MediaPickerModal.tsx:382
 #: packages/admin/src/components/MenuEditor.tsx:313
 #: packages/admin/src/components/MenuEditor.tsx:319
 #: packages/admin/src/components/MenuEditor.tsx:323
 #: packages/admin/src/components/MenuEditor.tsx:481
 #: packages/admin/src/components/MenuEditor.tsx:487
 #: packages/admin/src/components/MenuEditor.tsx:491
-#: packages/admin/src/components/MenuList.tsx:133
-#: packages/admin/src/components/MenuList.tsx:139
-#: packages/admin/src/components/MenuList.tsx:143
+#: packages/admin/src/components/MenuList.tsx:135
+#: packages/admin/src/components/MenuList.tsx:141
+#: packages/admin/src/components/MenuList.tsx:145
 #: packages/admin/src/components/PortableTextEditor.tsx:1246
 #: packages/admin/src/components/PortableTextEditor.tsx:1252
 #: packages/admin/src/components/PortableTextEditor.tsx:1256
@@ -1231,9 +1268,9 @@ msgstr "點擊郵件中的鏈接即可登錄。"
 #: packages/admin/src/components/SectionPickerModal.tsx:60
 #: packages/admin/src/components/SectionPickerModal.tsx:66
 #: packages/admin/src/components/SectionPickerModal.tsx:70
-#: packages/admin/src/components/Sections.tsx:151
-#: packages/admin/src/components/Sections.tsx:157
-#: packages/admin/src/components/Sections.tsx:161
+#: packages/admin/src/components/Sections.tsx:153
+#: packages/admin/src/components/Sections.tsx:159
+#: packages/admin/src/components/Sections.tsx:163
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:376
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:382
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:386
@@ -1338,6 +1375,10 @@ msgstr "配置字段"
 msgid "Confirm"
 msgstr "確認"
 
+#: packages/admin/src/components/WordPressImport.tsx:618
+msgid "Connect"
+msgstr ""
+
 #: packages/admin/src/components/WordPressImport.tsx:1337
 msgid "Connect & Analyze"
 msgstr "連接並分析"
@@ -1438,8 +1479,8 @@ msgstr "內容寫入"
 msgid "Continue"
 msgstr "繼續"
 
-#: packages/admin/src/components/SetupWizard.tsx:179
-#: packages/admin/src/components/SetupWizard.tsx:262
+#: packages/admin/src/components/SetupWizard.tsx:150
+#: packages/admin/src/components/SetupWizard.tsx:233
 msgid "Continue →"
 msgstr "繼續 →"
 
@@ -1458,7 +1499,7 @@ msgid "Copied to clipboard"
 msgstr "已複製到剪貼板"
 
 #. placeholder {0}: section.slug
-#: packages/admin/src/components/Sections.tsx:397
+#: packages/admin/src/components/Sections.tsx:399
 msgid "Copy {0} to clipboard"
 msgstr "複製 {0} 到剪貼板"
 
@@ -1466,7 +1507,7 @@ msgstr "複製 {0} 到剪貼板"
 msgid "Copy invite link"
 msgstr "複製邀請鏈接"
 
-#: packages/admin/src/components/Sections.tsx:396
+#: packages/admin/src/components/Sections.tsx:398
 msgid "Copy slug"
 msgstr "複製 slug"
 
@@ -1487,7 +1528,7 @@ msgstr ""
 msgid "Could not copy automatically. Please select the URL above and copy manually."
 msgstr "無法自動複製。請選擇上面的 URL 並手動複製。"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:328
+#: packages/admin/src/components/MediaPickerModal.tsx:331
 msgid "Could not load image from URL"
 msgstr "無法從 URL 加載圖片"
 
@@ -1500,14 +1541,18 @@ msgid "Count"
 msgstr "數量"
 
 #: packages/admin/src/components/ContentEditor.tsx:2042
-#: packages/admin/src/components/MenuList.tsx:172
+#: packages/admin/src/components/MenuList.tsx:174
 #: packages/admin/src/components/Redirects.tsx:185
-#: packages/admin/src/components/Sections.tsx:210
+#: packages/admin/src/components/Sections.tsx:212
 #: packages/admin/src/components/TaxonomyManager.tsx:477
 #: packages/admin/src/components/Widgets.tsx:389
 #: packages/admin/src/routes/bylines.tsx:315
 msgid "Create"
 msgstr "創建"
+
+#: packages/admin/src/components/TaxonomySidebar.tsx:265
+msgid "Create \"{trimmedInput}\""
+msgstr ""
 
 #: packages/admin/src/components/PortableTextEditor.tsx:887
 msgid "Create a bullet list"
@@ -1540,12 +1585,12 @@ msgstr "創建署名"
 msgid "Create Content Type"
 msgstr ""
 
-#: packages/admin/src/components/MenuList.tsx:123
-#: packages/admin/src/components/MenuList.tsx:186
+#: packages/admin/src/components/MenuList.tsx:125
+#: packages/admin/src/components/MenuList.tsx:188
 msgid "Create Menu"
 msgstr "創建菜單"
 
-#: packages/admin/src/components/MenuList.tsx:130
+#: packages/admin/src/components/MenuList.tsx:132
 msgid "Create New Menu"
 msgstr "創建新菜單"
 
@@ -1557,7 +1602,7 @@ msgstr "創建新令牌"
 msgid "Create one in WordPress: Users → Profile → Application Passwords"
 msgstr "在 WordPress 中創建：用戶 → 個人資料 → 應用程式密碼"
 
-#: packages/admin/src/components/SetupWizard.tsx:327
+#: packages/admin/src/components/SetupWizard.tsx:298
 msgid "Create Passkey"
 msgstr "創建通行密鑰"
 
@@ -1583,8 +1628,8 @@ msgstr "創建重定向規則以管理 URL 更改。"
 msgid "Create Schema & Import"
 msgstr "創建架構並導入"
 
-#: packages/admin/src/components/Sections.tsx:148
-#: packages/admin/src/components/Sections.tsx:268
+#: packages/admin/src/components/Sections.tsx:150
+#: packages/admin/src/components/Sections.tsx:270
 msgid "Create Section"
 msgstr "創建區塊"
 
@@ -1606,11 +1651,11 @@ msgstr "創建令牌"
 msgid "Create Widget Area"
 msgstr ""
 
-#: packages/admin/src/components/SetupWizard.tsx:573
+#: packages/admin/src/components/SetupWizard.tsx:560
 msgid "Create your account"
 msgstr "創建您的帳戶"
 
-#: packages/admin/src/components/MenuList.tsx:184
+#: packages/admin/src/components/MenuList.tsx:186
 msgid "Create your first navigation menu to get started"
 msgstr "創建您的第一個導航菜單以開始使用"
 
@@ -1619,7 +1664,7 @@ msgstr "創建您的第一個導航菜單以開始使用"
 msgid "Create your first one"
 msgstr "創建第一個內容"
 
-#: packages/admin/src/components/Sections.tsx:265
+#: packages/admin/src/components/Sections.tsx:267
 msgid "Create your first reusable content section to get started."
 msgstr "創建您的第一個可重用內容區塊以開始使用。"
 
@@ -1670,11 +1715,12 @@ msgid "Creating collections and fields..."
 msgstr "正在創建合集和字段..."
 
 #: packages/admin/src/components/ContentEditor.tsx:2042
-#: packages/admin/src/components/MenuList.tsx:172
+#: packages/admin/src/components/MenuList.tsx:174
 #: packages/admin/src/components/Redirects.tsx:182
-#: packages/admin/src/components/Sections.tsx:210
+#: packages/admin/src/components/Sections.tsx:212
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:455
 #: packages/admin/src/components/TaxonomyManager.tsx:692
+#: packages/admin/src/components/TaxonomySidebar.tsx:265
 msgid "Creating..."
 msgstr "創建中..."
 
@@ -1686,7 +1732,8 @@ msgstr "當前"
 msgid "Current"
 msgstr "當前版本"
 
-#: packages/admin/src/components/Sections.tsx:242
+#: packages/admin/src/components/Sections.tsx:46
+#: packages/admin/src/components/Sections.tsx:244
 msgid "Custom"
 msgstr "自定義"
 
@@ -1765,14 +1812,15 @@ msgstr "程式碼定義"
 #: packages/admin/src/components/comments/CommentInbox.tsx:407
 #: packages/admin/src/components/ContentTypeEditor.tsx:683
 #: packages/admin/src/components/ContentTypeList.tsx:148
+#: packages/admin/src/components/editor/BlockMenu.tsx:298
 #: packages/admin/src/components/editor/PluginBlockNode.tsx:378
 #: packages/admin/src/components/MediaDetailPanel.tsx:230
 #: packages/admin/src/components/MediaDetailPanel.tsx:255
 #: packages/admin/src/components/MenuEditor.tsx:455
-#: packages/admin/src/components/MenuList.tsx:248
+#: packages/admin/src/components/MenuList.tsx:253
 #: packages/admin/src/components/Redirects.tsx:559
-#: packages/admin/src/components/Sections.tsx:306
-#: packages/admin/src/components/Sections.tsx:405
+#: packages/admin/src/components/Sections.tsx:308
+#: packages/admin/src/components/Sections.tsx:407
 #: packages/admin/src/components/TaxonomyManager.tsx:889
 #: packages/admin/src/components/Widgets.tsx:636
 #: packages/admin/src/routes/bylines.tsx:324
@@ -1789,7 +1837,7 @@ msgstr "刪除 \"{0}\"？此操作無法撤銷。"
 #. placeholder {0}: domain.domain
 #. placeholder {0}: section.title
 #: packages/admin/src/components/ContentTypeList.tsx:229
-#: packages/admin/src/components/Sections.tsx:406
+#: packages/admin/src/components/Sections.tsx:408
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:290
 #: packages/admin/src/components/TaxonomyManager.tsx:97
 #: packages/admin/src/components/Widgets.tsx:737
@@ -1802,7 +1850,7 @@ msgid "Delete {0} field"
 msgstr ""
 
 #. placeholder {0}: menu.name
-#: packages/admin/src/components/MenuList.tsx:230
+#: packages/admin/src/components/MenuList.tsx:235
 msgid "Delete {0} menu"
 msgstr "刪除 {0} 菜單"
 
@@ -1849,7 +1897,7 @@ msgstr ""
 msgid "Delete Media?"
 msgstr "刪除媒體？"
 
-#: packages/admin/src/components/MenuList.tsx:246
+#: packages/admin/src/components/MenuList.tsx:251
 msgid "Delete Menu"
 msgstr "刪除菜單"
 
@@ -1883,7 +1931,7 @@ msgstr "刪除重定向？"
 msgid "Delete row"
 msgstr ""
 
-#: packages/admin/src/components/Sections.tsx:294
+#: packages/admin/src/components/Sections.tsx:296
 msgid "Delete Section?"
 msgstr "刪除區塊？"
 
@@ -1904,9 +1952,9 @@ msgstr "已刪除"
 #: packages/admin/src/components/ContentTypeList.tsx:149
 #: packages/admin/src/components/MediaDetailPanel.tsx:230
 #: packages/admin/src/components/MediaDetailPanel.tsx:256
-#: packages/admin/src/components/MenuList.tsx:249
+#: packages/admin/src/components/MenuList.tsx:254
 #: packages/admin/src/components/Redirects.tsx:560
-#: packages/admin/src/components/Sections.tsx:307
+#: packages/admin/src/components/Sections.tsx:309
 #: packages/admin/src/components/TaxonomyManager.tsx:890
 #: packages/admin/src/components/Widgets.tsx:637
 #: packages/admin/src/routes/bylines.tsx:340
@@ -1950,7 +1998,7 @@ msgstr "描述此區塊的用途..."
 
 #: packages/admin/src/components/ContentTypeEditor.tsx:414
 #: packages/admin/src/components/SectionEditor.tsx:249
-#: packages/admin/src/components/Sections.tsx:198
+#: packages/admin/src/components/Sections.tsx:200
 #: packages/admin/src/components/Widgets.tsx:373
 msgid "Description"
 msgstr "描述"
@@ -2059,7 +2107,7 @@ msgstr "顯示導航菜單"
 msgid "Display name"
 msgstr "顯示名稱"
 
-#: packages/admin/src/components/MenuList.tsx:164
+#: packages/admin/src/components/MenuList.tsx:166
 msgid "Display name for admin interface"
 msgstr "管理界面的顯示名稱"
 
@@ -2151,6 +2199,10 @@ msgstr "拖動以重新排序"
 msgid "Drag to reorder {0}"
 msgstr ""
 
+#: packages/admin/src/components/editor/BlockMenu.tsx:335
+msgid "Drag to reorder block"
+msgstr ""
+
 #: packages/admin/src/components/Widgets.tsx:624
 msgid "Drag widgets here to add them"
 msgstr ""
@@ -2167,9 +2219,17 @@ msgstr ""
 msgid "Drop your WordPress export file here"
 msgstr "將 WordPress 導出文件拖放到此處"
 
+#: packages/admin/src/components/editor/BlockMenu.tsx:289
+msgid "Duplicate"
+msgstr ""
+
 #: packages/admin/src/components/ContentList.tsx:541
 msgid "Duplicate {title}"
 msgstr "複製 {title}"
+
+#: packages/admin/src/components/Redirects.tsx:161
+msgid "e.g. import, blog"
+msgstr ""
 
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:415
 msgid "e.g., CI/CD Pipeline"
@@ -2183,9 +2243,9 @@ msgstr "例如：MacBook Pro、iPhone"
 #: packages/admin/src/components/editor/PluginBlockNode.tsx:367
 #: packages/admin/src/components/editor/PluginBlockNode.tsx:368
 #: packages/admin/src/components/MenuEditor.tsx:450
-#: packages/admin/src/components/MenuList.tsx:224
+#: packages/admin/src/components/MenuList.tsx:229
 #: packages/admin/src/components/PortableTextEditor.tsx:1243
-#: packages/admin/src/components/Sections.tsx:390
+#: packages/admin/src/components/Sections.tsx:392
 #: packages/admin/src/components/TaxonomyManager.tsx:360
 #: packages/admin/src/components/TranslationsPanel.tsx:88
 msgid "Edit"
@@ -2278,7 +2338,7 @@ msgstr "郵箱（可選）"
 msgid "Email address"
 msgstr "郵箱地址"
 
-#: packages/admin/src/components/SetupWizard.tsx:208
+#: packages/admin/src/components/SetupWizard.tsx:179
 #: packages/admin/src/components/SignupPage.tsx:48
 msgid "Email is required"
 msgstr "郵箱爲必填項"
@@ -2408,7 +2468,7 @@ msgstr "輸入您的 WordPress 站點 URL"
 #: packages/admin/src/components/MenuEditor.tsx:101
 #: packages/admin/src/components/MenuEditor.tsx:139
 #: packages/admin/src/components/MenuEditor.tsx:179
-#: packages/admin/src/components/SetupWizard.tsx:552
+#: packages/admin/src/components/SetupWizard.tsx:539
 #: packages/admin/src/components/Widgets.tsx:689
 #: packages/admin/src/router.tsx:1722
 msgid "Error"
@@ -2471,7 +2531,7 @@ msgstr "從 WordPress 導出您的內容，以導入所有內容（包括草稿�
 msgid "Facebook"
 msgstr "Facebook"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:348
+#: packages/admin/src/components/MarketplaceBrowse.tsx:349
 msgid "Fail"
 msgstr "失敗"
 
@@ -2487,6 +2547,18 @@ msgstr "安全審計失敗"
 msgid "Failed to add domain"
 msgstr "添加域名失敗"
 
+#: packages/admin/src/components/WordPressImport.tsx:358
+msgid "Failed to analyze WordPress site"
+msgstr ""
+
+#: packages/admin/src/components/SandboxedPluginPage.tsx:54
+msgid "Failed to communicate with plugin"
+msgstr ""
+
+#: packages/admin/src/components/SetupWizard.tsx:493
+msgid "Failed to create admin"
+msgstr ""
+
 #: packages/admin/src/components/ContentEditor.tsx:2036
 msgid "Failed to create byline"
 msgstr "創建署名失敗"
@@ -2495,7 +2567,7 @@ msgstr "創建署名失敗"
 msgid "Failed to create some collections"
 msgstr "創建部分合集失敗"
 
-#: packages/admin/src/components/TaxonomySidebar.tsx:453
+#: packages/admin/src/components/TaxonomySidebar.tsx:458
 msgid "Failed to create term"
 msgstr "創建分類項失敗"
 
@@ -2509,16 +2581,85 @@ msgstr ""
 msgid "Failed to delete"
 msgstr ""
 
+#: packages/admin/src/lib/api/users.ts:345
+msgid "Failed to delete allowed domain"
+msgstr ""
+
+#: packages/admin/src/lib/api/bylines.ts:89
+msgid "Failed to delete byline"
+msgstr ""
+
+#: packages/admin/src/lib/api/schema.ts:219
+msgid "Failed to delete collection"
+msgstr ""
+
+#: packages/admin/src/lib/api/comments.ts:111
 #: packages/admin/src/router.tsx:1098
 msgid "Failed to delete comment"
+msgstr ""
+
+#: packages/admin/src/lib/api/content.ts:217
+msgid "Failed to delete content"
+msgstr ""
+
+#: packages/admin/src/lib/api/schema.ts:275
+msgid "Failed to delete field"
+msgstr ""
+
+#: packages/admin/src/lib/api/media.ts:327
+msgid "Failed to delete from provider"
+msgstr ""
+
+#: packages/admin/src/lib/api/media.ts:207
+msgid "Failed to delete media"
+msgstr ""
+
+#: packages/admin/src/lib/api/menus.ts:163
+msgid "Failed to delete menu"
+msgstr ""
+
+#: packages/admin/src/lib/api/menus.ts:217
+msgid "Failed to delete menu item"
+msgstr ""
+
+#: packages/admin/src/lib/api/users.ts:256
+msgid "Failed to delete passkey"
+msgstr ""
+
+#: packages/admin/src/lib/api/redirects.ts:111
+msgid "Failed to delete redirect"
+msgstr ""
+
+#: packages/admin/src/lib/api/sections.ts:110
+msgid "Failed to delete section"
+msgstr ""
+
+#: packages/admin/src/lib/api/taxonomies.ts:201
+msgid "Failed to delete term"
+msgstr ""
+
+#: packages/admin/src/lib/api/widgets.ts:146
+msgid "Failed to delete widget"
+msgstr ""
+
+#: packages/admin/src/lib/api/widgets.ts:108
+msgid "Failed to delete widget area"
 msgstr ""
 
 #: packages/admin/src/components/PluginManager.tsx:108
 msgid "Failed to disable plugin"
 msgstr "禁用插件失敗"
 
+#: packages/admin/src/lib/api/users.ts:118
+msgid "Failed to disable user"
+msgstr ""
+
 #: packages/admin/src/router.tsx:783
 msgid "Failed to discard changes"
+msgstr ""
+
+#: packages/admin/src/components/WelcomeModal.tsx:70
+msgid "Failed to dismiss welcome"
 msgstr ""
 
 #: packages/admin/src/router.tsx:381
@@ -2529,6 +2670,47 @@ msgstr ""
 msgid "Failed to enable plugin"
 msgstr "啓用插件失敗"
 
+#: packages/admin/src/lib/api/users.ts:138
+msgid "Failed to enable user"
+msgstr ""
+
+#: packages/admin/src/components/WordPressImport.tsx:286
+msgid "Failed to execute import"
+msgstr ""
+
+#: packages/admin/src/lib/api/schema.ts:167
+#: packages/admin/src/lib/api/schema.ts:171
+msgid "Failed to fetch collection"
+msgstr ""
+
+#: packages/admin/src/components/TaxonomySidebar.tsx:81
+msgid "Failed to fetch entry terms"
+msgstr ""
+
+#: packages/admin/src/lib/api/client.ts:187
+msgid "Failed to fetch manifest"
+msgstr ""
+
+#: packages/admin/src/lib/api/plugins.ts:55
+#: packages/admin/src/lib/api/plugins.ts:59
+msgid "Failed to fetch plugin"
+msgstr ""
+
+#: packages/admin/src/lib/api/content.ts:462
+#: packages/admin/src/lib/api/content.ts:467
+msgid "Failed to fetch revision"
+msgstr ""
+
+#: packages/admin/src/components/SetupWizard.tsx:446
+msgid "Failed to fetch setup status"
+msgstr ""
+
+#: packages/admin/src/components/TaxonomySidebar.tsx:65
+msgid "Failed to fetch terms"
+msgstr ""
+
+#: packages/admin/src/lib/api/users.ts:88
+#: packages/admin/src/lib/api/users.ts:93
 #: packages/admin/src/router.tsx:642
 #: packages/admin/src/router.tsx:1029
 msgid "Failed to fetch user"
@@ -2541,6 +2723,27 @@ msgstr "生成預覽失敗"
 #: packages/admin/src/components/ThemeMarketplaceDetail.tsx:157
 msgid "Failed to generate preview URL"
 msgstr "生成預覽 URL 失敗"
+
+#: packages/admin/src/components/auth/PasskeyLogin.tsx:176
+msgid "Failed to get authentication options"
+msgstr ""
+
+#: packages/admin/src/components/auth/PasskeyRegistration.tsx:180
+msgid "Failed to get registration options"
+msgstr ""
+
+#: packages/admin/src/components/WordPressImport.tsx:377
+msgid "Failed to import from WordPress"
+msgstr ""
+
+#: packages/admin/src/components/WordPressImport.tsx:310
+#: packages/admin/src/lib/api/import.ts:256
+msgid "Failed to import media"
+msgstr ""
+
+#: packages/admin/src/lib/api/marketplace.ts:160
+msgid "Failed to install plugin"
+msgstr ""
 
 #: packages/admin/src/router.tsx:244
 msgid "Failed to load admin"
@@ -2559,6 +2762,10 @@ msgstr ""
 msgid "Failed to load email settings"
 msgstr "加載郵件設置失敗"
 
+#: packages/admin/src/components/MediaPickerModal.tsx:315
+msgid "Failed to load image"
+msgstr ""
+
 #: packages/admin/src/components/settings/SecuritySettings.tsx:149
 msgid "Failed to load passkeys"
 msgstr "加載通行密鑰失敗"
@@ -2576,7 +2783,7 @@ msgstr "加載插件失敗：{0}"
 msgid "Failed to load revisions"
 msgstr "加載修訂歷史失敗"
 
-#: packages/admin/src/components/SetupWizard.tsx:554
+#: packages/admin/src/components/SetupWizard.tsx:541
 msgid "Failed to load setup"
 msgstr "加載設置失敗"
 
@@ -2589,8 +2796,20 @@ msgstr "加載主題失敗"
 msgid "Failed to load users: {0}"
 msgstr ""
 
+#: packages/admin/src/components/SandboxedPluginWidget.tsx:46
+msgid "Failed to load widget"
+msgstr ""
+
 #: packages/admin/src/router.tsx:1123
 msgid "Failed to perform bulk action"
+msgstr ""
+
+#: packages/admin/src/lib/api/content.ts:260
+msgid "Failed to permanently delete content"
+msgstr ""
+
+#: packages/admin/src/components/WordPressImport.tsx:267
+msgid "Failed to prepare import"
 msgstr ""
 
 #: packages/admin/src/router.tsx:748
@@ -2610,8 +2829,33 @@ msgstr "移除通行密鑰失敗"
 msgid "Failed to rename passkey"
 msgstr "重命名通行密鑰失敗"
 
+#: packages/admin/src/lib/api/schema.ts:290
+msgid "Failed to reorder fields"
+msgstr ""
+
+#: packages/admin/src/lib/api/widgets.ts:158
+msgid "Failed to reorder widgets"
+msgstr ""
+
 #: packages/admin/src/router.tsx:353
 msgid "Failed to restore"
+msgstr ""
+
+#: packages/admin/src/lib/api/content.ts:249
+msgid "Failed to restore content"
+msgstr ""
+
+#: packages/admin/src/lib/api/content.ts:484
+#: packages/admin/src/lib/api/content.ts:489
+msgid "Failed to restore revision"
+msgstr ""
+
+#: packages/admin/src/lib/api/api-tokens.ts:98
+msgid "Failed to revoke API token"
+msgstr ""
+
+#: packages/admin/src/components/WordPressImport.tsx:323
+msgid "Failed to rewrite URLs"
 msgstr ""
 
 #: packages/admin/src/router.tsx:701
@@ -2634,9 +2878,25 @@ msgstr ""
 msgid "Failed to send magic link"
 msgstr "發送免密登錄鏈接失敗"
 
+#: packages/admin/src/lib/api/users.ts:128
+msgid "Failed to send recovery link"
+msgstr ""
+
 #: packages/admin/src/components/settings/EmailSettings.tsx:62
 msgid "Failed to send test email"
 msgstr "發送測試郵件失敗"
+
+#: packages/admin/src/components/SignupPage.tsx:350
+msgid "Failed to send verification email"
+msgstr ""
+
+#: packages/admin/src/components/TaxonomySidebar.tsx:100
+msgid "Failed to set entry terms"
+msgstr ""
+
+#: packages/admin/src/lib/api/marketplace.ts:192
+msgid "Failed to uninstall plugin"
+msgstr ""
 
 #: packages/admin/src/router.tsx:764
 msgid "Failed to unpublish"
@@ -2647,7 +2907,7 @@ msgid "Failed to unschedule"
 msgstr ""
 
 #. placeholder {0}: taxonomy.label.toLowerCase()
-#: packages/admin/src/components/TaxonomySidebar.tsx:317
+#: packages/admin/src/components/TaxonomySidebar.tsx:322
 msgid "Failed to update {0}"
 msgstr "更新 {0} 失敗"
 
@@ -2659,8 +2919,24 @@ msgstr "更新署名失敗"
 msgid "Failed to update domain"
 msgstr "更新域名失敗"
 
+#: packages/admin/src/lib/api/marketplace.ts:176
+msgid "Failed to update plugin"
+msgstr ""
+
 #: packages/admin/src/router.tsx:1082
 msgid "Failed to update status"
+msgstr ""
+
+#: packages/admin/src/lib/api/media.ts:125
+msgid "Failed to upload file"
+msgstr ""
+
+#: packages/admin/src/components/auth/PasskeyLogin.tsx:250
+msgid "Failed to verify authentication"
+msgstr ""
+
+#: packages/admin/src/components/auth/PasskeyRegistration.tsx:253
+msgid "Failed to verify registration"
 msgstr ""
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:232
@@ -2726,7 +3002,7 @@ msgstr "文件名上傳後無法更改"
 msgid "files imported"
 msgstr "文件已導入"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:106
+#: packages/admin/src/components/MarketplaceBrowse.tsx:107
 msgid "Filter by capability"
 msgstr "按功能篩選"
 
@@ -2770,6 +3046,10 @@ msgstr "常規"
 #: packages/admin/src/components/settings/GeneralSettings.tsx:140
 msgid "General Settings"
 msgstr "常規設置"
+
+#: packages/admin/src/components/TaxonomyManager.tsx:624
+msgid "Genres"
+msgstr ""
 
 #: packages/admin/src/components/WelcomeModal.tsx:143
 msgid "Get Started"
@@ -2831,6 +3111,14 @@ msgstr "標題 3"
 msgid "Height"
 msgstr "高度"
 
+#: packages/admin/src/components/Sections.tsx:180
+msgid "Hero Banner"
+msgstr ""
+
+#: packages/admin/src/components/SectionEditor.tsx:261
+msgid "hero, banner, cta"
+msgstr ""
+
 #: packages/admin/src/components/SeoPanel.tsx:188
 msgid "Hide from search engines"
 msgstr "對搜索引擎隱藏"
@@ -2868,7 +3156,11 @@ msgstr "如何創建應用程式密碼"
 msgid "https://example.com or /about"
 msgstr "https://example.com 或 /about"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:246
+#: packages/admin/src/components/MediaPickerModal.tsx:398
+msgid "https://example.com/image.jpg"
+msgstr ""
+
+#: packages/admin/src/components/MarketplaceBrowse.tsx:247
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:143
 msgid "Icon blurred due to image audit"
 msgstr "由於圖像審計，圖標已模糊"
@@ -2904,7 +3196,7 @@ msgstr "圖片設置"
 msgid "Image shown when this page is shared on social media"
 msgstr "當此頁面在社交媒體上分享時顯示的圖片"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:396
+#: packages/admin/src/components/MediaPickerModal.tsx:399
 msgid "Image URL"
 msgstr "圖片 URL"
 
@@ -2914,6 +3206,7 @@ msgstr "圖片 URL 已更新於"
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:227
 #: packages/admin/src/components/Sidebar.tsx:228
+#: packages/admin/src/components/WordPressImport.tsx:655
 msgid "Import"
 msgstr "導入"
 
@@ -2986,7 +3279,8 @@ msgstr "導入站點標題和副標題"
 msgid "Import via EmDash Exporter"
 msgstr "通過 EmDash Exporter 導入"
 
-#: packages/admin/src/components/Sections.tsx:243
+#: packages/admin/src/components/Sections.tsx:47
+#: packages/admin/src/components/Sections.tsx:245
 msgid "Imported"
 msgstr "已導入"
 
@@ -3002,7 +3296,7 @@ msgstr "正在導入內容..."
 msgid "Importing Media"
 msgstr "正在導入媒體"
 
-#: packages/admin/src/components/SetupWizard.tsx:167
+#: packages/admin/src/components/SetupWizard.tsx:138
 msgid "Include sample content (recommended for new sites)"
 msgstr "包含示例內容（推薦新站點使用）"
 
@@ -3014,8 +3308,8 @@ msgstr "不兼容"
 msgid "Inline Code"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:407
-#: packages/admin/src/components/MediaPickerModal.tsx:608
+#: packages/admin/src/components/MediaPickerModal.tsx:410
+#: packages/admin/src/components/MediaPickerModal.tsx:611
 #: packages/admin/src/components/PortableTextEditor.tsx:1243
 msgid "Insert"
 msgstr "插入"
@@ -3044,7 +3338,7 @@ msgstr ""
 msgid "Insert an image"
 msgstr "插入圖片"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:389
+#: packages/admin/src/components/MediaPickerModal.tsx:392
 msgid "Insert from URL"
 msgstr "從 URL 插入"
 
@@ -3084,7 +3378,7 @@ msgstr "安裝並激活電子郵件提供商插件以啓用電子郵件功能，
 msgid "Install blocked"
 msgstr "安裝被阻止"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:266
+#: packages/admin/src/components/MarketplaceBrowse.tsx:267
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:174
 msgid "Installed"
 msgstr "已安裝"
@@ -3163,7 +3457,7 @@ msgstr "項目已刪除"
 msgid "Item updated"
 msgstr "項目已更新"
 
-#: packages/admin/src/components/SetupWizard.tsx:242
+#: packages/admin/src/components/SetupWizard.tsx:213
 #: packages/admin/src/components/SignupPage.tsx:204
 msgid "Jane Doe"
 msgstr "張三"
@@ -3182,7 +3476,7 @@ msgstr "關鍵詞"
 #: packages/admin/src/components/FieldEditor.tsx:554
 #: packages/admin/src/components/MenuEditor.tsx:329
 #: packages/admin/src/components/MenuEditor.tsx:498
-#: packages/admin/src/components/MenuList.tsx:163
+#: packages/admin/src/components/MenuList.tsx:165
 #: packages/admin/src/components/TaxonomyManager.tsx:621
 #: packages/admin/src/components/Widgets.tsx:371
 msgid "Label"
@@ -3245,6 +3539,8 @@ msgstr "留空以使用可發現的通行密鑰。"
 msgid "Leave unassigned"
 msgstr "不分配"
 
+#: packages/admin/src/components/MediaLibrary.tsx:82
+#: packages/admin/src/components/MediaLibrary.tsx:202
 #: packages/admin/src/components/MediaLibrary.tsx:314
 msgid "Library"
 msgstr "庫"
@@ -3299,7 +3595,7 @@ msgid "Live View"
 msgstr "實時預覽"
 
 #: packages/admin/src/components/ContentPickerModal.tsx:241
-#: packages/admin/src/components/MarketplaceBrowse.tsx:203
+#: packages/admin/src/components/MarketplaceBrowse.tsx:204
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:172
 #: packages/admin/src/routes/bylines.tsx:236
 msgid "Load more"
@@ -3335,7 +3631,7 @@ msgstr ""
 msgid "Loading menu..."
 msgstr "正在加載菜單..."
 
-#: packages/admin/src/components/MenuList.tsx:91
+#: packages/admin/src/components/MenuList.tsx:93
 msgid "Loading menus..."
 msgstr "正在加載菜單..."
 
@@ -3348,7 +3644,7 @@ msgid "Loading redirects..."
 msgstr "正在加載重定向..."
 
 #: packages/admin/src/components/SectionPickerModal.tsx:94
-#: packages/admin/src/components/Sections.tsx:250
+#: packages/admin/src/components/Sections.tsx:252
 msgid "Loading sections..."
 msgstr "正在加載區塊..."
 
@@ -3358,7 +3654,7 @@ msgstr "正在加載區塊..."
 msgid "Loading settings..."
 msgstr "正在加載設置..."
 
-#: packages/admin/src/components/SetupWizard.tsx:541
+#: packages/admin/src/components/SetupWizard.tsx:528
 msgid "Loading setup..."
 msgstr "正在加載設置..."
 
@@ -3375,7 +3671,7 @@ msgstr ""
 #: packages/admin/src/components/ContentList.tsx:368
 #: packages/admin/src/components/ContentList.tsx:396
 #: packages/admin/src/components/ContentPickerModal.tsx:238
-#: packages/admin/src/components/MarketplaceBrowse.tsx:203
+#: packages/admin/src/components/MarketplaceBrowse.tsx:204
 #: packages/admin/src/components/PortableTextEditor.tsx:1755
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:181
 #: packages/admin/src/components/settings/SecuritySettings.tsx:118
@@ -3419,7 +3715,7 @@ msgstr "標誌和網站圖標"
 msgid "Long Text"
 msgstr "長文本"
 
-#: packages/admin/src/components/Sections.tsx:191
+#: packages/admin/src/components/Sections.tsx:193
 msgid "Lowercase letters, numbers, and hyphens only"
 msgstr "僅限小寫字母、數字和連字符"
 
@@ -3449,7 +3745,7 @@ msgstr ""
 msgid "Manage installed plugins. Enable or disable plugins to control their functionality."
 msgstr "管理已安裝的插件。啓用或禁用插件以控制其功能。"
 
-#: packages/admin/src/components/MenuList.tsx:101
+#: packages/admin/src/components/MenuList.tsx:103
 msgid "Manage navigation menus for your site"
 msgstr "管理您站點的導航菜單"
 
@@ -3477,7 +3773,7 @@ msgstr "標記爲垃圾"
 msgid "marketplace"
 msgstr "市場"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:86
+#: packages/admin/src/components/MarketplaceBrowse.tsx:87
 #: packages/admin/src/components/PluginManager.tsx:158
 #: packages/admin/src/components/PluginManager.tsx:305
 #: packages/admin/src/components/Sidebar.tsx:219
@@ -3498,6 +3794,7 @@ msgstr "最大值"
 
 #: packages/admin/src/components/PortableTextEditor.tsx:1945
 #: packages/admin/src/components/Sidebar.tsx:185
+#: packages/admin/src/components/WordPressImport.tsx:669
 #: packages/admin/src/components/WordPressImport.tsx:1164
 msgid "Media"
 msgstr "媒體"
@@ -3552,15 +3849,15 @@ msgid "Menu \"{0}\" ({1}) created."
 msgstr ""
 
 #. placeholder {0}: menu.label
-#: packages/admin/src/components/MenuList.tsx:52
+#: packages/admin/src/components/MenuList.tsx:54
 msgid "Menu \"{0}\" has been created."
 msgstr "菜單 \"{0}\" 已創建。"
 
-#: packages/admin/src/components/MenuList.tsx:51
+#: packages/admin/src/components/MenuList.tsx:53
 msgid "Menu created"
 msgstr "菜單已創建"
 
-#: packages/admin/src/components/MenuList.tsx:71
+#: packages/admin/src/components/MenuList.tsx:73
 msgid "Menu deleted"
 msgstr "菜單已刪除"
 
@@ -3585,7 +3882,7 @@ msgid "Menu order has been updated."
 msgstr "菜單順序已更新。"
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:161
-#: packages/admin/src/components/MenuList.tsx:100
+#: packages/admin/src/components/MenuList.tsx:102
 #: packages/admin/src/components/Sidebar.tsx:195
 msgid "Menus"
 msgstr "菜單"
@@ -3643,6 +3940,10 @@ msgstr "已修改"
 msgid "Modify collection schemas"
 msgstr "修改合集模式"
 
+#: packages/admin/src/components/MarketplaceBrowse.tsx:42
+msgid "Most Popular"
+msgstr ""
+
 #: packages/admin/src/components/ContentList.tsx:562
 msgid "Move \"{title}\" to trash? You can restore it later."
 msgstr "將「{title}」移至回收站？您可以稍後恢復它。"
@@ -3682,12 +3983,13 @@ msgstr "多行純文本"
 msgid "Multiple choices from options"
 msgstr "從選項中選擇多個"
 
-#: packages/admin/src/components/SetupWizard.tsx:149
+#: packages/admin/src/components/SetupWizard.tsx:120
 msgid "My Awesome Blog"
 msgstr "我的精彩博客"
 
 #: packages/admin/src/components/ContentTypeList.tsx:94
-#: packages/admin/src/components/MenuList.tsx:151
+#: packages/admin/src/components/MarketplaceBrowse.tsx:45
+#: packages/admin/src/components/MenuList.tsx:153
 #: packages/admin/src/components/TaxonomyManager.tsx:387
 #: packages/admin/src/components/TaxonomyManager.tsx:630
 #: packages/admin/src/components/TaxonomyManager.tsx:824
@@ -3726,7 +4028,7 @@ msgid "NEW"
 msgstr "新"
 
 #. placeholder {0}: (taxonomy.labelSingular || taxonomy.label).toLowerCase()
-#: packages/admin/src/components/TaxonomySidebar.tsx:424
+#: packages/admin/src/components/TaxonomySidebar.tsx:429
 msgid "New {0}"
 msgstr "新{0}"
 
@@ -3748,7 +4050,7 @@ msgstr "新內容類型"
 msgid "New Redirect"
 msgstr "新重定向"
 
-#: packages/admin/src/components/Sections.tsx:141
+#: packages/admin/src/components/Sections.tsx:143
 msgid "New Section"
 msgstr "新區塊"
 
@@ -3766,6 +4068,14 @@ msgstr "新分類"
 #: packages/admin/src/components/MenuEditor.tsx:517
 msgid "New window"
 msgstr "新視窗"
+
+#: packages/admin/src/components/MarketplaceBrowse.tsx:44
+msgid "Newest"
+msgstr ""
+
+#: packages/admin/src/components/TaxonomyManager.tsx:390
+msgid "News"
+msgstr ""
 
 #: packages/admin/src/components/ThemeMarketplaceDetail.tsx:315
 msgid "Next"
@@ -3785,7 +4095,7 @@ msgid "No"
 msgstr "否"
 
 #. placeholder {0}: taxonomy.label.toLowerCase()
-#: packages/admin/src/components/TaxonomySidebar.tsx:394
+#: packages/admin/src/components/TaxonomySidebar.tsx:399
 msgid "No {0} available."
 msgstr "暫無{0}。"
 
@@ -3835,6 +4145,10 @@ msgstr "暫無待審覈評論。"
 #: packages/admin/src/components/comments/CommentInbox.tsx:542
 msgid "No comments match your search."
 msgstr "暫無評論符合您的搜索。"
+
+#: packages/admin/src/components/SandboxedPluginWidget.tsx:80
+msgid "No content"
+msgstr ""
 
 #: packages/admin/src/components/ContentPickerModal.tsx:176
 msgid "No content found"
@@ -3911,12 +4225,12 @@ msgid "No maximum"
 msgstr "無最大值"
 
 #: packages/admin/src/components/MediaLibrary.tsx:369
-#: packages/admin/src/components/MediaPickerModal.tsx:521
+#: packages/admin/src/components/MediaPickerModal.tsx:524
 msgid "No media available from this provider"
 msgstr "此提供商無可用媒體"
 
 #: packages/admin/src/components/MediaLibrary.tsx:363
-#: packages/admin/src/components/MediaPickerModal.tsx:515
+#: packages/admin/src/components/MediaPickerModal.tsx:518
 msgid "No media found"
 msgstr "未找到媒體"
 
@@ -3928,7 +4242,7 @@ msgstr "暫無媒體"
 msgid "No menu items yet"
 msgstr "暫無菜單項"
 
-#: packages/admin/src/components/MenuList.tsx:183
+#: packages/admin/src/components/MenuList.tsx:185
 msgid "No menus yet"
 msgstr "暫無菜單"
 
@@ -3953,11 +4267,11 @@ msgstr "暫無已註冊的通行密鑰。"
 msgid "No plugins configured"
 msgstr "未配置插件"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:178
+#: packages/admin/src/components/MarketplaceBrowse.tsx:179
 msgid "No plugins found"
 msgstr "未找到插件"
 
-#: packages/admin/src/components/Sections.tsx:341
+#: packages/admin/src/components/Sections.tsx:343
 msgid "No preview"
 msgstr "無預覽"
 
@@ -3973,7 +4287,7 @@ msgstr "暫無重定向"
 msgid "No results"
 msgstr "無結果"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:181
+#: packages/admin/src/components/MarketplaceBrowse.tsx:182
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:154
 msgid "No results for \"{debouncedQuery}\". Try a different search term."
 msgstr "「{debouncedQuery}」無結果。請嘗試其他搜索詞。"
@@ -3995,11 +4309,11 @@ msgid "No sections available"
 msgstr "無可用區塊"
 
 #: packages/admin/src/components/SectionPickerModal.tsx:101
-#: packages/admin/src/components/Sections.tsx:257
+#: packages/admin/src/components/Sections.tsx:259
 msgid "No sections found"
 msgstr "未找到區塊"
 
-#: packages/admin/src/components/Sections.tsx:263
+#: packages/admin/src/components/Sections.tsx:265
 msgid "No sections yet"
 msgstr "暫無區塊"
 
@@ -4060,7 +4374,7 @@ msgstr "僅授權您認識的代碼。"
 msgid "Only email addresses from allowed domains can sign up."
 msgstr "僅允許來自允許域名的郵箱註冊。"
 
-#: packages/admin/src/components/MenuList.tsx:156
+#: packages/admin/src/components/MenuList.tsx:158
 msgid "Only lowercase letters, numbers, and hyphens"
 msgstr "僅限小寫字母、數字和連字符"
 
@@ -4080,6 +4394,13 @@ msgstr "在新標籤頁中開啟"
 #: packages/admin/src/components/WordPressImport.tsx:1364
 msgid "Open WordPress Profile"
 msgstr "開啟 WordPress 個人資料"
+
+#: packages/admin/src/components/FieldEditor.tsx:516
+msgid ""
+"Option 1\n"
+"Option 2\n"
+"Option 3"
+msgstr ""
 
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:309
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:474
@@ -4103,7 +4424,7 @@ msgstr "懸停時的可選工具提示"
 msgid "Options (one per line)"
 msgstr "選項（每行一個）"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:419
+#: packages/admin/src/components/MediaPickerModal.tsx:422
 msgid "or choose from library"
 msgstr "或從庫中選擇"
 
@@ -4112,6 +4433,7 @@ msgid "Or click to browse. Accepts .xml files exported from WordPress."
 msgstr "或點擊瀏覽。接受從 WordPress 導出的 .xml 文件。"
 
 #: packages/admin/src/components/LoginPage.tsx:261
+#: packages/admin/src/components/SetupWizard.tsx:310
 msgid "Or continue with"
 msgstr "或繼續使用"
 
@@ -4170,7 +4492,7 @@ msgstr "父級"
 msgid "Part of a redirect loop"
 msgstr "重定向循環的一部分"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:327
+#: packages/admin/src/components/MarketplaceBrowse.tsx:328
 msgid "Pass"
 msgstr "通過"
 
@@ -4274,7 +4596,7 @@ msgstr "永久刪除 {title}"
 msgid "Permissions"
 msgstr "權限"
 
-#: packages/admin/src/components/SetupWizard.tsx:319
+#: packages/admin/src/components/SetupWizard.tsx:290
 msgid "Pick any method to create your admin account."
 msgstr "選擇任意方式創建您的管理員賬戶。"
 
@@ -4287,7 +4609,7 @@ msgstr "普通"
 msgid "Please ask your administrator to send a new invite."
 msgstr ""
 
-#: packages/admin/src/components/SetupWizard.tsx:210
+#: packages/admin/src/components/SetupWizard.tsx:181
 msgid "Please enter a valid email"
 msgstr "請輸入有效的郵箱"
 
@@ -4295,7 +4617,7 @@ msgstr "請輸入有效的郵箱"
 msgid "Please enter a valid email address"
 msgstr "請輸入有效的郵箱地址"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:304
+#: packages/admin/src/components/MediaPickerModal.tsx:307
 msgid "Please enter a valid URL"
 msgstr "請輸入有效的 URL"
 
@@ -4311,6 +4633,15 @@ msgstr "插件已禁用"
 msgid "Plugin enabled"
 msgstr "插件已啓用"
 
+#: packages/admin/src/components/SandboxedPluginPage.tsx:89
+msgid "Plugin Error"
+msgstr ""
+
+#. placeholder {0}: response.status
+#: packages/admin/src/components/SandboxedPluginWidget.tsx:37
+msgid "Plugin error ({0})"
+msgstr ""
+
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:113
 msgid "Plugin not found"
 msgstr "未找到插件"
@@ -4322,6 +4653,11 @@ msgstr "在您的 WordPress 站點上的插件。"
 #: packages/admin/src/components/CapabilityConsentDialog.tsx:72
 msgid "Plugin Permissions"
 msgstr "插件權限"
+
+#. placeholder {0}: response.status
+#: packages/admin/src/components/SandboxedPluginPage.tsx:40
+msgid "Plugin responded with {0}: {text}"
+msgstr ""
 
 #: packages/admin/src/components/PluginManager.tsx:255
 msgid "Plugin uninstalled"
@@ -4361,7 +4697,7 @@ msgid "Preparing to download files from WordPress..."
 msgstr "正在準備從 WordPress 下載文件..."
 
 #: packages/admin/src/components/auth/PasskeyLogin.tsx:166
-#: packages/admin/src/components/SetupWizard.tsx:262
+#: packages/admin/src/components/SetupWizard.tsx:233
 msgid "Preparing..."
 msgstr "正在準備..."
 
@@ -4392,7 +4728,7 @@ msgstr "上一頁"
 msgid "Previous screenshot"
 msgstr "上一張截圖"
 
-#: packages/admin/src/components/MenuList.tsx:163
+#: packages/admin/src/components/MenuList.tsx:165
 msgid "Primary Navigation"
 msgstr "主導航"
 
@@ -4472,6 +4808,10 @@ msgstr "就緒"
 msgid "Recent Activity"
 msgstr "最近活動"
 
+#: packages/admin/src/components/MarketplaceBrowse.tsx:43
+msgid "Recently Updated"
+msgstr ""
+
 #: packages/admin/src/components/settings/EmailSettings.tsx:153
 msgid "Recipient email"
 msgstr "收件人郵箱"
@@ -4516,6 +4856,10 @@ msgstr "註冊通行密鑰"
 msgid "Registered user"
 msgstr "已註冊用戶"
 
+#: packages/admin/src/components/auth/PasskeyRegistration.tsx:259
+msgid "Registration failed"
+msgstr ""
+
 #: packages/admin/src/components/auth/PasskeyRegistration.tsx:266
 msgid "Registration was cancelled or timed out. Please try again."
 msgstr "註冊已取消或超時。請重試。"
@@ -4534,7 +4878,7 @@ msgstr "移除"
 #. placeholder {0}: passkey.name
 #. placeholder {0}: term.label
 #: packages/admin/src/components/settings/PasskeyItem.tsx:188
-#: packages/admin/src/components/TaxonomySidebar.tsx:219
+#: packages/admin/src/components/TaxonomySidebar.tsx:224
 msgid "Remove {0}"
 msgstr "移除 {0}"
 
@@ -4698,18 +5042,22 @@ msgstr "從 {0} 恢復此版本？這將把當前內容更新爲此修訂版本�
 msgid "Restoring..."
 msgstr "正在恢復..."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:146
+#: packages/admin/src/components/MarketplaceBrowse.tsx:147
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:124
 #: packages/admin/src/router.tsx:1728
 msgid "Retry"
 msgstr "重試"
 
-#: packages/admin/src/components/Sections.tsx:134
+#: packages/admin/src/components/Sections.tsx:136
 msgid "Reusable content blocks you can insert into any content"
 msgstr "可重用的內容區塊，可插入到任何內容中"
 
 #: packages/admin/src/router.tsx:778
 msgid "Reverted to published version"
+msgstr ""
+
+#: packages/admin/src/components/WordPressImport.tsx:641
+msgid "Review"
 msgstr ""
 
 #: packages/admin/src/components/CapabilityConsentDialog.tsx:72
@@ -4972,7 +5320,7 @@ msgstr "搜索引擎優化"
 msgid "Search engine optimization and verification"
 msgstr "搜索引擎優化和驗證"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:465
+#: packages/admin/src/components/MediaPickerModal.tsx:468
 msgid "Search media"
 msgstr "搜索媒體"
 
@@ -4980,12 +5328,12 @@ msgstr "搜索媒體"
 msgid "Search pages and content..."
 msgstr "搜索頁面和內容..."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:96
+#: packages/admin/src/components/MarketplaceBrowse.tsx:97
 msgid "Search plugins..."
 msgstr "搜索插件..."
 
 #: packages/admin/src/components/SectionPickerModal.tsx:81
-#: packages/admin/src/components/Sections.tsx:224
+#: packages/admin/src/components/Sections.tsx:226
 msgid "Search sections..."
 msgstr "搜索區塊..."
 
@@ -5002,7 +5350,7 @@ msgid "Search users"
 msgstr ""
 
 #: packages/admin/src/components/MediaLibrary.tsx:336
-#: packages/admin/src/components/MediaPickerModal.tsx:464
+#: packages/admin/src/components/MediaPickerModal.tsx:467
 msgid "Search..."
 msgstr "搜索..."
 
@@ -5019,11 +5367,11 @@ msgstr "區塊"
 msgid "Section \"{slug}\" could not be found."
 msgstr "未找到區塊 \"{slug}\"。"
 
-#: packages/admin/src/components/Sections.tsx:91
+#: packages/admin/src/components/Sections.tsx:93
 msgid "Section created"
 msgstr "區塊已創建"
 
-#: packages/admin/src/components/Sections.tsx:105
+#: packages/admin/src/components/Sections.tsx:107
 msgid "Section deleted"
 msgstr "區塊已刪除"
 
@@ -5044,7 +5392,7 @@ msgid "Section title"
 msgstr "區塊標題"
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:177
-#: packages/admin/src/components/Sections.tsx:132
+#: packages/admin/src/components/Sections.tsx:134
 #: packages/admin/src/components/Sidebar.tsx:198
 msgid "Sections"
 msgstr "區塊"
@@ -5054,7 +5402,7 @@ msgstr "區塊"
 msgid "secure context"
 msgstr "安全上下文"
 
-#: packages/admin/src/components/SetupWizard.tsx:574
+#: packages/admin/src/components/SetupWizard.tsx:561
 msgid "Secure your account"
 msgstr "保護您的帳戶"
 
@@ -5066,11 +5414,11 @@ msgstr "安全"
 msgid "Security Audit"
 msgstr "安全審計"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:345
+#: packages/admin/src/components/MarketplaceBrowse.tsx:346
 msgid "Security audit failed"
 msgstr "安全審計失敗"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:335
+#: packages/admin/src/components/MarketplaceBrowse.tsx:336
 msgid "Security audit flagged concerns"
 msgstr "安全審計標記了問題"
 
@@ -5082,7 +5430,7 @@ msgstr "安全審計標記了此插件的潛在問題。"
 msgid "Security audit flagged this plugin as potentially unsafe."
 msgstr "安全審計標記此插件爲可能不安全。"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:324
+#: packages/admin/src/components/MarketplaceBrowse.tsx:325
 msgid "Security audit passed"
 msgstr "安全審計通過"
 
@@ -5143,7 +5491,7 @@ msgstr "選擇網站圖標"
 msgid "Select file"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:86
+#: packages/admin/src/components/MediaPickerModal.tsx:89
 msgid "Select File"
 msgstr ""
 
@@ -5151,7 +5499,7 @@ msgstr ""
 msgid "Select image"
 msgstr "選擇圖片"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:86
+#: packages/admin/src/components/MediaPickerModal.tsx:89
 #: packages/admin/src/components/PortableTextEditor.tsx:2317
 #: packages/admin/src/components/PortableTextEditor.tsx:2990
 msgid "Select Image"
@@ -5178,12 +5526,13 @@ msgstr "選擇 OG 圖片"
 msgid "Select which content types to import."
 msgstr "選擇要導入的內容類型。"
 
+#: packages/admin/src/components/BlockKitFieldWidget.tsx:110
 #: packages/admin/src/components/PortableTextEditor.tsx:1762
 #: packages/admin/src/components/RepeaterField.tsx:367
 msgid "Select..."
 msgstr "選擇..."
 
-#: packages/admin/src/components/MediaPickerModal.tsx:595
+#: packages/admin/src/components/MediaPickerModal.tsx:598
 msgid "Selected:"
 msgstr "已選擇："
 
@@ -5261,11 +5610,11 @@ msgstr "爲此圖片實例設置自定義顯示尺寸。"
 msgid "Set to 0 to never close comments automatically."
 msgstr ""
 
-#: packages/admin/src/components/SetupWizard.tsx:572
+#: packages/admin/src/components/SetupWizard.tsx:559
 msgid "Set up your site"
 msgstr "設置您的站點"
 
-#: packages/admin/src/components/SetupWizard.tsx:179
+#: packages/admin/src/components/SetupWizard.tsx:150
 msgid "Setting up..."
 msgstr "正在設置..."
 
@@ -5292,6 +5641,10 @@ msgstr "設置讀取"
 msgid "Settings saved successfully"
 msgstr "設置保存成功"
 
+#: packages/admin/src/components/SetupWizard.tsx:468
+msgid "Setup failed"
+msgstr ""
+
 #: packages/admin/src/components/users/InviteUserModal.tsx:109
 msgid "Share this link with the invited user"
 msgstr "與此邀請用戶分享此鏈接"
@@ -5314,7 +5667,7 @@ msgstr "懸停在圖片上時顯示。"
 msgid "Sign in"
 msgstr "登錄"
 
-#: packages/admin/src/components/SetupWizard.tsx:384
+#: packages/admin/src/components/SetupWizard.tsx:355
 msgid "Sign In"
 msgstr "登錄"
 
@@ -5330,7 +5683,7 @@ msgstr "登錄到您的網站"
 #. placeholder {0}: authProviderList.find((p) => p.id === activeProvider)?.label ?? activeProvider
 #. placeholder {0}: provider.label
 #: packages/admin/src/components/LoginPage.tsx:231
-#: packages/admin/src/components/SetupWizard.tsx:293
+#: packages/admin/src/components/SetupWizard.tsx:264
 msgid "Sign in with {0}"
 msgstr "使用 {0} 登錄"
 
@@ -5360,7 +5713,7 @@ msgstr "從選項中選擇一個"
 msgid "Single line text input"
 msgstr "單行文本輸入"
 
-#: packages/admin/src/components/SetupWizard.tsx:382
+#: packages/admin/src/components/SetupWizard.tsx:353
 msgid "Site"
 msgstr "站點"
 
@@ -5372,12 +5725,12 @@ msgstr "站點標識"
 msgid "Site identity, logo, favicon, and reading preferences"
 msgstr "網站標識、徽標、網站圖標和閱讀偏好"
 
-#: packages/admin/src/components/SetupWizard.tsx:380
+#: packages/admin/src/components/SetupWizard.tsx:351
 msgid "Site Settings"
 msgstr "站點設置"
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:167
-#: packages/admin/src/components/SetupWizard.tsx:145
+#: packages/admin/src/components/SetupWizard.tsx:116
 msgid "Site Title"
 msgstr "站點標題"
 
@@ -5385,7 +5738,7 @@ msgstr "站點標題"
 msgid "Site title & tagline"
 msgstr "站點標題和副標題"
 
-#: packages/admin/src/components/SetupWizard.tsx:129
+#: packages/admin/src/components/SetupWizard.tsx:100
 msgid "Site title is required"
 msgstr "站點標題爲必填項"
 
@@ -5418,13 +5771,13 @@ msgstr "已跳過"
 #: packages/admin/src/components/FieldEditor.tsx:224
 #: packages/admin/src/components/FieldEditor.tsx:407
 #: packages/admin/src/components/SectionEditor.tsx:234
-#: packages/admin/src/components/Sections.tsx:182
+#: packages/admin/src/components/Sections.tsx:184
 #: packages/admin/src/components/TaxonomyManager.tsx:396
 #: packages/admin/src/routes/bylines.tsx:254
 msgid "Slug"
 msgstr "別名"
 
-#: packages/admin/src/components/Sections.tsx:122
+#: packages/admin/src/components/Sections.tsx:124
 msgid "Slug copied to clipboard"
 msgstr "別名已複製到剪貼板"
 
@@ -5459,7 +5812,7 @@ msgstr "某些內容類型無法導入"
 msgid "Something went wrong"
 msgstr "出現問題"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:122
+#: packages/admin/src/components/MarketplaceBrowse.tsx:123
 msgid "Sort plugins"
 msgstr "排序插件"
 
@@ -5554,7 +5907,7 @@ msgid "Table"
 msgstr ""
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:173
-#: packages/admin/src/components/SetupWizard.tsx:156
+#: packages/admin/src/components/SetupWizard.tsx:127
 msgid "Tagline"
 msgstr "副標題"
 
@@ -5580,7 +5933,7 @@ msgstr "目標"
 msgid "Target locale"
 msgstr ""
 
-#: packages/admin/src/components/TaxonomySidebar.tsx:492
+#: packages/admin/src/components/TaxonomySidebar.tsx:497
 msgid "Taxonomies"
 msgstr "分類"
 
@@ -5600,7 +5953,7 @@ msgstr "未找到分類："
 msgid "Taxonomy: {taxonomyName}"
 msgstr ""
 
-#: packages/admin/src/components/SetupWizard.tsx:184
+#: packages/admin/src/components/SetupWizard.tsx:155
 msgid "Template:"
 msgstr "模板："
 
@@ -5648,11 +6001,11 @@ msgstr "被邀請的用戶完成註冊後將擁有此角色。"
 msgid "The link will expire in 15 minutes."
 msgstr "鏈接將在 15 分鐘後過期。"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:182
+#: packages/admin/src/components/MarketplaceBrowse.tsx:183
 msgid "The marketplace is empty. Check back later for new plugins."
 msgstr "市場爲空。請稍後查看新插件。"
 
-#: packages/admin/src/components/MenuList.tsx:72
+#: packages/admin/src/components/MenuList.tsx:74
 msgid "The menu has been deleted."
 msgstr "菜單已刪除。"
 
@@ -5672,7 +6025,8 @@ msgstr "您站點的公共 URL（用於規範鏈接和站點地圖）"
 msgid "The theme marketplace is empty. Check back later."
 msgstr "主題市場爲空。請稍後再來。"
 
-#: packages/admin/src/components/Sections.tsx:241
+#: packages/admin/src/components/Sections.tsx:45
+#: packages/admin/src/components/Sections.tsx:243
 msgid "Theme"
 msgstr "主題"
 
@@ -5689,7 +6043,7 @@ msgstr "未找到主題"
 msgid "Theme Section"
 msgstr "主題區塊"
 
-#: packages/admin/src/components/Sections.tsx:298
+#: packages/admin/src/components/Sections.tsx:300
 msgid "Theme-provided sections cannot be deleted. Edit the section to create a custom copy, then delete that."
 msgstr "主題提供的區塊無法刪除。編輯區塊以創建自定義副本，然後刪除該副本。"
 
@@ -5769,7 +6123,7 @@ msgid "This will permanently delete \"{0}\" and remove it from all content."
 msgstr "這將永久刪除「{0}」並將其從所有內容中移除。"
 
 #. placeholder {0}: sectionToDelete?.title
-#: packages/admin/src/components/Sections.tsx:302
+#: packages/admin/src/components/Sections.tsx:304
 msgid "This will permanently delete \"{0}\". This action cannot be undone."
 msgstr "這將永久刪除「{0}」。此操作無法撤銷。"
 
@@ -5785,7 +6139,7 @@ msgstr "這將從您的站點移除插件及其包。"
 msgid "This will revert to the published version. Your draft changes will be lost."
 msgstr "這將恢復到已發佈的版本。您的草稿更改將會丟失。"
 
-#: packages/admin/src/components/SetupWizard.tsx:160
+#: packages/admin/src/components/SetupWizard.tsx:131
 msgid "Thoughts, tutorials, and more"
 msgstr "想法、教程等"
 
@@ -5800,7 +6154,7 @@ msgstr "用於顯示日期的時區（例如：America/New_York）"
 #: packages/admin/src/components/ContentList.tsx:221
 #: packages/admin/src/components/ContentList.tsx:352
 #: packages/admin/src/components/SectionEditor.tsx:226
-#: packages/admin/src/components/Sections.tsx:168
+#: packages/admin/src/components/Sections.tsx:170
 #: packages/admin/src/components/Widgets.tsx:811
 msgid "Title"
 msgstr "標題"
@@ -5908,7 +6262,7 @@ msgid "True/false toggle"
 msgstr "真/假切換"
 
 #: packages/admin/src/components/MediaLibrary.tsx:366
-#: packages/admin/src/components/MediaPickerModal.tsx:518
+#: packages/admin/src/components/MediaPickerModal.tsx:521
 msgid "Try a different search term"
 msgstr "嘗試其他搜索詞"
 
@@ -5917,7 +6271,7 @@ msgstr "嘗試其他搜索詞"
 msgid "Try adjusting your search"
 msgstr "嘗試調整您的搜索"
 
-#: packages/admin/src/components/Sections.tsx:258
+#: packages/admin/src/components/Sections.tsx:260
 msgid "Try adjusting your search or filters."
 msgstr "嘗試調整您的搜索或篩選條件。"
 
@@ -5943,6 +6297,10 @@ msgstr "嘗試其他 URL"
 msgid "Try with my data"
 msgstr "使用我的數據嘗試"
 
+#: packages/admin/src/components/editor/BlockMenu.tsx:279
+msgid "Turn into"
+msgstr ""
+
 #: packages/admin/src/components/settings/SocialSettings.tsx:143
 msgid "Twitter"
 msgstr "Twitter"
@@ -5957,7 +6315,7 @@ msgstr "類型"
 msgid "Type mismatch ({0})"
 msgstr "類型不匹配 ({0})"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:136
+#: packages/admin/src/components/MarketplaceBrowse.tsx:137
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:114
 msgid "Unable to reach marketplace"
 msgstr "無法訪問市場"
@@ -6043,6 +6401,11 @@ msgstr "取消定時發佈"
 msgid "Unscheduled"
 msgstr ""
 
+#. placeholder {0}: (element as { type: string }).type
+#: packages/admin/src/components/BlockKitFieldWidget.tsx:134
+msgid "Unsupported widget element type: {0}"
+msgstr ""
+
 #: packages/admin/src/components/Dashboard.tsx:249
 msgid "Untitled"
 msgstr "無標題"
@@ -6109,11 +6472,11 @@ msgstr "正在更新內容 URL..."
 msgid "Updating..."
 msgstr "更新中..."
 
-#: packages/admin/src/components/MediaPickerModal.tsx:486
+#: packages/admin/src/components/MediaPickerModal.tsx:489
 msgid "Upload"
 msgstr "上傳"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:88
+#: packages/admin/src/components/MediaPickerModal.tsx:91
 msgid "Upload a file to get started"
 msgstr ""
 
@@ -6121,7 +6484,7 @@ msgstr ""
 msgid "Upload an export file"
 msgstr "上傳導出文件"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:89
+#: packages/admin/src/components/MediaPickerModal.tsx:92
 msgid "Upload an image to get started"
 msgstr "上傳圖片以開始使用"
 
@@ -6134,11 +6497,15 @@ msgstr "上傳和刪除媒體"
 msgid "Upload Export File"
 msgstr "上傳導出文件"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:502
+#: packages/admin/src/components/MediaPickerModal.tsx:505
 msgid "Upload failed: {uploadError}"
 msgstr "上傳失敗：{uploadError}"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:90
+#: packages/admin/src/components/MediaPickerModal.tsx:497
+msgid "Upload file"
+msgstr ""
+
+#: packages/admin/src/components/MediaPickerModal.tsx:93
 msgid "Upload File"
 msgstr ""
 
@@ -6150,7 +6517,7 @@ msgstr "上傳文件"
 msgid "Upload Files"
 msgstr "上傳文件"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:90
+#: packages/admin/src/components/MediaPickerModal.tsx:93
 msgid "Upload Image"
 msgstr "上傳圖片"
 
@@ -6190,7 +6557,7 @@ msgid "Uploading {0}/{1}..."
 msgstr "正在上傳 {0}/{1}..."
 
 #: packages/admin/src/components/MediaLibrary.tsx:290
-#: packages/admin/src/components/MediaPickerModal.tsx:486
+#: packages/admin/src/components/MediaPickerModal.tsx:489
 msgid "Uploading..."
 msgstr "上傳中..."
 
@@ -6211,7 +6578,7 @@ msgstr ""
 msgid "URL-friendly identifier"
 msgstr "URL 友好的標識符"
 
-#: packages/admin/src/components/MenuList.tsx:159
+#: packages/admin/src/components/MenuList.tsx:161
 msgid "URL-friendly identifier (e.g., \"primary\", \"footer\")"
 msgstr "URL 友好的標識符（例如：\"primary\"、\"footer\"）"
 
@@ -6244,7 +6611,7 @@ msgid "Used in URLs and API endpoints"
 msgstr ""
 
 #: packages/admin/src/components/SectionEditor.tsx:244
-#: packages/admin/src/components/Sections.tsx:194
+#: packages/admin/src/components/Sections.tsx:196
 msgid "Used to identify this section. Lowercase letters, numbers, and hyphens only."
 msgstr "用於標識此區塊。僅限小寫字母、數字和連字符。"
 
@@ -6338,7 +6705,7 @@ msgstr "訪問這些路徑的訪問者將看到錯誤。"
 msgid "Waiting for passkey..."
 msgstr "等待通行密鑰..."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:338
+#: packages/admin/src/components/MarketplaceBrowse.tsx:339
 msgid "Warn"
 msgstr "警告"
 
@@ -6535,7 +6902,7 @@ msgstr "您將被重定向到 WordPress 以授權連接。"
 msgid "You'll be signing up as"
 msgstr "您將註冊爲"
 
-#: packages/admin/src/components/SetupWizard.tsx:577
+#: packages/admin/src/components/SetupWizard.tsx:564
 msgid "You're signed in via Cloudflare Access"
 msgstr "您已通過 Cloudflare Access 登錄"
 
@@ -6548,7 +6915,7 @@ msgid "you@company.com"
 msgstr "you@company.com"
 
 #: packages/admin/src/components/auth/PasskeyLogin.tsx:336
-#: packages/admin/src/components/SetupWizard.tsx:230
+#: packages/admin/src/components/SetupWizard.tsx:201
 msgid "you@example.com"
 msgstr "you@example.com"
 
@@ -6566,7 +6933,7 @@ msgstr "您的瀏覽器不支持通行密鑰。請使用現代瀏覽器，如 Ch
 msgid "Your device doesn't support the required security features."
 msgstr "您的設備不支持所需的安全功能。"
 
-#: packages/admin/src/components/SetupWizard.tsx:226
+#: packages/admin/src/components/SetupWizard.tsx:197
 msgid "Your Email"
 msgstr "您的郵箱"
 
@@ -6586,7 +6953,7 @@ msgstr "您的 Instagram 用戶名"
 msgid "Your LinkedIn profile username"
 msgstr "您的 LinkedIn 個人資料用戶名"
 
-#: packages/admin/src/components/SetupWizard.tsx:238
+#: packages/admin/src/components/SetupWizard.tsx:209
 msgid "Your Name"
 msgstr "您的姓名"
 

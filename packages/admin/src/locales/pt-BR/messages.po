@@ -79,7 +79,7 @@ msgid "{0, plural, one {# content item imported} other {# content items imported
 msgstr "{0, plural, one {# item de conteúdo importado} other {# itens de conteúdo importados}}"
 
 #. placeholder {0}: filteredItems.length
-#: packages/admin/src/components/ContentList.tsx:291
+#: packages/admin/src/components/ContentList.tsx:300
 msgid "{0, plural, one {# item matching \"{searchQuery}\"} other {# items matching \"{searchQuery}\"}}"
 msgstr "{0, plural, one {# item correspondente a \"{searchQuery}\"} other {# itens correspondentes a \"{searchQuery}\"}}"
 
@@ -109,7 +109,7 @@ msgid "{0, plural, one {# menu will be imported} other {# menus will be imported
 msgstr "{0, plural, one {# menu será importado} other {# menus serão importados}}"
 
 #. placeholder {0}: plugin.capabilities.length
-#: packages/admin/src/components/MarketplaceBrowse.tsx:289
+#: packages/admin/src/components/MarketplaceBrowse.tsx:293
 msgid "{0, plural, one {# permission} other {# permissions}}"
 msgstr "{0, plural, one {# permissão} other {# permissões}}"
 
@@ -141,7 +141,7 @@ msgstr "{0, plural, one {# usuário} other {# usuários}}"
 #. placeholder {0}: filteredItems.length
 #. placeholder {1}: hasMore ? "+" : ""
 #. placeholder {2}: hasMore ? "+" : ""
-#: packages/admin/src/components/ContentList.tsx:295
+#: packages/admin/src/components/ContentList.tsx:304
 msgid "{0, plural, one {#{1} item} other {#{2} items}}"
 msgstr "{0, plural, one {#{1} item} other {#{2} itens}}"
 
@@ -156,12 +156,12 @@ msgid "{0} has been deactivated"
 msgstr "{0} foi desativado"
 
 #. placeholder {0}: plugin.name
-#: packages/admin/src/components/PluginManager.tsx:260
+#: packages/admin/src/components/PluginManager.tsx:256
 msgid "{0} has been removed"
 msgstr "{0} foi removido"
 
 #. placeholder {0}: plugin.installCount.toLocaleString()
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:204
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:203
 msgid "{0} installs"
 msgstr "{0} instalações"
 
@@ -183,17 +183,17 @@ msgstr "{0} itens serão importados"
 
 #. placeholder {0}: plugin.capabilities.length
 #. placeholder {1}: plugin.capabilities.length !== 1 ? "s" : ""
-#: packages/admin/src/components/PluginManager.tsx:348
+#: packages/admin/src/components/PluginManager.tsx:344
 msgid "{0} permission{1}"
 msgstr "{0} permissão{1}"
 
 #. placeholder {0}: plugins?.length ?? 0
-#: packages/admin/src/components/PluginManager.tsx:165
+#: packages/admin/src/components/PluginManager.tsx:161
 msgid "{0} plugins"
 msgstr "{0} plugins"
 
 #. placeholder {0}: theme.name
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:208
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:212
 msgid "{0} preview"
 msgstr "{0} pré-visualização"
 
@@ -204,7 +204,7 @@ msgstr ""
 
 #. placeholder {0}: plugin.name
 #. placeholder {1}: updateInfo?.latest
-#: packages/admin/src/components/PluginManager.tsx:247
+#: packages/admin/src/components/PluginManager.tsx:243
 msgid "{0} updated to v{1}"
 msgstr "{0} atualizado para v{1}"
 
@@ -423,8 +423,8 @@ msgid "Account Info"
 msgstr "Informações da conta"
 
 #: packages/admin/src/components/comments/CommentInbox.tsx:299
-#: packages/admin/src/components/ContentList.tsx:235
-#: packages/admin/src/components/ContentList.tsx:349
+#: packages/admin/src/components/ContentList.tsx:244
+#: packages/admin/src/components/ContentList.tsx:358
 #: packages/admin/src/components/ContentTypeList.tsx:106
 #: packages/admin/src/components/MediaLibrary.tsx:419
 #: packages/admin/src/components/TaxonomyManager.tsx:826
@@ -513,7 +513,7 @@ msgstr "Adicionar item"
 msgid "Add links to build your navigation menu"
 msgstr "Adicione links para construir seu menu de navegação"
 
-#: packages/admin/src/components/ContentList.tsx:159
+#: packages/admin/src/components/ContentList.tsx:168
 msgid "Add New"
 msgstr "Adicionar novo"
 
@@ -530,7 +530,7 @@ msgstr "Adicionar meta tag noindex"
 msgid "Add Passkey"
 msgstr "Adicionar chave de acesso"
 
-#: packages/admin/src/components/PluginManager.tsx:201
+#: packages/admin/src/components/PluginManager.tsx:197
 msgid "Add plugins to your astro.config.mjs to extend EmDash functionality."
 msgstr "Adicione plugins ao seu astro.config.mjs para estender a funcionalidade do EmDash."
 
@@ -581,7 +581,7 @@ msgstr "Administrador"
 msgid "After send:"
 msgstr "Após envio:"
 
-#: packages/admin/src/components/ContentList.tsx:186
+#: packages/admin/src/components/ContentList.tsx:195
 msgid "All"
 msgstr "Todos"
 
@@ -630,7 +630,7 @@ msgstr "Domínios permitidos"
 msgid "Already have an account?"
 msgstr "Já tem uma conta?"
 
-#: packages/admin/src/components/PluginManager.tsx:569
+#: packages/admin/src/components/PluginManager.tsx:565
 msgid "Also delete plugin storage data"
 msgstr "Também excluir dados de armazenamento do plugin"
 
@@ -693,7 +693,7 @@ msgstr "Aprovado"
 msgid "Arbitrary JSON data"
 msgstr "Dados JSON arbitrários"
 
-#: packages/admin/src/components/ContentList.tsx:672
+#: packages/admin/src/components/ContentList.tsx:680
 msgid "archived"
 msgstr "arquivado"
 
@@ -786,7 +786,7 @@ msgstr "Provedores disponíveis"
 msgid "Back"
 msgstr "Voltar"
 
-#: packages/admin/src/components/ContentEditor.tsx:584
+#: packages/admin/src/components/ContentEditor.tsx:585
 msgid "Back to {collectionLabel} list"
 msgstr "Voltar para a lista de {collectionLabel}"
 
@@ -802,7 +802,7 @@ msgid "Back to login"
 msgstr "Voltar ao acesso"
 
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:116
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:393
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:392
 msgid "Back to marketplace"
 msgstr "Voltar ao marketplace"
 
@@ -856,7 +856,7 @@ msgstr "Navegue e instale plugins para estender seu site."
 msgid "Browse Files"
 msgstr "Navegar nos arquivos"
 
-#: packages/admin/src/components/PluginManager.tsx:194
+#: packages/admin/src/components/PluginManager.tsx:190
 msgid "Browse the"
 msgstr "Navegue pelo"
 
@@ -892,13 +892,13 @@ msgstr "Pode visualizar conteúdo"
 
 #: packages/admin/src/components/CapabilityConsentDialog.tsx:139
 #: packages/admin/src/components/ConfirmDialog.tsx:57
-#: packages/admin/src/components/ContentEditor.tsx:677
+#: packages/admin/src/components/ContentEditor.tsx:678
 #: packages/admin/src/components/ContentEditor.tsx:893
 #: packages/admin/src/components/ContentEditor.tsx:945
 #: packages/admin/src/components/ContentEditor.tsx:2018
 #: packages/admin/src/components/ContentEditor.tsx:2071
-#: packages/admin/src/components/ContentList.tsx:560
-#: packages/admin/src/components/ContentList.tsx:631
+#: packages/admin/src/components/ContentList.tsx:568
+#: packages/admin/src/components/ContentList.tsx:639
 #: packages/admin/src/components/ContentPickerModal.tsx:253
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:516
 #: packages/admin/src/components/FieldEditor.tsx:645
@@ -907,7 +907,7 @@ msgstr "Pode visualizar conteúdo"
 #: packages/admin/src/components/MenuEditor.tsx:351
 #: packages/admin/src/components/MenuEditor.tsx:522
 #: packages/admin/src/components/MenuList.tsx:169
-#: packages/admin/src/components/PluginManager.tsx:575
+#: packages/admin/src/components/PluginManager.tsx:571
 #: packages/admin/src/components/Redirects.tsx:176
 #: packages/admin/src/components/SectionPickerModal.tsx:130
 #: packages/admin/src/components/Sections.tsx:207
@@ -936,7 +936,7 @@ msgstr "Não é possível excluir seções do tema"
 msgid "Canonical URL"
 msgstr "URL canônica"
 
-#: packages/admin/src/components/PluginManager.tsx:414
+#: packages/admin/src/components/PluginManager.tsx:410
 msgid "Capabilities"
 msgstr "Capacidades"
 
@@ -983,7 +983,7 @@ msgstr "Alterar logo"
 msgid "Character between page title and site name (e.g., \"My Post | My Site\")"
 msgstr "Caractere entre o título da página e o nome do site (ex.: \"Meu Post | Meu Site\")"
 
-#: packages/admin/src/components/PluginManager.tsx:154
+#: packages/admin/src/components/PluginManager.tsx:152
 msgid "Check for updates"
 msgstr "Verificar atualizações"
 
@@ -1013,6 +1013,10 @@ msgstr ""
 msgid "Choose your preferred admin language"
 msgstr "Escolha o idioma preferido do painel"
 
+#: packages/admin/src/components/users/UserList.tsx:129
+msgid "Clear filters"
+msgstr ""
+
 #: packages/admin/src/components/SignupPage.tsx:137
 msgid "Click the link in the email to continue setting up your account."
 msgstr "Clique no link no e-mail para continuar configurando sua conta."
@@ -1032,7 +1036,7 @@ msgstr "Clique no link no e-mail para entrar."
 #: packages/admin/src/components/FieldEditor.tsx:334
 #: packages/admin/src/components/FieldEditor.tsx:340
 #: packages/admin/src/components/FieldEditor.tsx:344
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:438
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:437
 #: packages/admin/src/components/MediaDetailPanel.tsx:131
 #: packages/admin/src/components/MediaDetailPanel.tsx:133
 #: packages/admin/src/components/MediaPickerModal.tsx:369
@@ -1065,7 +1069,7 @@ msgstr "Clique no link no e-mail para entrar."
 #: packages/admin/src/components/TaxonomyManager.tsx:603
 #: packages/admin/src/components/TaxonomyManager.tsx:609
 #: packages/admin/src/components/TaxonomyManager.tsx:613
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:302
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:298
 #: packages/admin/src/components/users/InviteUserModal.tsx:88
 #: packages/admin/src/components/users/InviteUserModal.tsx:94
 #: packages/admin/src/components/users/InviteUserModal.tsx:98
@@ -1087,11 +1091,11 @@ msgstr "Código"
 msgid "Code Block"
 msgstr "Bloco de código"
 
-#: packages/admin/src/components/PluginManager.tsx:401
+#: packages/admin/src/components/PluginManager.tsx:397
 msgid "Collapse"
 msgstr "Recolher"
 
-#: packages/admin/src/components/PluginManager.tsx:395
+#: packages/admin/src/components/PluginManager.tsx:391
 msgid "Collapse details"
 msgstr "Recolher detalhes"
 
@@ -1383,7 +1387,7 @@ msgstr "Crie sua conta"
 msgid "Create your first navigation menu to get started"
 msgstr "Crie seu primeiro menu de navegação para começar"
 
-#: packages/admin/src/components/ContentList.tsx:259
+#: packages/admin/src/components/ContentList.tsx:268
 #: packages/admin/src/components/ContentTypeList.tsx:122
 msgid "Create your first one"
 msgstr "Crie o primeiro"
@@ -1478,7 +1482,7 @@ msgid "Dashboard"
 msgstr "Painel"
 
 #: packages/admin/src/components/comments/CommentInbox.tsx:296
-#: packages/admin/src/components/ContentList.tsx:232
+#: packages/admin/src/components/ContentList.tsx:241
 msgid "Date"
 msgstr "Data"
 
@@ -1584,11 +1588,11 @@ msgid "Delete permanently"
 msgstr "Excluir permanentemente"
 
 #: packages/admin/src/components/comments/CommentDetail.tsx:182
-#: packages/admin/src/components/ContentList.tsx:642
+#: packages/admin/src/components/ContentList.tsx:650
 msgid "Delete Permanently"
 msgstr "Excluir permanentemente"
 
-#: packages/admin/src/components/ContentList.tsx:622
+#: packages/admin/src/components/ContentList.tsx:630
 msgid "Delete Permanently?"
 msgstr "Excluir permanentemente?"
 
@@ -1617,7 +1621,7 @@ msgstr "Excluir seção?"
 msgid "Delete table"
 msgstr ""
 
-#: packages/admin/src/components/ContentList.tsx:346
+#: packages/admin/src/components/ContentList.tsx:355
 msgid "Deleted"
 msgstr "Excluídos"
 
@@ -1632,8 +1636,8 @@ msgstr "Excluídos"
 msgid "Deleting..."
 msgstr "Excluindo..."
 
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:260
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:151
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:264
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:147
 msgid "Demo"
 msgstr "Demonstração"
 
@@ -1668,7 +1672,7 @@ msgstr "Destino"
 msgid "Destination path"
 msgstr "Caminho de destino"
 
-#: packages/admin/src/components/PluginManager.tsx:401
+#: packages/admin/src/components/PluginManager.tsx:397
 msgid "details"
 msgstr "detalhes"
 
@@ -1700,7 +1704,7 @@ msgstr "Dimensões:"
 msgid "Disable"
 msgstr "Desativar"
 
-#: packages/admin/src/components/PluginManager.tsx:389
+#: packages/admin/src/components/PluginManager.tsx:385
 msgid "Disable plugin"
 msgstr "Desativar Plugin"
 
@@ -1708,22 +1712,22 @@ msgstr "Desativar Plugin"
 msgid "Disable redirect"
 msgstr "Desativar redirecionamento"
 
-#: packages/admin/src/components/PluginManager.tsx:308
+#: packages/admin/src/components/PluginManager.tsx:304
 #: packages/admin/src/components/Redirects.tsx:397
 #: packages/admin/src/components/users/UserDetail.tsx:201
 msgid "Disabled"
 msgstr "Desativado"
 
-#: packages/admin/src/components/PluginManager.tsx:468
+#: packages/admin/src/components/PluginManager.tsx:464
 msgid "Disabled:"
 msgstr "Desativado:"
 
-#: packages/admin/src/components/ContentEditor.tsx:662
-#: packages/admin/src/components/ContentEditor.tsx:684
+#: packages/admin/src/components/ContentEditor.tsx:663
+#: packages/admin/src/components/ContentEditor.tsx:685
 msgid "Discard changes"
 msgstr "Descartar alterações"
 
-#: packages/admin/src/components/ContentEditor.tsx:668
+#: packages/admin/src/components/ContentEditor.tsx:669
 msgid "Discard draft changes?"
 msgstr "Descartar alterações do rascunho?"
 
@@ -1755,7 +1759,7 @@ msgstr "Tamanho de exibição"
 msgid "Displayed below the image as a visible caption."
 msgstr "Exibido abaixo da imagem como legenda visível."
 
-#: packages/admin/src/components/ContentEditor.tsx:638
+#: packages/admin/src/components/ContentEditor.tsx:639
 msgid "Distraction-free mode (⌘⇧\\)"
 msgstr "Modo sem distrações (⌘⇧\\)"
 
@@ -1796,7 +1800,7 @@ msgstr "Abaixo"
 msgid "Downloading"
 msgstr "Baixando"
 
-#: packages/admin/src/components/ContentList.tsx:668
+#: packages/admin/src/components/ContentList.tsx:676
 msgid "draft"
 msgstr "rascunho"
 
@@ -1826,7 +1830,7 @@ msgstr ""
 msgid "Drop your WordPress export file here"
 msgstr "Solte seu arquivo de exportação do WordPress aqui"
 
-#: packages/admin/src/components/ContentList.tsx:533
+#: packages/admin/src/components/ContentList.tsx:541
 msgid "Duplicate {title}"
 msgstr "Duplicar {title}"
 
@@ -1856,11 +1860,11 @@ msgstr "Editar"
 msgid "Edit {0}"
 msgstr "Editar {0}"
 
-#: packages/admin/src/components/ContentEditor.tsx:601
+#: packages/admin/src/components/ContentEditor.tsx:602
 msgid "Edit {collectionLabel}"
 msgstr "Editar {collectionLabel}"
 
-#: packages/admin/src/components/ContentList.tsx:525
+#: packages/admin/src/components/ContentList.tsx:533
 msgid "Edit {title}"
 msgstr "Editar {title}"
 
@@ -1973,7 +1977,7 @@ msgstr "Ativar"
 msgid "Enable full-text search on this collection"
 msgstr "Ativar pesquisa de texto completo nesta coleção"
 
-#: packages/admin/src/components/PluginManager.tsx:389
+#: packages/admin/src/components/PluginManager.tsx:385
 msgid "Enable plugin"
 msgstr "Ativar Plugin"
 
@@ -2004,7 +2008,7 @@ msgstr ""
 msgid "Enter credentials manually"
 msgstr "Digitar credenciais manualmente"
 
-#: packages/admin/src/components/ContentEditor.tsx:637
+#: packages/admin/src/components/ContentEditor.tsx:638
 msgid "Enter distraction-free mode"
 msgstr "Entrar no modo sem distrações"
 
@@ -2051,15 +2055,15 @@ msgstr "Erro ao salvar seção"
 msgid "Exists"
 msgstr "Existe"
 
-#: packages/admin/src/components/ContentEditor.tsx:595
+#: packages/admin/src/components/ContentEditor.tsx:596
 msgid "Exit distraction-free mode"
 msgstr "Sair do modo sem distrações"
 
-#: packages/admin/src/components/PluginManager.tsx:401
+#: packages/admin/src/components/PluginManager.tsx:397
 msgid "Expand"
 msgstr "Expandir"
 
-#: packages/admin/src/components/PluginManager.tsx:395
+#: packages/admin/src/components/PluginManager.tsx:391
 msgid "Expand details"
 msgstr "Expandir detalhes"
 
@@ -2084,7 +2088,7 @@ msgstr "Exporte seu conteúdo do WordPress para importar tudo, incluindo rascunh
 msgid "Facebook"
 msgstr "Facebook"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:344
+#: packages/admin/src/components/MarketplaceBrowse.tsx:348
 msgid "Fail"
 msgstr "Falhar"
 
@@ -2120,11 +2124,11 @@ msgstr "Falha ao desativar Plugin"
 msgid "Failed to enable plugin"
 msgstr "Falha ao ativar Plugin"
 
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:269
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:273
 msgid "Failed to generate preview"
 msgstr "Falha ao gerar pré-visualização"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:161
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:157
 msgid "Failed to generate preview URL"
 msgstr "Falha ao gerar URL de pré-visualização"
 
@@ -2367,11 +2371,11 @@ msgstr "Acessos"
 msgid "Home"
 msgstr "Início"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:235
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:231
 msgid "Homepage"
 msgstr "Página inicial"
 
-#: packages/admin/src/components/PluginManager.tsx:339
+#: packages/admin/src/components/PluginManager.tsx:335
 msgid "Hooks"
 msgstr "Hooks"
 
@@ -2383,7 +2387,7 @@ msgstr "Como criar uma senha de aplicativo"
 msgid "https://example.com or /about"
 msgstr "https://example.com ou /about"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:242
+#: packages/admin/src/components/MarketplaceBrowse.tsx:246
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:143
 msgid "Icon blurred due to image audit"
 msgstr "Ícone desfocado devido à auditoria de imagem"
@@ -2565,7 +2569,7 @@ msgstr ""
 msgid "Instagram"
 msgstr "Instagram"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:194
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:193
 msgid "Install"
 msgstr "Instalar"
 
@@ -2577,17 +2581,17 @@ msgstr "Instale e ative um plugin de provedor de e-mail para habilitar recursos 
 msgid "Install blocked"
 msgstr "Instalação bloqueada"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:262
+#: packages/admin/src/components/MarketplaceBrowse.tsx:266
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:174
 msgid "Installed"
 msgstr "Instalado"
 
 #. placeholder {0}: plugin.marketplaceVersion || plugin.version
-#: packages/admin/src/components/PluginManager.tsx:437
+#: packages/admin/src/components/PluginManager.tsx:433
 msgid "Installed from marketplace (v{0})"
 msgstr "Instalado do marketplace (v{0})"
 
-#: packages/admin/src/components/PluginManager.tsx:456
+#: packages/admin/src/components/PluginManager.tsx:452
 msgid "Installed:"
 msgstr "Instalado:"
 
@@ -2616,6 +2620,10 @@ msgstr "Link de convite criado"
 msgid "Invite User"
 msgstr "Convidar usuário"
 
+#: packages/admin/src/components/users/UserList.tsx:140
+msgid "Invite your first team member"
+msgstr ""
+
 #. placeholder {0}: index + 1
 #: packages/admin/src/components/PortableTextEditor.tsx:1627
 #: packages/admin/src/components/RepeaterField.tsx:234
@@ -2643,9 +2651,9 @@ msgstr "Jane Doe"
 msgid "JSON"
 msgstr "JSON"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:295
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:294
 #: packages/admin/src/components/SectionEditor.tsx:258
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:193
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:189
 msgid "Keywords"
 msgstr "Palavras-chave"
 
@@ -2668,7 +2676,7 @@ msgstr "Idioma"
 msgid "Large section heading"
 msgstr "Título de seção grande"
 
-#: packages/admin/src/components/PluginManager.tsx:462
+#: packages/admin/src/components/PluginManager.tsx:458
 msgid "Last enabled:"
 msgstr "Última ativação:"
 
@@ -2707,7 +2715,7 @@ msgstr "Deixar sem atribuição"
 msgid "Library"
 msgstr "Biblioteca"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:207
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:203
 msgid "License"
 msgstr "Licença"
 
@@ -2736,7 +2744,7 @@ msgstr "Contas vinculadas ({0})"
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:214
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:210
 msgid "Links"
 msgstr "Links"
 
@@ -2749,13 +2757,13 @@ msgid "Live View"
 msgstr "Visualização ao vivo"
 
 #: packages/admin/src/components/ContentPickerModal.tsx:241
-#: packages/admin/src/components/MarketplaceBrowse.tsx:199
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:168
+#: packages/admin/src/components/MarketplaceBrowse.tsx:203
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:172
 msgid "Load more"
 msgstr "Carregar mais"
 
-#: packages/admin/src/components/ContentList.tsx:330
-#: packages/admin/src/components/ContentList.tsx:387
+#: packages/admin/src/components/ContentList.tsx:339
+#: packages/admin/src/components/ContentList.tsx:396
 msgid "Load More"
 msgstr "Carregar mais"
 
@@ -2806,23 +2814,23 @@ msgstr "Carregando configuração..."
 msgid "Loading terms..."
 msgstr "Carregando termos..."
 
-#: packages/admin/src/components/ContentList.tsx:245
-#: packages/admin/src/components/ContentList.tsx:330
-#: packages/admin/src/components/ContentList.tsx:359
-#: packages/admin/src/components/ContentList.tsx:387
+#: packages/admin/src/components/ContentList.tsx:254
+#: packages/admin/src/components/ContentList.tsx:339
+#: packages/admin/src/components/ContentList.tsx:368
+#: packages/admin/src/components/ContentList.tsx:396
 #: packages/admin/src/components/ContentPickerModal.tsx:238
-#: packages/admin/src/components/MarketplaceBrowse.tsx:199
+#: packages/admin/src/components/MarketplaceBrowse.tsx:203
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:181
 #: packages/admin/src/components/settings/SecuritySettings.tsx:118
 #: packages/admin/src/components/TaxonomyManager.tsx:782
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:168
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:250
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:172
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:254
 #: packages/admin/src/components/ThemeMarketplaceDetail.tsx:143
 #: packages/admin/src/components/WelcomeModal.tsx:143
 msgid "Loading..."
 msgstr "Carregando..."
 
-#: packages/admin/src/components/ContentList.tsx:225
+#: packages/admin/src/components/ContentList.tsx:234
 #: packages/admin/src/components/LocaleSwitcher.tsx:60
 msgid "Locale"
 msgstr "Localização"
@@ -2870,7 +2878,7 @@ msgstr "Gerenciar"
 msgid "Manage {0} for {1}"
 msgstr "Gerenciar {0} para {1}"
 
-#: packages/admin/src/components/PluginManager.tsx:170
+#: packages/admin/src/components/PluginManager.tsx:166
 msgid "Manage installed plugins. Enable or disable plugins to control their functionality."
 msgstr "Gerencie os Plugins instalados. Ative ou desative Plugins para controlar suas funcionalidades."
 
@@ -2898,13 +2906,13 @@ msgstr "Mapear autores"
 msgid "Mark as spam"
 msgstr "Marcar como spam"
 
-#: packages/admin/src/components/PluginManager.tsx:196
+#: packages/admin/src/components/PluginManager.tsx:192
 msgid "marketplace"
 msgstr "marketplace"
 
 #: packages/admin/src/components/MarketplaceBrowse.tsx:86
-#: packages/admin/src/components/PluginManager.tsx:161
-#: packages/admin/src/components/PluginManager.tsx:309
+#: packages/admin/src/components/PluginManager.tsx:158
+#: packages/admin/src/components/PluginManager.tsx:305
 #: packages/admin/src/components/Sidebar.tsx:219
 msgid "Marketplace"
 msgstr "Marketplace"
@@ -3063,11 +3071,11 @@ msgstr "Modificado"
 msgid "Modify collection schemas"
 msgstr "Modificar esquemas de coleção"
 
-#: packages/admin/src/components/ContentList.tsx:554
+#: packages/admin/src/components/ContentList.tsx:562
 msgid "Move \"{title}\" to trash? You can restore it later."
 msgstr "Mover \"{title}\" para a lixeira? Você pode restaurá-lo depois."
 
-#: packages/admin/src/components/ContentList.tsx:545
+#: packages/admin/src/components/ContentList.tsx:553
 msgid "Move {title} to trash"
 msgstr "Mover {title} para a lixeira"
 
@@ -3077,12 +3085,12 @@ msgstr "Mover para baixo"
 
 #: packages/admin/src/components/ContentEditor.tsx:930
 #: packages/admin/src/components/ContentEditor.tsx:952
-#: packages/admin/src/components/ContentList.tsx:567
+#: packages/admin/src/components/ContentList.tsx:575
 msgid "Move to Trash"
 msgstr "Mover para a lixeira"
 
 #: packages/admin/src/components/ContentEditor.tsx:936
-#: packages/admin/src/components/ContentList.tsx:552
+#: packages/admin/src/components/ContentList.tsx:560
 msgid "Move to Trash?"
 msgstr "Mover para a lixeira?"
 
@@ -3140,7 +3148,7 @@ msgstr "NOVO"
 msgid "New {0}"
 msgstr ""
 
-#: packages/admin/src/components/ContentEditor.tsx:601
+#: packages/admin/src/components/ContentEditor.tsx:602
 msgid "New {collectionLabel}"
 msgstr "Novo {collectionLabel}"
 
@@ -3177,16 +3185,16 @@ msgstr "Nova taxonomia"
 msgid "New window"
 msgstr "Nova janela"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:319
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:315
 msgid "Next"
 msgstr "Próximo"
 
 #: packages/admin/src/components/comments/CommentInbox.tsx:371
-#: packages/admin/src/components/ContentList.tsx:318
+#: packages/admin/src/components/ContentList.tsx:327
 msgid "Next page"
 msgstr "Próxima página"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:465
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:464
 msgid "Next screenshot"
 msgstr "Próxima captura de tela"
 
@@ -3200,7 +3208,7 @@ msgid "No {0} available."
 msgstr "Nenhum {0} disponível."
 
 #. placeholder {0}: collectionLabel.toLowerCase()
-#: packages/admin/src/components/ContentList.tsx:252
+#: packages/admin/src/components/ContentList.tsx:261
 msgid "No {0} yet."
 msgstr "Nenhum {0} ainda."
 
@@ -3254,7 +3262,7 @@ msgstr "Nenhum conteúdo nesta coleção"
 msgid "No content types yet."
 msgstr "Nenhum tipo de conteúdo ainda."
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:266
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:265
 msgid "No detailed description available."
 msgstr "Nenhuma descrição detalhada disponível."
 
@@ -3339,11 +3347,11 @@ msgstr "Nenhuma chave de acesso registrada"
 msgid "No passkeys registered yet."
 msgstr "Nenhuma chave de acesso registrada ainda."
 
-#: packages/admin/src/components/PluginManager.tsx:190
+#: packages/admin/src/components/PluginManager.tsx:186
 msgid "No plugins configured"
 msgstr "Nenhum plugin configurado"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:174
+#: packages/admin/src/components/MarketplaceBrowse.tsx:178
 msgid "No plugins found"
 msgstr "Nenhum plugin encontrado"
 
@@ -3363,12 +3371,12 @@ msgstr "Nenhum redirecionamento ainda"
 msgid "No results"
 msgstr "Nenhum resultado"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:177
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:150
+#: packages/admin/src/components/MarketplaceBrowse.tsx:181
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:154
 msgid "No results for \"{debouncedQuery}\". Try a different search term."
 msgstr "Nenhum resultado para \"{debouncedQuery}\". Tente um termo de pesquisa diferente."
 
-#: packages/admin/src/components/ContentList.tsx:266
+#: packages/admin/src/components/ContentList.tsx:275
 msgid "No results for \"{searchQuery}\""
 msgstr "Nenhum resultado para \"{searchQuery}\""
 
@@ -3397,7 +3405,7 @@ msgstr "Nenhuma seção ainda"
 msgid "No spam comments."
 msgstr "Nenhum comentário de spam."
 
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:147
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:151
 msgid "No themes found"
 msgstr "Nenhum tema encontrado"
 
@@ -3519,11 +3527,11 @@ msgstr "Substitui o título da página nos resultados dos mecanismos de busca"
 msgid "Ownership"
 msgstr "Propriedade"
 
-#: packages/admin/src/components/PluginManager.tsx:446
+#: packages/admin/src/components/PluginManager.tsx:442
 msgid "Package"
 msgstr "Pacote"
 
-#: packages/admin/src/components/PluginManager.tsx:327
+#: packages/admin/src/components/PluginManager.tsx:323
 #: packages/admin/src/components/WordPressImport.tsx:1158
 msgid "Pages"
 msgstr "Páginas"
@@ -3541,7 +3549,7 @@ msgstr "Ascendente"
 msgid "Part of a redirect loop"
 msgstr "Parte de um loop de redirecionamento"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:323
+#: packages/admin/src/components/MarketplaceBrowse.tsx:327
 msgid "Pass"
 msgstr "Aprovar"
 
@@ -3609,7 +3617,7 @@ msgid "Pattern (Regex)"
 msgstr "Padrão (Regex)"
 
 #: packages/admin/src/components/comments/CommentDetail.tsx:196
-#: packages/admin/src/components/ContentList.tsx:691
+#: packages/admin/src/components/ContentList.tsx:699
 msgid "pending"
 msgstr "pendente"
 
@@ -3621,15 +3629,15 @@ msgstr "Pendente"
 msgid "Pending changes"
 msgstr "Alterações pendentes"
 
-#: packages/admin/src/components/ContentList.tsx:625
+#: packages/admin/src/components/ContentList.tsx:633
 msgid "Permanently delete \"{title}\"? This cannot be undone."
 msgstr "Excluir \"{title}\" permanentemente? Isso não pode ser desfeito."
 
-#: packages/admin/src/components/ContentList.tsx:614
+#: packages/admin/src/components/ContentList.tsx:622
 msgid "Permanently delete {title}"
 msgstr "Excluir {title} permanentemente"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:275
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:274
 msgid "Permissions"
 msgstr "Permissões"
 
@@ -3678,11 +3686,11 @@ msgstr "plugin no seu site WordPress."
 msgid "Plugin Permissions"
 msgstr "Permissões do plugin"
 
-#: packages/admin/src/components/PluginManager.tsx:259
+#: packages/admin/src/components/PluginManager.tsx:255
 msgid "Plugin uninstalled"
 msgstr "Plugin desinstalado"
 
-#: packages/admin/src/components/PluginManager.tsx:246
+#: packages/admin/src/components/PluginManager.tsx:242
 msgid "Plugin updated"
 msgstr "Plugin atualizado"
 
@@ -3720,7 +3728,7 @@ msgstr "Preparando para baixar arquivos do WordPress..."
 msgid "Preparing..."
 msgstr "Preparando..."
 
-#: packages/admin/src/components/ContentEditor.tsx:651
+#: packages/admin/src/components/ContentEditor.tsx:652
 #: packages/admin/src/components/ContentTypeEditor.tsx:74
 #: packages/admin/src/components/MediaLibrary.tsx:415
 msgid "Preview"
@@ -3730,20 +3738,20 @@ msgstr "Pré-visualização"
 msgid "Preview content before publishing"
 msgstr "Pré-visualizar conteúdo antes de publicar"
 
-#: packages/admin/src/components/ContentEditor.tsx:651
+#: packages/admin/src/components/ContentEditor.tsx:652
 msgid "Preview draft"
 msgstr "Pré-visualizar rascunho"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:312
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:308
 msgid "Previous"
 msgstr "Anterior"
 
 #: packages/admin/src/components/comments/CommentInbox.tsx:352
-#: packages/admin/src/components/ContentList.tsx:306
+#: packages/admin/src/components/ContentList.tsx:315
 msgid "Previous page"
 msgstr "Página anterior"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:447
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:446
 msgid "Previous screenshot"
 msgstr "Captura de tela anterior"
 
@@ -3755,16 +3763,16 @@ msgstr "Navegação principal"
 msgid "Provider:"
 msgstr "Provedor:"
 
-#: packages/admin/src/components/ContentEditor.tsx:706
+#: packages/admin/src/components/ContentEditor.tsx:707
 #: packages/admin/src/components/ContentEditor.tsx:823
 msgid "Publish"
 msgstr "Publicar"
 
-#: packages/admin/src/components/ContentEditor.tsx:696
+#: packages/admin/src/components/ContentEditor.tsx:697
 msgid "Publish changes"
 msgstr "Publicar alterações"
 
-#: packages/admin/src/components/ContentList.tsx:666
+#: packages/admin/src/components/ContentList.tsx:674
 msgid "published"
 msgstr "publicado"
 
@@ -3775,7 +3783,7 @@ msgid "Published"
 msgstr "Publicado"
 
 #. placeholder {0}: new Date(latest.publishedAt).toLocaleDateString()
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:328
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:327
 msgid "Published {0}"
 msgstr "Publicado {0}"
 
@@ -3965,7 +3973,7 @@ msgstr "Substituir imagem"
 msgid "Reply to:"
 msgstr "Responder a:"
 
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:224
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:220
 msgid "Repository"
 msgstr "Repositório"
 
@@ -3988,7 +3996,7 @@ msgid "Required for accessibility. Describes the image for screen readers."
 msgstr "Obrigatório para acessibilidade. Descreve a imagem para leitores de tela."
 
 #. placeholder {0}: latest.minEmDashVersion
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:326
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:325
 msgid "Requires EmDash {0}"
 msgstr "Requer EmDash {0}"
 
@@ -4009,7 +4017,7 @@ msgstr "Restaurar para o original"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: packages/admin/src/components/ContentList.tsx:602
+#: packages/admin/src/components/ContentList.tsx:610
 msgid "Restore {title}"
 msgstr "Restaurar {title}"
 
@@ -4035,8 +4043,8 @@ msgstr "Restaurar esta versão de {0}? Isso atualizará o conteúdo atual para o
 msgid "Restoring..."
 msgstr "Restaurando..."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:142
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:120
+#: packages/admin/src/components/MarketplaceBrowse.tsx:146
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:124
 msgid "Retry"
 msgstr "Tentar novamente"
 
@@ -4082,7 +4090,7 @@ msgid "Rich text editor"
 msgstr "Editor de texto rico"
 
 #. placeholder {0}: latest.audit.riskScore
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:313
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:312
 msgid "Risk score: {0}/100"
 msgstr "Pontuação de risco: {0}/100"
 
@@ -4144,12 +4152,12 @@ msgstr "Salvar configurações"
 msgid "Save Social Links"
 msgstr "Salvar links sociais"
 
-#: packages/admin/src/components/ContentEditor.tsx:626
+#: packages/admin/src/components/ContentEditor.tsx:627
 #: packages/admin/src/components/SaveButton.tsx:42
 msgid "Saved"
 msgstr "Salvo"
 
-#: packages/admin/src/components/ContentEditor.tsx:621
+#: packages/admin/src/components/ContentEditor.tsx:622
 #: packages/admin/src/components/ContentEditor.tsx:2092
 #: packages/admin/src/components/FieldEditor.tsx:656
 #: packages/admin/src/components/MediaDetailPanel.tsx:241
@@ -4179,7 +4187,7 @@ msgstr "Agendar para"
 msgid "Schedule for later"
 msgstr "Agendar para depois"
 
-#: packages/admin/src/components/ContentList.tsx:670
+#: packages/admin/src/components/ContentList.tsx:678
 msgid "scheduled"
 msgstr "agendado"
 
@@ -4219,28 +4227,28 @@ msgstr "Escopos: {0}"
 
 #. placeholder {0}: i + 1
 #. placeholder {0}: index + 1
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:245
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:178
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:297
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:244
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:174
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:293
 msgid "Screenshot {0}"
 msgstr "Captura de tela {0}"
 
 #. placeholder {0}: index + 1
 #. placeholder {1}: screenshots.length
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:455
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:454
 msgid "Screenshot {0} of {1}"
 msgstr "Captura de tela {0} de {1}"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:248
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:247
 msgid "Screenshot blurred due to image audit"
 msgstr "Captura de tela desfocada devido à auditoria de imagem"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:433
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:432
 msgid "Screenshot viewer"
 msgstr "Visualizador de capturas de tela"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:235
-#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:168
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:234
+#: packages/admin/src/components/ThemeMarketplaceDetail.tsx:164
 msgid "Screenshots"
 msgstr "Capturas de tela"
 
@@ -4249,12 +4257,12 @@ msgid "Search"
 msgstr "Pesquisa"
 
 #. placeholder {0}: collectionLabel.toLowerCase()
-#: packages/admin/src/components/ContentList.tsx:170
+#: packages/admin/src/components/ContentList.tsx:179
 msgid "Search {0}"
 msgstr "Pesquisar {0}"
 
 #. placeholder {0}: collectionLabel.toLowerCase()
-#: packages/admin/src/components/ContentList.tsx:169
+#: packages/admin/src/components/ContentList.tsx:178
 msgid "Search {0}..."
 msgstr "Pesquisar {0}..."
 
@@ -4363,15 +4371,15 @@ msgstr "Proteja sua conta"
 msgid "Security"
 msgstr "Segurança"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:309
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:308
 msgid "Security Audit"
 msgstr "Auditoria de segurança"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:341
+#: packages/admin/src/components/MarketplaceBrowse.tsx:345
 msgid "Security audit failed"
 msgstr "Auditoria de segurança falhou"
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:331
+#: packages/admin/src/components/MarketplaceBrowse.tsx:335
 msgid "Security audit flagged concerns"
 msgstr "Auditoria de segurança sinalizou preocupações"
 
@@ -4383,7 +4391,7 @@ msgstr "A auditoria de segurança sinalizou preocupações em potencial com este
 msgid "Security audit flagged this plugin as potentially unsafe."
 msgstr "A auditoria de segurança sinalizou este plugin como potencialmente inseguro."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:320
+#: packages/admin/src/components/MarketplaceBrowse.tsx:324
 msgid "Security audit passed"
 msgstr "Auditoria de segurança aprovada"
 
@@ -4556,8 +4564,8 @@ msgstr "Configurando..."
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:235
 #: packages/admin/src/components/Header.tsx:93
-#: packages/admin/src/components/PluginManager.tsx:378
-#: packages/admin/src/components/PluginManager.tsx:380
+#: packages/admin/src/components/PluginManager.tsx:374
+#: packages/admin/src/components/PluginManager.tsx:376
 #: packages/admin/src/components/Settings.tsx:62
 #: packages/admin/src/components/Sidebar.tsx:229
 #: packages/admin/src/components/WordPressImport.tsx:1655
@@ -4750,8 +4758,8 @@ msgstr "Ordenar temas"
 #: packages/admin/src/components/ContentTypeList.tsx:100
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:325
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:490
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:216
-#: packages/admin/src/components/PluginManager.tsx:434
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:215
+#: packages/admin/src/components/PluginManager.tsx:430
 #: packages/admin/src/components/Redirects.tsx:447
 #: packages/admin/src/components/SectionEditor.tsx:269
 msgid "Source"
@@ -4776,7 +4784,7 @@ msgid "Start Import"
 msgstr "Iniciar importação"
 
 #: packages/admin/src/components/ContentEditor.tsx:832
-#: packages/admin/src/components/ContentList.tsx:218
+#: packages/admin/src/components/ContentList.tsx:227
 #: packages/admin/src/components/ContentTypeEditor.tsx:110
 #: packages/admin/src/components/Redirects.tsx:452
 msgid "Status"
@@ -4906,7 +4914,7 @@ msgstr "O usuário convidado terá esta função após concluir o registro."
 msgid "The link will expire in 15 minutes."
 msgstr "O link expirará em 15 minutos."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:178
+#: packages/admin/src/components/MarketplaceBrowse.tsx:182
 msgid "The marketplace is empty. Check back later for new plugins."
 msgstr "O marketplace está vazio. Verifique novamente mais tarde para novos plugins."
 
@@ -4922,7 +4930,7 @@ msgstr "O nome do seu site, usado no cabeçalho e metadados"
 msgid "The public URL of your site (used for canonical links and sitemaps)"
 msgstr "A URL pública do seu site (usada para links canônicos e sitemaps)"
 
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:151
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:155
 msgid "The theme marketplace is empty. Check back later."
 msgstr "O marketplace de temas está vazio. Verifique novamente mais tarde."
 
@@ -4981,7 +4989,7 @@ msgstr "Isso pode levar um tempo para exportações grandes."
 msgid "This passkey is already registered on this device."
 msgstr "Esta chave de acesso já está registrada neste dispositivo."
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:278
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:277
 msgid "This plugin requires no special permissions."
 msgstr "Este plugin não requer permissões especiais."
 
@@ -5019,11 +5027,11 @@ msgstr "Isso excluirá permanentemente \"{0}\". Esta ação não pode ser desfei
 msgid "This will permanently delete this comment. This action cannot be undone."
 msgstr "Isso excluirá permanentemente este comentário. Esta ação não pode ser desfeita."
 
-#: packages/admin/src/components/PluginManager.tsx:560
+#: packages/admin/src/components/PluginManager.tsx:556
 msgid "This will remove the plugin and its bundle from your site."
 msgstr "Isso removerá o plugin e seu pacote do seu site."
 
-#: packages/admin/src/components/ContentEditor.tsx:671
+#: packages/admin/src/components/ContentEditor.tsx:672
 msgid "This will revert to the published version. Your draft changes will be lost."
 msgstr "Isso reverterá para a versão publicada. Suas alterações de rascunho serão perdidas."
 
@@ -5039,8 +5047,8 @@ msgstr "Fuso horário"
 msgid "Timezone for displaying dates (e.g., America/New_York)"
 msgstr "Fuso horário para exibição de datas (ex.: América/São_Paulo)"
 
-#: packages/admin/src/components/ContentList.tsx:212
-#: packages/admin/src/components/ContentList.tsx:343
+#: packages/admin/src/components/ContentList.tsx:221
+#: packages/admin/src/components/ContentList.tsx:352
 #: packages/admin/src/components/SectionEditor.tsx:226
 #: packages/admin/src/components/Sections.tsx:168
 msgid "Title"
@@ -5059,7 +5067,7 @@ msgstr "Separador de título"
 msgid "to close"
 msgstr "para fechar"
 
-#: packages/admin/src/components/PluginManager.tsx:198
+#: packages/admin/src/components/PluginManager.tsx:194
 msgid "to install plugins, or add them to your astro.config.mjs."
 msgstr "para instalar plugins, ou adicioná-los ao seu astro.config.mjs."
 
@@ -5131,11 +5139,11 @@ msgstr "lixeira"
 #: packages/admin/src/components/comments/CommentInbox.tsx:216
 #: packages/admin/src/components/comments/CommentInbox.tsx:257
 #: packages/admin/src/components/comments/CommentInbox.tsx:513
-#: packages/admin/src/components/ContentList.tsx:192
+#: packages/admin/src/components/ContentList.tsx:201
 msgid "Trash"
 msgstr "Lixeira"
 
-#: packages/admin/src/components/ContentList.tsx:366
+#: packages/admin/src/components/ContentList.tsx:375
 msgid "Trash is empty"
 msgstr "A lixeira está vazia"
 
@@ -5174,7 +5182,7 @@ msgstr "Tente outro código"
 msgid "Try Another URL"
 msgstr "Tente outra URL"
 
-#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:250
+#: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:254
 #: packages/admin/src/components/ThemeMarketplaceDetail.tsx:143
 msgid "Try with my data"
 msgstr "Tentar com meus dados"
@@ -5204,20 +5212,20 @@ msgid "Unassigned"
 msgstr "Não atribuído"
 
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:181
-#: packages/admin/src/components/PluginManager.tsx:484
-#: packages/admin/src/components/PluginManager.tsx:578
+#: packages/admin/src/components/PluginManager.tsx:480
+#: packages/admin/src/components/PluginManager.tsx:574
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: packages/admin/src/components/PluginManager.tsx:558
+#: packages/admin/src/components/PluginManager.tsx:554
 msgid "Uninstall {pluginName}?"
 msgstr "Desinstalar {pluginName}?"
 
-#: packages/admin/src/components/PluginManager.tsx:553
+#: packages/admin/src/components/PluginManager.tsx:549
 msgid "Uninstall confirmation"
 msgstr "Confirmação de desinstalação"
 
-#: packages/admin/src/components/PluginManager.tsx:578
+#: packages/admin/src/components/PluginManager.tsx:574
 msgid "Uninstalling..."
 msgstr "Desinstalando..."
 
@@ -5249,7 +5257,7 @@ msgstr "Desbloquear proporção"
 msgid "Unnamed passkey"
 msgstr "Chave de acesso sem nome"
 
-#: packages/admin/src/components/ContentEditor.tsx:700
+#: packages/admin/src/components/ContentEditor.tsx:701
 msgid "Unpublish"
 msgstr "Despublicar"
 
@@ -5300,7 +5308,7 @@ msgid "Update this redirect rule."
 msgstr "Atualize esta regra de redirecionamento."
 
 #. placeholder {0}: updateInfo.latest
-#: packages/admin/src/components/PluginManager.tsx:363
+#: packages/admin/src/components/PluginManager.tsx:359
 msgid "Update to v{0}"
 msgstr "Atualizar para v{0}"
 
@@ -5318,7 +5326,7 @@ msgid "Updating content URLs..."
 msgstr "Atualizando URLs de conteúdo..."
 
 #: packages/admin/src/components/CapabilityConsentDialog.tsx:144
-#: packages/admin/src/components/PluginManager.tsx:363
+#: packages/admin/src/components/PluginManager.tsx:359
 msgid "Updating..."
 msgstr "Atualizando..."
 
@@ -5485,7 +5493,7 @@ msgid "Users with email addresses from these domains can sign up without an invi
 msgstr "Usuários com endereços de e-mail destes domínios podem se registrar sem um convite. Eles receberão a função especificada automaticamente."
 
 #. placeholder {0}: updateInfo.latest
-#: packages/admin/src/components/PluginManager.tsx:312
+#: packages/admin/src/components/PluginManager.tsx:308
 msgid "v{0} available"
 msgstr "v{0} disponível"
 
@@ -5503,7 +5511,7 @@ msgstr "Verificando seu link..."
 msgid "Verifying..."
 msgstr "Verificando..."
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:322
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:321
 msgid "Version"
 msgstr "Versão"
 
@@ -5511,7 +5519,7 @@ msgstr "Versão"
 msgid "View email provider status and send test emails"
 msgstr "Verificar status do provedor de e-mail e enviar e-mails de teste"
 
-#: packages/admin/src/components/PluginManager.tsx:371
+#: packages/admin/src/components/PluginManager.tsx:367
 msgid "View in Marketplace"
 msgstr "Ver no marketplace"
 
@@ -5519,7 +5527,7 @@ msgstr "Ver no marketplace"
 msgid "View mode"
 msgstr "Modo de visualização"
 
-#: packages/admin/src/components/ContentList.tsx:516
+#: packages/admin/src/components/ContentList.tsx:526
 msgid "View published {title}"
 msgstr "Ver {title} publicado"
 
@@ -5536,7 +5544,7 @@ msgstr "Visitantes que acessarem estes caminhos verão um erro."
 msgid "Waiting for passkey..."
 msgstr "Aguardando chave de acesso..."
 
-#: packages/admin/src/components/MarketplaceBrowse.tsx:334
+#: packages/admin/src/components/MarketplaceBrowse.tsx:338
 msgid "Warn"
 msgstr "Alerta"
 
@@ -5566,7 +5574,7 @@ msgstr ""
 msgid "WebAuthn is not supported in this browser"
 msgstr "WebAuthn não é suportado neste navegador"
 
-#: packages/admin/src/components/MarketplacePluginDetail.tsx:227
+#: packages/admin/src/components/MarketplacePluginDetail.tsx:226
 msgid "Website"
 msgstr "Site"
 
@@ -5607,7 +5615,7 @@ msgid "Whole number"
 msgstr "Número inteiro"
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:169
-#: packages/admin/src/components/PluginManager.tsx:333
+#: packages/admin/src/components/PluginManager.tsx:329
 #: packages/admin/src/components/Sidebar.tsx:197
 msgid "Widgets"
 msgstr "Widgets"

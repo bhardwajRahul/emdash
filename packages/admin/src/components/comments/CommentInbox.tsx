@@ -279,7 +279,7 @@ export function CommentInbox({
 							<th scope="col" className="w-10 px-3 py-3">
 								<Checkbox
 									checked={allOnPageSelected}
-									onChange={toggleAll}
+									onCheckedChange={toggleAll}
 									aria-label={t`Select all`}
 								/>
 							</th>
@@ -452,7 +452,7 @@ function CommentRow({
 			<td className="w-10 px-3 py-3">
 				<Checkbox
 					checked={isSelected}
-					onChange={onToggle}
+					onCheckedChange={onToggle}
 					aria-label={t`Select comment by ${comment.authorName}`}
 				/>
 			</td>

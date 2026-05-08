@@ -18,12 +18,13 @@ import {
 	Rows,
 	Plus,
 	Trash,
+	X,
 } from "@phosphor-icons/react";
-import { X } from "@phosphor-icons/react";
 import * as React from "react";
 
 import type { FieldType, CreateFieldInput, SchemaField } from "../lib/api";
 import { cn } from "../lib/utils";
+import { AllowedTypesEditor } from "./AllowedTypesEditor";
 
 // ============================================================================
 // Constants
@@ -75,6 +76,7 @@ interface FieldFormState {
 	subFields: RepeaterSubFieldState[];
 	minItems: string;
 	maxItems: string;
+	allowedMimeTypes: string[];
 }
 
 function getInitialFormState(field?: SchemaField): FieldFormState {
@@ -98,6 +100,7 @@ function getInitialFormState(field?: SchemaField): FieldFormState {
 				: [],
 			minItems: (field.validation as Record<string, unknown>)?.minItems?.toString() ?? "",
 			maxItems: (field.validation as Record<string, unknown>)?.maxItems?.toString() ?? "",
+			allowedMimeTypes: field.validation?.allowedMimeTypes ?? [],
 		};
 	}
 	return {
@@ -117,6 +120,7 @@ function getInitialFormState(field?: SchemaField): FieldFormState {
 		subFields: [],
 		minItems: "",
 		maxItems: "",
+		allowedMimeTypes: [],
 	};
 }
 
@@ -300,6 +304,13 @@ export function FieldEditor({ open, onOpenChange, field, onSave, isSaving }: Fie
 				(validation as Record<string, unknown>).maxItems = parseInt(formState.maxItems, 10);
 		}
 
+		if (
+			(selectedType === "file" || selectedType === "image") &&
+			formState.allowedMimeTypes.length > 0
+		) {
+			validation.allowedMimeTypes = formState.allowedMimeTypes;
+		}
+
 		// Only include searchable for text-based fields
 		const isSearchableType =
 			selectedType === "string" ||
@@ -315,7 +326,7 @@ export function FieldEditor({ open, onOpenChange, field, onSave, isSaving }: Fie
 			required,
 			unique,
 			searchable: isSearchableType ? searchable : undefined,
-			validation: Object.keys(validation).length > 0 ? validation : undefined,
+			validation: Object.keys(validation).length > 0 ? validation : null,
 		};
 
 		onSave(input);
@@ -635,6 +646,13 @@ export function FieldEditor({ open, onOpenChange, field, onSave, isSaving }: Fie
 									/>
 								</div>
 							</div>
+						)}
+
+						{(selectedType === "file" || selectedType === "image") && (
+							<AllowedTypesEditor
+								value={formState.allowedMimeTypes}
+								onChange={(next) => setField("allowedMimeTypes", next)}
+							/>
 						)}
 					</div>
 				)}

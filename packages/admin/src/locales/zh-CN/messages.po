@@ -5231,7 +5231,7 @@ msgstr "保存"
 
 #: packages/admin/src/components/editor/PluginBlockNode.tsx:416
 msgid "Save (Enter)"
-msgstr "保存 (Enter)"                                                                 
+msgstr "保存 (Enter)"
 
 #: packages/admin/src/components/editor/ImageNode.tsx:236
 msgid "Save alt text"
@@ -6068,7 +6068,7 @@ msgstr "词条"
 #. placeholder {1}: term.locale.toUpperCase()
 #: packages/admin/src/components/TaxonomyManager.tsx:757
 msgid "Term \"{0}\" created in {1}."
-msgstr "术语 \"{0}\" 已在 {1} 中创建。""术语 \"{0}\" 已在 {1} 中创建。"
+msgstr "术语 \"{0}\" 已在 {1} 中创建。\"\"术语 \"{0}\" 已在 {1} 中创建。"
 
 #: packages/admin/src/components/TaxonomyManager.tsx:739
 msgid "Term deleted"

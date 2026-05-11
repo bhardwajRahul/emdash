@@ -22,6 +22,7 @@ import { discoverDids, enqueueBackfillJobs } from "./backfill.js";
 import type { BackfillJob, RecordsJob } from "./env.js";
 import { drainDeadLetterBatch, processBatch } from "./records-consumer.js";
 import { RECORDS_DO_NAME } from "./records-do.js";
+import { handleXrpc } from "./routes/xrpc/router.js";
 import { isPlainObject } from "./utils.js";
 
 const RECORDS_QUEUE_NAME = "emdash-aggregator-records";
@@ -55,6 +56,7 @@ export { RecordsJetstreamDO } from "./records-do.js";
  */
 const BOOTSTRAP_PATH = "/_admin/start";
 const BACKFILL_PATH = "/_admin/backfill";
+const STATUS_PATH = "/_admin/status";
 
 /**
  * Cap on the explicit DID list a single POST may submit. Lower than the
@@ -194,6 +196,24 @@ export default {
 			ctx.waitUntil(stub.fetch("https://do.internal/bootstrap"));
 			return new Response(null, { status: 204 });
 		}
+		if (url.pathname === STATUS_PATH) {
+			if (request.method !== "GET") {
+				return new Response("method not allowed", {
+					status: 405,
+					headers: { allow: "GET" },
+				});
+			}
+			const denied = requireAdminAuth(request, env);
+			if (denied) return denied;
+			// Proxy the DO's status JSON straight through. The DO returns
+			// `{cursor, consecutiveFailures}` — `consecutiveFailures: 0`
+			// means the latest connection attempt produced events; non-zero
+			// means Jetstream is unreachable, the wantedCollections filter
+			// is mismatched, or queue backpressure is biting.
+			const id = env.RECORDS_DO.idFromName(RECORDS_DO_NAME);
+			const stub = env.RECORDS_DO.get(id);
+			return stub.fetch("https://do.internal/status");
+		}
 		if (url.pathname === BACKFILL_PATH) {
 			if (request.method !== "POST") {
 				return new Response("method not allowed", {
@@ -232,8 +252,13 @@ export default {
 			ctx.waitUntil(runBackfill(parsed, env));
 			return new Response(null, { status: 202 });
 		}
-		return new Response("emdash-aggregator: not yet implemented", {
-			status: 503,
+		// XRPC read API: aggregator endpoints + cached sync.getRecord
+		// passthrough. Returns null if pathname doesn't start with /xrpc/, so
+		// non-matching paths fall through to the catch-all below.
+		const xrpc = await handleXrpc(env, request);
+		if (xrpc) return xrpc;
+		return new Response("emdash-aggregator: not found", {
+			status: 404,
 			headers: { "content-type": "text/plain" },
 		});
 	},

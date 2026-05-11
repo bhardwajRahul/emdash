@@ -53,7 +53,7 @@ import {
 	type VerificationFailureReason,
 	type VerifiedPdsRecord,
 } from "./pds-verify.js";
-import { isPlainObject } from "./utils.js";
+import { boundFetch, isPlainObject, parseSignatureMetadataCid } from "./utils.js";
 
 /**
  * Deps the consumer needs at runtime. Constructed once per `processBatch` call
@@ -392,12 +392,13 @@ export async function ingestPackageProfile(
 	}
 	const slug = record.slug ?? job.rkey;
 	const sigMeta = JSON.stringify({ cid: verified.cid });
+	const nowIso = now.toISOString();
 	await db
 		.prepare(
 			`INSERT INTO packages
 			   (did, slug, type, name, description, license, authors, security, keywords, sections,
-			    last_updated, latest_version, capabilities, record_blob, signature_metadata, verified_at)
-			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+			    last_updated, latest_version, capabilities, record_blob, signature_metadata, verified_at, indexed_at)
+			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 			 ON CONFLICT(did, slug) DO UPDATE SET
 			   type = excluded.type,
 			   name = excluded.name,
@@ -411,6 +412,10 @@ export async function ingestPackageProfile(
 			   record_blob = excluded.record_blob,
 			   signature_metadata = excluded.signature_metadata,
 			   verified_at = excluded.verified_at`,
+			// indexed_at intentionally NOT in DO UPDATE SET — we want the
+			// first-observed timestamp preserved across re-ingest. SQLite's
+			// upsert leaves untouched columns alone, so omitting from SET
+			// keeps the original value.
 		)
 		.bind(
 			job.did,
@@ -428,7 +433,8 @@ export async function ingestPackageProfile(
 			null, // capabilities — populated by release writer
 			verified.carBytes,
 			sigMeta,
-			now.toISOString(),
+			nowIso,
+			nowIso, // indexed_at on first insert; preserved on conflict (see SQL comment)
 		)
 		.run();
 }
@@ -520,12 +526,13 @@ export async function ingestPackageRelease(
 	}
 
 	const sigMeta = JSON.stringify({ cid: verified.cid });
+	const nowIso = now.toISOString();
 	const insertStmt = db
 		.prepare(
 			`INSERT INTO releases
 			   (did, package, version, rkey, version_sort, artifacts, requires, suggests,
-			    emdash_extension, repo_url, cts, record_blob, signature_metadata, verified_at)
-			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+			    emdash_extension, repo_url, cts, record_blob, signature_metadata, verified_at, indexed_at)
+			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 			 ON CONFLICT(did, package, version) DO NOTHING`,
 		)
 		.bind(
@@ -546,10 +553,14 @@ export async function ingestPackageRelease(
 			// has no creation-timestamp field today and the atproto MST commit
 			// rev isn't surfaced by verifyRecord. Tracked: revisit if the
 			// lexicon adds a createdAt or @atcute/repo exposes commit metadata.
-			now.toISOString(),
+			nowIso,
 			verified.carBytes,
 			sigMeta,
-			now.toISOString(),
+			nowIso,
+			// Releases use ON CONFLICT DO NOTHING (versions are immutable per
+			// FAIR PR #77), so indexed_at is only ever set on first insert —
+			// no preservation logic needed.
+			nowIso,
 		);
 
 	// Atomic with the refresh: D1 wraps a batch in a single transaction. If
@@ -591,7 +602,7 @@ export async function ingestPackageRelease(
 			.bind(job.did, record.package, record.version)
 			.first<{ signature_metadata: string; tombstoned_at: string | null }>();
 		if (existing) {
-			const existingCid = parseCid(existing.signature_metadata);
+			const existingCid = parseSignatureMetadataCid(existing.signature_metadata);
 			const sameContent = existingCid === verified.cid;
 			if (sameContent && existing.tombstoned_at !== null) {
 				await db.batch([
@@ -745,12 +756,13 @@ export async function ingestPublisherProfile(
 		}
 	}
 	const sigMeta = JSON.stringify({ cid: verified.cid });
+	const nowIso = now.toISOString();
 	await db
 		.prepare(
 			`INSERT INTO publishers
 			   (did, display_name, description, url, contact, updated_at,
-			    record_blob, signature_metadata, verified_at)
-			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+			    record_blob, signature_metadata, verified_at, indexed_at)
+			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 			 ON CONFLICT(did) DO UPDATE SET
 			   display_name = excluded.display_name,
 			   description = excluded.description,
@@ -760,6 +772,8 @@ export async function ingestPublisherProfile(
 			   record_blob = excluded.record_blob,
 			   signature_metadata = excluded.signature_metadata,
 			   verified_at = excluded.verified_at`,
+			// indexed_at omitted from DO UPDATE SET — first-observed
+			// timestamp preserved across re-ingest. Same pattern as packages.
 		)
 		.bind(
 			job.did,
@@ -770,7 +784,8 @@ export async function ingestPublisherProfile(
 			record.updatedAt ?? null,
 			verified.carBytes,
 			sigMeta,
-			now.toISOString(),
+			nowIso,
+			nowIso,
 		)
 		.run();
 }
@@ -791,12 +806,13 @@ export async function ingestPublisherVerification(
 	}
 	const record = validation.value;
 	const sigMeta = JSON.stringify({ cid: verified.cid });
+	const nowIso = now.toISOString();
 	await db
 		.prepare(
 			`INSERT INTO publisher_verifications
 			   (issuer_did, rkey, subject_did, subject_handle, subject_display_name,
-			    created_at, expires_at, record_blob, signature_metadata, verified_at, tombstoned_at)
-			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+			    created_at, expires_at, record_blob, signature_metadata, verified_at, indexed_at, tombstoned_at)
+			 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
 			 ON CONFLICT(issuer_did, rkey) DO UPDATE SET
 			   subject_did = excluded.subject_did,
 			   subject_handle = excluded.subject_handle,
@@ -807,6 +823,8 @@ export async function ingestPublisherVerification(
 			   signature_metadata = excluded.signature_metadata,
 			   verified_at = excluded.verified_at,
 			   tombstoned_at = NULL`,
+			// indexed_at omitted from DO UPDATE SET — same first-observed
+			// preservation as packages/publishers.
 		)
 		.bind(
 			job.did,
@@ -818,7 +836,8 @@ export async function ingestPublisherVerification(
 			record.expiresAt ?? null,
 			verified.carBytes,
 			sigMeta,
-			now.toISOString(),
+			nowIso,
+			nowIso,
 		)
 		.run();
 }
@@ -936,8 +955,8 @@ async function writeDeadLetter(
 function createProductionDeps(env: Env): ConsumerDeps {
 	const composite = new CompositeDidDocumentResolver({
 		methods: {
-			plc: new PlcDidDocumentResolver(),
-			web: new AtprotoWebDidDocumentResolver(),
+			plc: new PlcDidDocumentResolver({ fetch: boundFetch }),
+			web: new AtprotoWebDidDocumentResolver({ fetch: boundFetch }),
 		},
 	});
 	return {
@@ -946,6 +965,11 @@ function createProductionDeps(env: Env): ConsumerDeps {
 			cache: createD1DidDocCache(env.DB),
 			resolver: composite,
 		}),
+		// PDS verify uses this fetch for the CAR fetch. workerd's `fetch`
+		// rejects calls made through a stored reference, so we hand off
+		// the bound wrapper rather than letting `pds-verify.ts` fall
+		// back to bare global `fetch`.
+		fetch: boundFetch,
 	};
 }
 
@@ -1071,22 +1095,6 @@ function computeVersionSort(version: string): string | null {
 		return `${pad(major)}.${pad(minor)}.${pad(patch)}.${padded.join(".")}`;
 	}
 	return `${pad(major)}.${pad(minor)}.${pad(patch)}.${FINAL_VERSION_SENTINEL}`;
-}
-
-/**
- * Pull the verified record's CID out of the JSON-stringified
- * `signature_metadata` column. Returns null if the column is missing or
- * malformed (which shouldn't happen in writer-controlled data, but the
- * fallback keeps the comparison robust against future schema drift).
- */
-function parseCid(signatureMetadata: string): string | null {
-	try {
-		const parsed: unknown = JSON.parse(signatureMetadata);
-		if (isPlainObject(parsed) && typeof parsed.cid === "string") return parsed.cid;
-	} catch {
-		// fall through
-	}
-	return null;
 }
 
 function formatValidationIssues(issues: unknown): string {

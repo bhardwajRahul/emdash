@@ -30,8 +30,8 @@ msgstr " (padrão)"
 msgid " (opens in new window)"
 msgstr " (abre em nova janela)"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:757
-#: packages/admin/src/components/MediaPickerModal.tsx:839
+#: packages/admin/src/components/MediaPickerModal.tsx:782
+#: packages/admin/src/components/MediaPickerModal.tsx:864
 msgid " (selected)"
 msgstr " (selecionado)"
 
@@ -46,7 +46,7 @@ msgid ": use"
 msgstr ": use"
 
 #. placeholder {0}: providers?.find((p) => p.id === selectedItem.providerId)?.name
-#: packages/admin/src/components/MediaPickerModal.tsx:697
+#: packages/admin/src/components/MediaPickerModal.tsx:722
 msgid "(from {0})"
 msgstr "(de {0})"
 
@@ -98,7 +98,7 @@ msgstr "{0, plural, one {# item correspondente a \"{searchQuery}\"} other {# ite
 
 #. placeholder {0}: items.length
 #. placeholder {0}: menu.itemCount ?? 0
-#: packages/admin/src/components/MediaPickerModal.tsx:548
+#: packages/admin/src/components/MediaPickerModal.tsx:573
 #: packages/admin/src/components/MenuList.tsx:217
 msgid "{0, plural, one {# item} other {# items}}"
 msgstr "{0, plural, one {# item} other {# itens}}"
@@ -243,8 +243,8 @@ msgstr "{0} atualizado para v{1}"
 
 #. placeholder {0}: item.filename
 #. placeholder {1}: selected ? t` (selected)` : ""
-#: packages/admin/src/components/MediaPickerModal.tsx:757
-#: packages/admin/src/components/MediaPickerModal.tsx:839
+#: packages/admin/src/components/MediaPickerModal.tsx:782
+#: packages/admin/src/components/MediaPickerModal.tsx:864
 msgid "{0}{1}"
 msgstr "{0}{1}"
 
@@ -972,7 +972,7 @@ msgstr ""
 msgid "Autosave status"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:622
+#: packages/admin/src/components/MediaPickerModal.tsx:647
 msgid "Available media"
 msgstr "Mídia disponível"
 
@@ -1030,7 +1030,7 @@ msgstr "Voltar aos temas"
 msgid "Before send:"
 msgstr "Antes do envio:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:144
+#: packages/admin/src/components/settings/SeoSettings.tsx:233
 msgid "Bing Verification"
 msgstr "Verificação do Bing"
 
@@ -1116,7 +1116,7 @@ msgstr "Pode visualizar conteúdo"
 #: packages/admin/src/components/editor/PluginBlockNode.tsx:406
 #: packages/admin/src/components/FieldEditor.tsx:648
 #: packages/admin/src/components/MediaDetailPanel.tsx:234
-#: packages/admin/src/components/MediaPickerModal.tsx:704
+#: packages/admin/src/components/MediaPickerModal.tsx:729
 #: packages/admin/src/components/MenuEditor.tsx:351
 #: packages/admin/src/components/MenuEditor.tsx:522
 #: packages/admin/src/components/MenuList.tsx:172
@@ -1151,7 +1151,7 @@ msgstr "Cancelar renomeação"
 msgid "Cannot delete theme sections"
 msgstr "Não é possível excluir seções do tema"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:377
+#: packages/admin/src/components/MediaPickerModal.tsx:400
 msgid "Cannot determine MIME type from URL. Use a URL ending in a recognized image extension (e.g. .jpg, .png, .webp)."
 msgstr ""
 
@@ -1201,11 +1201,15 @@ msgstr "Alterar"
 msgid "Change <0>{0}</0> from <1>{1}</1> to <2>{2}</2>? They will lose access to higher-level features."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:237
+#: packages/admin/src/components/settings/GeneralSettings.tsx:262
 msgid "Change Favicon"
 msgstr "Alterar favicon"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:193
+#: packages/admin/src/components/settings/SeoSettings.tsx:200
+msgid "Change Image"
+msgstr ""
+
+#: packages/admin/src/components/settings/GeneralSettings.tsx:208
 msgid "Change Logo"
 msgstr "Alterar logo"
 
@@ -1213,7 +1217,7 @@ msgstr "Alterar logo"
 msgid "Changes discarded"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:135
+#: packages/admin/src/components/settings/SeoSettings.tsx:162
 msgid "Character between page title and site name (e.g., \"My Post | My Site\")"
 msgstr "Caractere entre o título da página e o nome do site (ex.: \"Meu Post | Meu Site\")"
 
@@ -1273,9 +1277,9 @@ msgstr "Clique no link no e-mail para entrar."
 #: packages/admin/src/components/MarketplacePluginDetail.tsx:437
 #: packages/admin/src/components/MediaDetailPanel.tsx:131
 #: packages/admin/src/components/MediaDetailPanel.tsx:133
-#: packages/admin/src/components/MediaPickerModal.tsx:444
-#: packages/admin/src/components/MediaPickerModal.tsx:450
-#: packages/admin/src/components/MediaPickerModal.tsx:454
+#: packages/admin/src/components/MediaPickerModal.tsx:469
+#: packages/admin/src/components/MediaPickerModal.tsx:475
+#: packages/admin/src/components/MediaPickerModal.tsx:479
 #: packages/admin/src/components/MenuEditor.tsx:313
 #: packages/admin/src/components/MenuEditor.tsx:319
 #: packages/admin/src/components/MenuEditor.tsx:323
@@ -1557,7 +1561,7 @@ msgstr ""
 msgid "Could not copy automatically. Please select the URL above and copy manually."
 msgstr "Não foi possível copiar automaticamente. Selecione a URL acima e copie manualmente."
 
-#: packages/admin/src/components/MediaPickerModal.tsx:403
+#: packages/admin/src/components/MediaPickerModal.tsx:426
 msgid "Could not load image from URL"
 msgstr "Não foi possível carregar a imagem da URL"
 
@@ -1778,7 +1782,7 @@ msgstr "Personalizado"
 msgid "Custom Fields"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:154
+#: packages/admin/src/components/settings/SeoSettings.tsx:243
 msgid "Custom robots.txt content. Leave empty to use the default."
 msgstr "Conteúdo personalizado de robots.txt. Deixe vazio para usar o padrão."
 
@@ -1816,7 +1820,7 @@ msgstr "Data e hora"
 msgid "Date and time picker"
 msgstr "Seletor de data e hora"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:279
+#: packages/admin/src/components/settings/GeneralSettings.tsx:304
 msgid "Date Format"
 msgstr "Formato de data"
 
@@ -1832,6 +1836,14 @@ msgstr "Função padrão"
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:266
 msgid "Default role:"
 msgstr "Função padrão:"
+
+#: packages/admin/src/components/settings/SeoSettings.tsx:180
+msgid "Default social image"
+msgstr ""
+
+#: packages/admin/src/components/settings/SeoSettings.tsx:171
+msgid "Default Social Image"
+msgstr ""
 
 #: packages/admin/src/components/TaxonomyManager.tsx:599
 msgid "Define a new taxonomy for classifying content"
@@ -2807,7 +2819,7 @@ msgstr ""
 msgid "Failed to load email settings"
 msgstr "Falha ao carregar configurações de e-mail"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:386
+#: packages/admin/src/components/MediaPickerModal.tsx:409
 msgid "Failed to load image"
 msgstr ""
 
@@ -2909,7 +2921,7 @@ msgid "Failed to save"
 msgstr ""
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:58
-#: packages/admin/src/components/settings/SeoSettings.tsx:53
+#: packages/admin/src/components/settings/SeoSettings.tsx:62
 #: packages/admin/src/components/settings/SocialSettings.tsx:53
 msgid "Failed to save settings"
 msgstr "Falha ao salvar configurações"
@@ -2984,8 +2996,8 @@ msgstr ""
 msgid "Failed to verify registration"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:221
-#: packages/admin/src/components/settings/GeneralSettings.tsx:226
+#: packages/admin/src/components/settings/GeneralSettings.tsx:236
+#: packages/admin/src/components/settings/GeneralSettings.tsx:242
 msgid "Favicon"
 msgstr "Favicon"
 
@@ -3129,7 +3141,7 @@ msgstr "Dê um nome a esta chave de acesso para ajudá-lo a identificá-la depoi
 msgid "Go to Dashboard"
 msgstr "Ir para o painel"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:138
+#: packages/admin/src/components/settings/SeoSettings.tsx:227
 msgid "Google Verification"
 msgstr "Verificação do Google"
 
@@ -3217,7 +3229,7 @@ msgstr "Como criar uma senha de aplicativo"
 msgid "https://example.com or /about"
 msgstr "https://example.com ou /about"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:470
+#: packages/admin/src/components/MediaPickerModal.tsx:495
 msgid "https://example.com/image.jpg"
 msgstr ""
 
@@ -3257,7 +3269,7 @@ msgstr "Configurações de imagem"
 msgid "Image shown when this page is shared on social media"
 msgstr "Imagem exibida quando esta página é compartilhada nas redes sociais"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:471
+#: packages/admin/src/components/MediaPickerModal.tsx:496
 msgid "Image URL"
 msgstr "URL da imagem"
 
@@ -3356,8 +3368,8 @@ msgstr "Incompatível"
 msgid "Inline Code"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:482
-#: packages/admin/src/components/MediaPickerModal.tsx:707
+#: packages/admin/src/components/MediaPickerModal.tsx:507
+#: packages/admin/src/components/MediaPickerModal.tsx:732
 #: packages/admin/src/components/PortableTextEditor.tsx:1243
 msgid "Insert"
 msgstr "Inserir"
@@ -3386,7 +3398,7 @@ msgstr ""
 msgid "Insert an image"
 msgstr "Inserir uma imagem"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:464
+#: packages/admin/src/components/MediaPickerModal.tsx:489
 msgid "Insert from URL"
 msgstr "Inserir por URL"
 
@@ -3652,7 +3664,7 @@ msgstr "Carregar mais"
 #: packages/admin/src/components/ContentList.tsx:330
 #: packages/admin/src/components/ContentList.tsx:387
 #: packages/admin/src/components/MediaLibrary.tsx:478
-#: packages/admin/src/components/MediaPickerModal.tsx:683
+#: packages/admin/src/components/MediaPickerModal.tsx:708
 #: packages/admin/src/components/users/UserList.tsx:169
 msgid "Load More"
 msgstr "Carregar mais"
@@ -3699,7 +3711,7 @@ msgid "Loading sections..."
 msgstr "Carregando seções..."
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:104
-#: packages/admin/src/components/settings/SeoSettings.tsx:81
+#: packages/admin/src/components/settings/SeoSettings.tsx:108
 #: packages/admin/src/components/settings/SocialSettings.tsx:81
 msgid "Loading settings..."
 msgstr "Carregando configurações..."
@@ -3723,7 +3735,7 @@ msgstr ""
 #: packages/admin/src/components/ContentPickerModal.tsx:233
 #: packages/admin/src/components/MarketplaceBrowse.tsx:198
 #: packages/admin/src/components/MediaLibrary.tsx:478
-#: packages/admin/src/components/MediaPickerModal.tsx:683
+#: packages/admin/src/components/MediaPickerModal.tsx:708
 #: packages/admin/src/components/PortableTextEditor.tsx:1751
 #: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:176
 #: packages/admin/src/components/settings/SecuritySettings.tsx:113
@@ -3753,8 +3765,8 @@ msgstr "Bloquear proporção"
 msgid "Log out"
 msgstr "Sair"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:177
 #: packages/admin/src/components/settings/GeneralSettings.tsx:182
+#: packages/admin/src/components/settings/GeneralSettings.tsx:188
 msgid "Logo"
 msgstr "Logo"
 
@@ -3967,11 +3979,11 @@ msgstr ""
 msgid "Meta Description"
 msgstr "Meta descrição"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:147
+#: packages/admin/src/components/settings/SeoSettings.tsx:236
 msgid "Meta tag content for Bing Webmaster Tools verification"
 msgstr "Conteúdo da meta tag para verificação do Bing Webmaster Tools"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:141
+#: packages/admin/src/components/settings/SeoSettings.tsx:230
 msgid "Meta tag content for Google Search Console verification"
 msgstr "Conteúdo da meta tag para verificação do Google Search Console"
 
@@ -4294,12 +4306,12 @@ msgid "No maximum"
 msgstr "Sem máximo"
 
 #: packages/admin/src/components/MediaLibrary.tsx:381
-#: packages/admin/src/components/MediaPickerModal.tsx:606
+#: packages/admin/src/components/MediaPickerModal.tsx:631
 msgid "No media available from this provider"
 msgstr "Nenhuma mídia disponível deste provedor"
 
 #: packages/admin/src/components/MediaLibrary.tsx:375
-#: packages/admin/src/components/MediaPickerModal.tsx:600
+#: packages/admin/src/components/MediaPickerModal.tsx:625
 msgid "No media found"
 msgstr "Nenhuma mídia encontrada"
 
@@ -4416,7 +4428,7 @@ msgstr "Nenhum (nível superior)"
 msgid "Number"
 msgstr "Número"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:276
+#: packages/admin/src/components/settings/GeneralSettings.tsx:301
 msgid "Number of posts to show per page on list views"
 msgstr "Número de posts a exibir por página na visualização em lista"
 
@@ -4497,7 +4509,7 @@ msgstr "Dica de ferramenta opcional ao passar o mouse"
 msgid "Options (one per line)"
 msgstr "Opções (uma por linha)"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:494
+#: packages/admin/src/components/MediaPickerModal.tsx:519
 msgid "or choose from library"
 msgstr "ou escolha na biblioteca"
 
@@ -4694,7 +4706,7 @@ msgstr "Insira um e-mail válido"
 msgid "Please enter a valid email address"
 msgstr "Insira um endereço de e-mail válido"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:363
+#: packages/admin/src/components/MediaPickerModal.tsx:386
 msgid "Please enter a valid URL"
 msgstr "Insira uma URL válida"
 
@@ -4761,7 +4773,7 @@ msgstr "Aponta os mecanismos de busca para a versão original desta página, se 
 msgid "Posts"
 msgstr "Posts"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:270
+#: packages/admin/src/components/settings/GeneralSettings.tsx:295
 msgid "Posts Per Page"
 msgstr "Posts por página"
 
@@ -4883,7 +4895,7 @@ msgstr ""
 msgid "Read your content"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:267
+#: packages/admin/src/components/settings/GeneralSettings.tsx:292
 msgid "Reading"
 msgstr "Leitura"
 
@@ -4931,6 +4943,10 @@ msgstr ""
 msgid "Reference"
 msgstr "Referência"
 
+#: packages/admin/src/components/settings/GeneralSettings.tsx:251
+msgid "Referenced favicon unavailable."
+msgstr ""
+
 #: packages/admin/src/components/ContentTypeList.tsx:78
 msgid "Register"
 msgstr "Cadastrar"
@@ -4956,10 +4972,11 @@ msgstr "O registro foi cancelado ou expirou. Tente novamente."
 #: packages/admin/src/components/ContentEditor.tsx:1969
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:177
 #: packages/admin/src/components/PortableTextEditor.tsx:2921
-#: packages/admin/src/components/settings/GeneralSettings.tsx:202
-#: packages/admin/src/components/settings/GeneralSettings.tsx:246
+#: packages/admin/src/components/settings/GeneralSettings.tsx:217
+#: packages/admin/src/components/settings/GeneralSettings.tsx:271
 #: packages/admin/src/components/settings/PasskeyItem.tsx:187
 #: packages/admin/src/components/settings/PasskeyItem.tsx:209
+#: packages/admin/src/components/settings/SeoSettings.tsx:209
 msgid "Remove"
 msgstr "Remover"
 
@@ -5251,13 +5268,13 @@ msgstr "Salvar conteúdo como rascunho antes de publicar"
 msgid "Save name"
 msgstr "Salvar nome"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:99
-#: packages/admin/src/components/settings/SeoSettings.tsx:162
+#: packages/admin/src/components/settings/SeoSettings.tsx:126
+#: packages/admin/src/components/settings/SeoSettings.tsx:251
 msgid "Save SEO Settings"
 msgstr "Salvar configurações de SEO"
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:296
+#: packages/admin/src/components/settings/GeneralSettings.tsx:321
 msgid "Save Settings"
 msgstr "Salvar configurações"
 
@@ -5280,9 +5297,9 @@ msgstr "Salvo"
 #: packages/admin/src/components/Redirects.tsx:180
 #: packages/admin/src/components/SaveButton.tsx:42
 #: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:296
-#: packages/admin/src/components/settings/SeoSettings.tsx:99
-#: packages/admin/src/components/settings/SeoSettings.tsx:162
+#: packages/admin/src/components/settings/GeneralSettings.tsx:321
+#: packages/admin/src/components/settings/SeoSettings.tsx:126
+#: packages/admin/src/components/settings/SeoSettings.tsx:251
 #: packages/admin/src/components/settings/SocialSettings.tsx:99
 #: packages/admin/src/components/settings/SocialSettings.tsx:173
 #: packages/admin/src/components/TaxonomyManager.tsx:474
@@ -5404,7 +5421,7 @@ msgstr "Pesquisar comentários..."
 msgid "Search content..."
 msgstr "Pesquisar conteúdo..."
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:128
+#: packages/admin/src/components/settings/SeoSettings.tsx:155
 msgid "Search Engine Optimization"
 msgstr "Otimização para mecanismos de busca"
 
@@ -5412,7 +5429,7 @@ msgstr "Otimização para mecanismos de busca"
 msgid "Search engine optimization and verification"
 msgstr "Otimização e verificação para mecanismos de pesquisa"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:540
+#: packages/admin/src/components/MediaPickerModal.tsx:565
 msgid "Search media"
 msgstr "Pesquisar mídia"
 
@@ -5450,7 +5467,7 @@ msgid "Search users"
 msgstr ""
 
 #: packages/admin/src/components/MediaLibrary.tsx:342
-#: packages/admin/src/components/MediaPickerModal.tsx:539
+#: packages/admin/src/components/MediaPickerModal.tsx:564
 msgid "Search..."
 msgstr "Pesquisar..."
 
@@ -5586,8 +5603,12 @@ msgstr "Selecionar comentário de {0}"
 msgid "Select Content"
 msgstr "Selecionar conteúdo"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:258
-#: packages/admin/src/components/settings/GeneralSettings.tsx:314
+#: packages/admin/src/components/settings/SeoSettings.tsx:268
+msgid "Select Default Social Image"
+msgstr ""
+
+#: packages/admin/src/components/settings/GeneralSettings.tsx:283
+#: packages/admin/src/components/settings/GeneralSettings.tsx:344
 msgid "Select Favicon"
 msgstr "Selecionar favicon"
 
@@ -5595,7 +5616,7 @@ msgstr "Selecionar favicon"
 msgid "Select file"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:125
+#: packages/admin/src/components/MediaPickerModal.tsx:138
 msgid "Select File"
 msgstr ""
 
@@ -5603,14 +5624,15 @@ msgstr ""
 msgid "Select image"
 msgstr "Selecionar imagem"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:125
+#: packages/admin/src/components/MediaPickerModal.tsx:138
 #: packages/admin/src/components/PortableTextEditor.tsx:2310
 #: packages/admin/src/components/PortableTextEditor.tsx:2983
+#: packages/admin/src/components/settings/SeoSettings.tsx:221
 msgid "Select Image"
 msgstr "Selecionar imagem"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:214
-#: packages/admin/src/components/settings/GeneralSettings.tsx:307
+#: packages/admin/src/components/settings/GeneralSettings.tsx:229
+#: packages/admin/src/components/settings/GeneralSettings.tsx:336
 msgid "Select Logo"
 msgstr "Selecionar logo"
 
@@ -5636,7 +5658,7 @@ msgstr "Selecione quais tipos de conteúdo importar."
 msgid "Select..."
 msgstr "Selecionar..."
 
-#: packages/admin/src/components/MediaPickerModal.tsx:694
+#: packages/admin/src/components/MediaPickerModal.tsx:719
 msgid "Selected:"
 msgstr "Selecionado:"
 
@@ -5688,8 +5710,8 @@ msgstr "Enviando..."
 msgid "SEO"
 msgstr "SEO"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:78
-#: packages/admin/src/components/settings/SeoSettings.tsx:103
+#: packages/admin/src/components/settings/SeoSettings.tsx:105
+#: packages/admin/src/components/settings/SeoSettings.tsx:130
 msgid "SEO Settings"
 msgstr "Configurações de SEO"
 
@@ -5697,7 +5719,7 @@ msgstr "Configurações de SEO"
 msgid "SEO settings (Yoast)"
 msgstr "Configurações de SEO (Yoast)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:48
+#: packages/admin/src/components/settings/SeoSettings.tsx:57
 msgid "SEO settings saved"
 msgstr "Configurações de SEO salvas"
 
@@ -6124,6 +6146,14 @@ msgstr ""
 msgid "The public URL of your site (used for canonical links and sitemaps)"
 msgstr "A URL pública do seu site (usada para links canônicos e sitemaps)"
 
+#: packages/admin/src/components/settings/SeoSettings.tsx:189
+msgid "The referenced image is no longer available. Pick a new one or remove the reference."
+msgstr ""
+
+#: packages/admin/src/components/settings/GeneralSettings.tsx:197
+msgid "The referenced logo is no longer available. Pick a new one or remove the reference."
+msgstr ""
+
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:153
 msgid "The theme marketplace is empty. Check back later."
 msgstr "O marketplace de temas está vazio. Verifique novamente mais tarde."
@@ -6162,7 +6192,7 @@ msgstr "Temas"
 msgid "This collection is defined in code. Some settings cannot be changed here. Edit your live.config.ts file to modify the schema."
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:382
+#: packages/admin/src/components/MediaPickerModal.tsx:405
 msgid "This field does not accept {sniffedMime} files."
 msgstr ""
 
@@ -6249,11 +6279,11 @@ msgstr "Isso reverterá para a versão publicada. Suas alterações de rascunho 
 msgid "Thoughts, tutorials, and more"
 msgstr "Pensamentos, tutoriais e mais"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:285
+#: packages/admin/src/components/settings/GeneralSettings.tsx:310
 msgid "Timezone"
 msgstr "Fuso horário"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:288
+#: packages/admin/src/components/settings/GeneralSettings.tsx:313
 msgid "Timezone for displaying dates (e.g., America/New_York)"
 msgstr "Fuso horário para exibição de datas (ex.: América/São_Paulo)"
 
@@ -6270,7 +6300,7 @@ msgstr "Título"
 msgid "Title (Tooltip)"
 msgstr "Título (Dica de ferramenta)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:132
+#: packages/admin/src/components/settings/SeoSettings.tsx:159
 msgid "Title Separator"
 msgstr "Separador de título"
 
@@ -6368,7 +6398,7 @@ msgid "True/false toggle"
 msgstr "Alternância verdadeiro/falso"
 
 #: packages/admin/src/components/MediaLibrary.tsx:378
-#: packages/admin/src/components/MediaPickerModal.tsx:603
+#: packages/admin/src/components/MediaPickerModal.tsx:628
 msgid "Try a different search term"
 msgstr "Tente um termo de pesquisa diferente"
 
@@ -6578,11 +6608,11 @@ msgstr "Atualizando URLs de conteúdo..."
 msgid "Updating..."
 msgstr "Atualizando..."
 
-#: packages/admin/src/components/MediaPickerModal.tsx:561
+#: packages/admin/src/components/MediaPickerModal.tsx:586
 msgid "Upload"
 msgstr "Enviar"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:127
+#: packages/admin/src/components/MediaPickerModal.tsx:140
 msgid "Upload a file to get started"
 msgstr ""
 
@@ -6590,7 +6620,7 @@ msgstr ""
 msgid "Upload an export file"
 msgstr "Enviar um arquivo de exportação"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:128
+#: packages/admin/src/components/MediaPickerModal.tsx:141
 msgid "Upload an image to get started"
 msgstr "Envie uma imagem para começar"
 
@@ -6608,15 +6638,15 @@ msgstr ""
 msgid "Upload Export File"
 msgstr "Enviar arquivo de exportação"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:581
+#: packages/admin/src/components/MediaPickerModal.tsx:606
 msgid "Upload failed: {uploadError}"
 msgstr "Falha no envio: {uploadError}"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:573
+#: packages/admin/src/components/MediaPickerModal.tsx:598
 msgid "Upload file"
 msgstr ""
 
-#: packages/admin/src/components/MediaPickerModal.tsx:129
+#: packages/admin/src/components/MediaPickerModal.tsx:142
 msgid "Upload File"
 msgstr ""
 
@@ -6628,7 +6658,7 @@ msgstr "Enviar arquivos"
 msgid "Upload Files"
 msgstr "Enviar arquivos"
 
-#: packages/admin/src/components/MediaPickerModal.tsx:129
+#: packages/admin/src/components/MediaPickerModal.tsx:142
 msgid "Upload Image"
 msgstr "Enviar imagem"
 
@@ -6668,7 +6698,7 @@ msgid "Uploading {0}/{1}..."
 msgstr "Enviando {0}/{1}..."
 
 #: packages/admin/src/components/MediaLibrary.tsx:296
-#: packages/admin/src/components/MediaPickerModal.tsx:561
+#: packages/admin/src/components/MediaPickerModal.tsx:586
 msgid "Uploading..."
 msgstr "Enviando..."
 
@@ -6704,6 +6734,10 @@ msgstr "Use a autenticação biométrica, chave de segurança ou PIN do seu disp
 #: packages/admin/src/components/LoginPage.tsx:326
 msgid "Use your registered passkey to sign in securely."
 msgstr "Use sua chave de acesso cadastrada para acessar com segurança."
+
+#: packages/admin/src/components/settings/SeoSettings.tsx:173
+msgid "Used as the fallback Open Graph image when a page has none. Recommended size: 1200×630."
+msgstr ""
 
 #: packages/admin/src/components/TaxonomyManager.tsx:642
 msgid "Used as the identifier. Lowercase letters, numbers, and underscores only."

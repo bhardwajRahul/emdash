@@ -486,7 +486,7 @@ msgstr ""
 msgid "A full-width hero banner with heading, text, and CTA button"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:165
+#: packages/admin/src/components/settings/GeneralSettings.tsx:142
 msgid "A short description of your site"
 msgstr "サイトの短い説明"
 
@@ -565,11 +565,11 @@ msgstr ""
 msgid "Add {label}"
 msgstr "{label}を追加"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:204
+#: packages/admin/src/components/settings/SecuritySettings.tsx:177
 msgid "Add a new passkey"
 msgstr "新しいパスキーを追加"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:304
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:271
 msgid "Add an allowed domain"
 msgstr "許可ドメインを追加"
 
@@ -596,8 +596,8 @@ msgstr "コンテンツを追加"
 msgid "Add Custom Link"
 msgstr "カスタムリンクを追加"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:349
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:311
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:316
 msgid "Add Domain"
 msgstr "ドメインを追加"
 
@@ -660,7 +660,7 @@ msgstr "新しい{0}を追加"
 msgid "Add noindex meta tag"
 msgstr "noindexメタタグを追加"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:225
+#: packages/admin/src/components/settings/SecuritySettings.tsx:200
 msgid "Add Passkey"
 msgstr "パスキーを追加"
 
@@ -692,12 +692,12 @@ msgstr "タグを追加..."
 msgid "Add Widget Area"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:128
+#: packages/admin/src/components/settings/SocialSettings.tsx:102
 msgid "Add your social media profiles. These are available to your site's theme and can be displayed in headers, footers, or author bios."
 msgstr "ソーシャルメディアのプロフィールを追加してください。サイトのテーマで利用でき、ヘッダー、フッター、著者プロフィールに表示できます。"
 
 #: packages/admin/src/components/MenuEditor.tsx:362
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:311
 msgid "Adding..."
 msgstr "追加中..."
 
@@ -719,7 +719,7 @@ msgstr "管理ナビゲーション"
 msgid "Administrator"
 msgstr "管理者"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:224
+#: packages/admin/src/components/settings/EmailSettings.tsx:198
 msgid "After send:"
 msgstr "送信後:"
 
@@ -800,7 +800,7 @@ msgstr "特定のドメインからのユーザー登録を許可"
 msgid "Allow visitors to leave comments on this collection's content"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:240
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:207
 msgid "Allowed Domains"
 msgstr "許可ドメイン"
 
@@ -839,6 +839,15 @@ msgstr "または、WordPressからエクスポート（ツール → エクス�
 #: packages/admin/src/components/MarketplaceBrowse.tsx:133
 #: packages/admin/src/components/PluginManager.tsx:98
 #: packages/admin/src/components/PluginManager.tsx:117
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:71
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:95
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:113
+#: packages/admin/src/components/settings/EmailSettings.tsx:51
+#: packages/admin/src/components/settings/GeneralSettings.tsx:51
+#: packages/admin/src/components/settings/SecuritySettings.tsx:54
+#: packages/admin/src/components/settings/SecuritySettings.tsx:71
+#: packages/admin/src/components/settings/SeoSettings.tsx:45
+#: packages/admin/src/components/settings/SocialSettings.tsx:43
 #: packages/admin/src/components/TaxonomySidebar.tsx:350
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:114
 #: packages/admin/src/router.tsx:399
@@ -993,7 +1002,7 @@ msgid "Authentication failed"
 msgstr ""
 
 #. placeholder {0}: manifest?.authMode
-#: packages/admin/src/components/settings/SecuritySettings.tsx:129
+#: packages/admin/src/components/settings/SecuritySettings.tsx:120
 msgid "Authentication is managed by an external provider ({0}). Passkey settings are not available when using external authentication."
 msgstr "認証は外部プロバイダー（{0}）で管理されています。外部認証を使用している場合、パスキー設定は利用できません。"
 
@@ -1064,7 +1073,7 @@ msgstr ""
 msgid "Available media"
 msgstr "利用可能なメディア"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:233
+#: packages/admin/src/components/settings/EmailSettings.tsx:207
 msgid "Available Providers"
 msgstr "利用可能なプロバイダー"
 
@@ -1127,11 +1136,11 @@ msgstr "テーマに戻る"
 msgid "Bash"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:219
+#: packages/admin/src/components/settings/EmailSettings.tsx:193
 msgid "Before send:"
 msgstr "送信前:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:233
+#: packages/admin/src/components/settings/SeoSettings.tsx:200
 msgid "Bing Verification"
 msgstr "Bing認証"
 
@@ -1256,11 +1265,11 @@ msgstr "コンテンツを閲覧可能"
 #: packages/admin/src/components/Redirects.tsx:182
 #: packages/admin/src/components/SectionPickerModal.tsx:130
 #: packages/admin/src/components/Sections.tsx:209
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:313
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:423
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:280
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:390
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:325
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:453
-#: packages/admin/src/components/settings/SecuritySettings.tsx:206
+#: packages/admin/src/components/settings/SecuritySettings.tsx:179
 #: packages/admin/src/components/TaxonomyManager.tsx:187
 #: packages/admin/src/components/TaxonomyManager.tsx:472
 #: packages/admin/src/components/TaxonomyManager.tsx:686
@@ -1338,15 +1347,15 @@ msgstr "変更"
 msgid "Change <0>{0}</0> from <1>{1}</1> to <2>{2}</2>? They will lose access to higher-level features."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:262
+#: packages/admin/src/components/settings/GeneralSettings.tsx:239
 msgid "Change Favicon"
 msgstr "ファビコンを変更"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:200
+#: packages/admin/src/components/settings/SeoSettings.tsx:167
 msgid "Change Image"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:208
+#: packages/admin/src/components/settings/GeneralSettings.tsx:185
 msgid "Change Logo"
 msgstr "ロゴを変更"
 
@@ -1358,7 +1367,7 @@ msgstr ""
 msgid "Changes discarded"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:162
+#: packages/admin/src/components/settings/SeoSettings.tsx:129
 msgid "Character between page title and site name (e.g., \"My Post | My Site\")"
 msgstr "ページタイトルとサイト名の間の文字（例: \"記事タイトル | サイト名\"）"
 
@@ -1450,9 +1459,9 @@ msgstr "メール内のリンクをクリックしてサインインしてくだ
 #: packages/admin/src/components/Sections.tsx:153
 #: packages/admin/src/components/Sections.tsx:159
 #: packages/admin/src/components/Sections.tsx:163
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:371
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:377
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:381
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:338
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:348
 #: packages/admin/src/components/TaxonomyManager.tsx:164
 #: packages/admin/src/components/TaxonomyManager.tsx:371
 #: packages/admin/src/components/TaxonomyManager.tsx:377
@@ -1964,7 +1973,7 @@ msgstr "カスタム"
 msgid "Custom Fields"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:243
+#: packages/admin/src/components/settings/SeoSettings.tsx:210
 msgid "Custom robots.txt content. Leave empty to use the default."
 msgstr "カスタムrobots.txtの内容。デフォルトを使用する場合は空のままにしてください。"
 
@@ -2006,7 +2015,7 @@ msgstr "日時ピッカー"
 msgid "Date field to filter on"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:304
+#: packages/admin/src/components/settings/GeneralSettings.tsx:281
 msgid "Date Format"
 msgstr "日付形式"
 
@@ -2018,20 +2027,20 @@ msgstr "小数"
 msgid "Declared permissions"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:327
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:389
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:294
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:356
 msgid "Default Role"
 msgstr "デフォルトロール"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:266
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:233
 msgid "Default role:"
 msgstr "デフォルトロール:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:180
+#: packages/admin/src/components/settings/SeoSettings.tsx:147
 msgid "Default social image"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:171
+#: packages/admin/src/components/settings/SeoSettings.tsx:138
 msgid "Default Social Image"
 msgstr ""
 
@@ -2083,7 +2092,7 @@ msgstr "\"{0}\"を削除しますか？この操作は取り消せません。"
 #. placeholder {0}: field.label
 #: packages/admin/src/components/ContentTypeList.tsx:229
 #: packages/admin/src/components/Sections.tsx:408
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:285
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:252
 #: packages/admin/src/components/TaxonomyManager.tsx:97
 #: packages/admin/src/components/Widgets.tsx:737
 #: packages/admin/src/routes/byline-schema.tsx:458
@@ -2407,19 +2416,19 @@ msgstr ""
 msgid "Documents"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:319
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:286
 msgid "Domain"
 msgstr "ドメイン"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:85
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:66
 msgid "Domain added successfully"
 msgstr "ドメインを追加しました"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:124
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:108
 msgid "Domain removed"
 msgstr "ドメインを削除しました"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:107
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:90
 msgid "Domain updated"
 msgstr "ドメインを更新しました"
 
@@ -2541,7 +2550,7 @@ msgstr "編集"
 #. placeholder {0}: domain.domain
 #: packages/admin/src/components/ContentTypeList.tsx:220
 #: packages/admin/src/components/PortableTextEditor.tsx:1438
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:276
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:243
 #: packages/admin/src/components/TaxonomyManager.tsx:89
 #: packages/admin/src/components/TaxonomyManager.tsx:361
 #: packages/admin/src/routes/byline-schema.tsx:449
@@ -2570,7 +2579,7 @@ msgstr "署名を編集"
 msgid "Edit byline field"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:364
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:331
 msgid "Edit Domain"
 msgstr "ドメインを編集"
 
@@ -2642,20 +2651,20 @@ msgstr "メールアドレス"
 msgid "Email is required"
 msgstr "メールアドレスは必須です"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:215
+#: packages/admin/src/components/settings/EmailSettings.tsx:189
 msgid "Email Middleware"
 msgstr "メールミドルウェア"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:125
+#: packages/admin/src/components/settings/EmailSettings.tsx:99
 msgid "Email Pipeline"
 msgstr "メールパイプライン"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:199
+#: packages/admin/src/components/settings/EmailSettings.tsx:173
 msgid "Email provider active"
 msgstr "メールプロバイダー有効"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:85
-#: packages/admin/src/components/settings/EmailSettings.tsx:100
+#: packages/admin/src/components/settings/EmailSettings.tsx:77
+#: packages/admin/src/components/settings/EmailSettings.tsx:92
 msgid "Email Settings"
 msgstr "メール設定"
 
@@ -2834,7 +2843,7 @@ msgstr "WordPressから手動でエクスポート"
 msgid "Export your content from WordPress to import everything including drafts."
 msgstr "下書きを含むすべてのコンテンツをインポートするために、WordPressからエクスポートしてください。"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:144
+#: packages/admin/src/components/settings/SocialSettings.tsx:118
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -2850,9 +2859,13 @@ msgstr "失敗"
 msgid "Failed security audit"
 msgstr "セキュリティ監査に不合格"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:90
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:70
 msgid "Failed to add domain"
 msgstr "ドメインの追加に失敗しました"
+
+#: packages/admin/src/components/settings/SecuritySettings.tsx:188
+msgid "Failed to add passkey"
+msgstr ""
 
 #: packages/admin/src/components/WordPressImport.tsx:367
 msgid "Failed to analyze WordPress site"
@@ -3141,7 +3154,7 @@ msgstr ""
 msgid "Failed to load admin"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:207
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:192
 msgid "Failed to load allowed domains"
 msgstr "許可ドメインの読み込みに失敗しました"
 
@@ -3150,7 +3163,7 @@ msgstr "許可ドメインの読み込みに失敗しました"
 msgid "Failed to load bylines: {0}"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:89
+#: packages/admin/src/components/settings/EmailSettings.tsx:81
 msgid "Failed to load email settings"
 msgstr "メール設定の読み込みに失敗しました"
 
@@ -3158,7 +3171,7 @@ msgstr "メール設定の読み込みに失敗しました"
 msgid "Failed to load image"
 msgstr ""
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:144
+#: packages/admin/src/components/settings/SecuritySettings.tsx:135
 msgid "Failed to load passkeys"
 msgstr "パスキーの読み込みに失敗しました"
 
@@ -3216,16 +3229,16 @@ msgstr ""
 msgid "Failed to read byline field usage"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:130
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:112
 msgid "Failed to remove domain"
 msgstr "ドメインの削除に失敗しました"
 
 #: packages/admin/src/components/settings/PasskeyItem.tsx:99
-#: packages/admin/src/components/settings/SecuritySettings.tsx:82
+#: packages/admin/src/components/settings/SecuritySettings.tsx:70
 msgid "Failed to remove passkey"
 msgstr "パスキーの削除に失敗しました"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:66
+#: packages/admin/src/components/settings/SecuritySettings.tsx:53
 msgid "Failed to rename passkey"
 msgstr "パスキーの名前変更に失敗しました"
 
@@ -3272,9 +3285,9 @@ msgstr "保存に失敗しました"
 msgid "Failed to save field"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:58
-#: packages/admin/src/components/settings/SeoSettings.tsx:62
-#: packages/admin/src/components/settings/SocialSettings.tsx:53
+#: packages/admin/src/components/settings/GeneralSettings.tsx:50
+#: packages/admin/src/components/settings/SeoSettings.tsx:44
+#: packages/admin/src/components/settings/SocialSettings.tsx:42
 msgid "Failed to save settings"
 msgstr "設定の保存に失敗しました"
 
@@ -3291,7 +3304,7 @@ msgstr "マジックリンクの送信に失敗しました"
 msgid "Failed to send recovery link"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:61
+#: packages/admin/src/components/settings/EmailSettings.tsx:50
 #: packages/admin/src/lib/api/email-settings.ts:45
 msgid "Failed to send test email"
 msgstr "テストメールの送信に失敗しました"
@@ -3330,7 +3343,7 @@ msgstr "署名の更新に失敗しました"
 msgid "Failed to update byline field"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:113
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:94
 msgid "Failed to update domain"
 msgstr "ドメインの更新に失敗しました"
 
@@ -3379,8 +3392,8 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:236
-#: packages/admin/src/components/settings/GeneralSettings.tsx:242
+#: packages/admin/src/components/settings/GeneralSettings.tsx:213
+#: packages/admin/src/components/settings/GeneralSettings.tsx:219
 msgid "Favicon"
 msgstr "ファビコン"
 
@@ -3529,8 +3542,8 @@ msgstr "管理者フルアクセス"
 msgid "General"
 msgstr "一般"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:101
-#: packages/admin/src/components/settings/GeneralSettings.tsx:129
+#: packages/admin/src/components/settings/GeneralSettings.tsx:96
+#: packages/admin/src/components/settings/GeneralSettings.tsx:124
 msgid "General Settings"
 msgstr "一般設定"
 
@@ -3542,7 +3555,7 @@ msgstr ""
 msgid "Get Started"
 msgstr "はじめる"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:138
+#: packages/admin/src/components/settings/SocialSettings.tsx:112
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -3559,7 +3572,7 @@ msgstr ""
 msgid "Go to Dashboard"
 msgstr "ダッシュボードへ"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:227
+#: packages/admin/src/components/settings/SeoSettings.tsx:194
 msgid "Google Verification"
 msgstr "Google認証"
 
@@ -3877,7 +3890,7 @@ msgstr "セクションを挿入"
 msgid "Insert Table"
 msgstr "テーブルを挿入"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:150
+#: packages/admin/src/components/settings/SocialSettings.tsx:124
 msgid "Instagram"
 msgstr "Instagram"
 
@@ -3886,7 +3899,7 @@ msgstr "Instagram"
 msgid "Install"
 msgstr "インストール"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:181
+#: packages/admin/src/components/settings/EmailSettings.tsx:155
 msgid "Install and activate an email provider plugin to enable email features like invitations, magic links, and password recovery."
 msgstr "招待、マジックリンク、パスワード回復などのメール機能を有効にするには、メールプロバイダープラグインをインストールして有効にしてください。"
 
@@ -4138,7 +4151,7 @@ msgstr ""
 msgid "Linked user"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:156
+#: packages/admin/src/components/settings/SocialSettings.tsx:130
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -4215,9 +4228,9 @@ msgstr "リダイレクトを読み込み中..."
 msgid "Loading sections..."
 msgstr "セクションを読み込み中..."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:104
-#: packages/admin/src/components/settings/SeoSettings.tsx:108
-#: packages/admin/src/components/settings/SocialSettings.tsx:81
+#: packages/admin/src/components/settings/GeneralSettings.tsx:99
+#: packages/admin/src/components/settings/SeoSettings.tsx:93
+#: packages/admin/src/components/settings/SocialSettings.tsx:73
 msgid "Loading settings..."
 msgstr "設定を読み込み中..."
 
@@ -4243,8 +4256,8 @@ msgstr ""
 #: packages/admin/src/components/MediaPickerModal.tsx:723
 #: packages/admin/src/components/PortableTextEditor.tsx:1946
 #: packages/admin/src/components/RegistryBrowse.tsx:143
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:176
-#: packages/admin/src/components/settings/SecuritySettings.tsx:113
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:161
+#: packages/admin/src/components/settings/SecuritySettings.tsx:104
 #: packages/admin/src/components/TaxonomyManager.tsx:779
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:170
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:252
@@ -4275,8 +4288,8 @@ msgstr ""
 msgid "Log out"
 msgstr "ログアウト"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:182
-#: packages/admin/src/components/settings/GeneralSettings.tsx:188
+#: packages/admin/src/components/settings/GeneralSettings.tsx:159
+#: packages/admin/src/components/settings/GeneralSettings.tsx:165
 msgid "Logo"
 msgstr "ロゴ"
 
@@ -4514,11 +4527,11 @@ msgstr ""
 msgid "Meta Description"
 msgstr "メタディスクリプション"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:236
+#: packages/admin/src/components/settings/SeoSettings.tsx:203
 msgid "Meta tag content for Bing Webmaster Tools verification"
 msgstr "Bingウェブマスターツール認証用メタタグの内容"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:230
+#: packages/admin/src/components/settings/SeoSettings.tsx:197
 msgid "Meta tag content for Google Search Console verification"
 msgstr "Google Search Console認証用メタタグの内容"
 
@@ -4821,11 +4834,11 @@ msgstr ""
 msgid "No detailed description available."
 msgstr "詳細な説明はありません。"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:295
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:262
 msgid "No domains configured. Users must be invited individually."
 msgstr "ドメインが設定されていません。ユーザーは個別に招待する必要があります。"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:178
+#: packages/admin/src/components/settings/EmailSettings.tsx:152
 msgid "No email provider configured"
 msgstr "メールプロバイダーが設定されていません"
 
@@ -4922,7 +4935,7 @@ msgstr ""
 msgid "No passkeys registered"
 msgstr "パスキーは登録されていません"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:195
+#: packages/admin/src/components/settings/SecuritySettings.tsx:168
 msgid "No passkeys registered yet."
 msgstr "パスキーはまだ登録されていません。"
 
@@ -5028,7 +5041,7 @@ msgstr ""
 msgid "Number"
 msgstr "数値"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:301
+#: packages/admin/src/components/settings/GeneralSettings.tsx:278
 msgid "Number of posts to show per page on list views"
 msgstr "一覧表示でページあたりに表示する投稿数"
 
@@ -5182,7 +5195,7 @@ msgstr "リダイレクトループの一部"
 msgid "Pass"
 msgstr "合格"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:98
+#: packages/admin/src/components/settings/SecuritySettings.tsx:89
 msgid "Passkey added successfully"
 msgstr "パスキーを追加しました"
 
@@ -5198,15 +5211,15 @@ msgstr "パスキー名（任意）"
 msgid "Passkey registered successfully!"
 msgstr "パスキーが登録されました！"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:76
+#: packages/admin/src/components/settings/SecuritySettings.tsx:66
 msgid "Passkey removed"
 msgstr "パスキーを削除しました"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:60
+#: packages/admin/src/components/settings/SecuritySettings.tsx:49
 msgid "Passkey renamed"
 msgstr "パスキーの名前を変更しました"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:177
+#: packages/admin/src/components/settings/SecuritySettings.tsx:150
 #: packages/admin/src/components/users/UserList.tsx:110
 msgid "Passkeys"
 msgstr "パスキー"
@@ -5216,7 +5229,7 @@ msgstr "パスキー"
 msgid "Passkeys ({0})"
 msgstr "パスキー ({0})"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:181
+#: packages/admin/src/components/settings/SecuritySettings.tsx:154
 msgid "Passkeys are a secure, passwordless way to sign in to your account. You can register multiple passkeys for different devices."
 msgstr "パスキーは安全でパスワード不要のサインイン方法です。異なるデバイス用に複数のパスキーを登録できます。"
 
@@ -5412,7 +5425,7 @@ msgstr ""
 msgid "Posts"
 msgstr "投稿"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:295
+#: packages/admin/src/components/settings/GeneralSettings.tsx:272
 msgid "Posts Per Page"
 msgstr "ページあたりの投稿数"
 
@@ -5464,7 +5477,7 @@ msgstr "前のスクリーンショット"
 msgid "Primary Navigation"
 msgstr "メインナビゲーション"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:202
+#: packages/admin/src/components/settings/EmailSettings.tsx:176
 msgid "Provider:"
 msgstr "プロバイダー:"
 
@@ -5548,7 +5561,7 @@ msgstr ""
 msgid "Read your content"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:292
+#: packages/admin/src/components/settings/GeneralSettings.tsx:269
 msgid "Reading"
 msgstr "閲覧"
 
@@ -5565,7 +5578,7 @@ msgstr "最近のアクティビティ"
 msgid "Recently Updated"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:144
+#: packages/admin/src/components/settings/EmailSettings.tsx:118
 msgid "Recipient email"
 msgstr "受信者メールアドレス"
 
@@ -5596,7 +5609,7 @@ msgstr ""
 msgid "Reference"
 msgstr "参照"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:251
+#: packages/admin/src/components/settings/GeneralSettings.tsx:228
 msgid "Referenced favicon unavailable."
 msgstr ""
 
@@ -5605,7 +5618,7 @@ msgid "Register"
 msgstr "登録"
 
 #: packages/admin/src/components/auth/PasskeyRegistration.tsx:146
-#: packages/admin/src/components/settings/SecuritySettings.tsx:220
+#: packages/admin/src/components/settings/SecuritySettings.tsx:195
 msgid "Register Passkey"
 msgstr "パスキーを登録"
 
@@ -5634,11 +5647,11 @@ msgstr ""
 #: packages/admin/src/components/ContentEditor.tsx:1965
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:199
 #: packages/admin/src/components/PortableTextEditor.tsx:3196
-#: packages/admin/src/components/settings/GeneralSettings.tsx:217
-#: packages/admin/src/components/settings/GeneralSettings.tsx:271
+#: packages/admin/src/components/settings/GeneralSettings.tsx:194
+#: packages/admin/src/components/settings/GeneralSettings.tsx:248
 #: packages/admin/src/components/settings/PasskeyItem.tsx:187
 #: packages/admin/src/components/settings/PasskeyItem.tsx:209
-#: packages/admin/src/components/settings/SeoSettings.tsx:209
+#: packages/admin/src/components/settings/SeoSettings.tsx:176
 msgid "Remove"
 msgstr "削除"
 
@@ -5657,11 +5670,11 @@ msgstr ""
 msgid "Remove {label}"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:430
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:397
 msgid "Remove Domain"
 msgstr "ドメインを削除"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:414
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:381
 msgid "Remove Domain?"
 msgstr "ドメインを削除しますか？"
 
@@ -5955,18 +5968,18 @@ msgstr "公開前にコンテンツを下書きとして保存"
 msgid "Save name"
 msgstr "名前を保存"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:126
-#: packages/admin/src/components/settings/SeoSettings.tsx:251
+#: packages/admin/src/components/settings/SeoSettings.tsx:111
+#: packages/admin/src/components/settings/SeoSettings.tsx:218
 msgid "Save SEO Settings"
 msgstr "SEO設定を保存"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:321
+#: packages/admin/src/components/settings/GeneralSettings.tsx:120
+#: packages/admin/src/components/settings/GeneralSettings.tsx:298
 msgid "Save Settings"
 msgstr "設定を保存"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:99
-#: packages/admin/src/components/settings/SocialSettings.tsx:173
+#: packages/admin/src/components/settings/SocialSettings.tsx:91
+#: packages/admin/src/components/settings/SocialSettings.tsx:147
 msgid "Save Social Links"
 msgstr "ソーシャルリンクを保存"
 
@@ -5988,12 +6001,12 @@ msgstr ""
 #: packages/admin/src/components/MenuEditor.tsx:533
 #: packages/admin/src/components/Redirects.tsx:187
 #: packages/admin/src/components/SaveButton.tsx:42
-#: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:321
-#: packages/admin/src/components/settings/SeoSettings.tsx:126
-#: packages/admin/src/components/settings/SeoSettings.tsx:251
-#: packages/admin/src/components/settings/SocialSettings.tsx:99
-#: packages/admin/src/components/settings/SocialSettings.tsx:173
+#: packages/admin/src/components/settings/GeneralSettings.tsx:120
+#: packages/admin/src/components/settings/GeneralSettings.tsx:298
+#: packages/admin/src/components/settings/SeoSettings.tsx:111
+#: packages/admin/src/components/settings/SeoSettings.tsx:218
+#: packages/admin/src/components/settings/SocialSettings.tsx:91
+#: packages/admin/src/components/settings/SocialSettings.tsx:147
 #: packages/admin/src/components/TaxonomyManager.tsx:476
 #: packages/admin/src/components/users/UserDetail.tsx:311
 #: packages/admin/src/components/Widgets.tsx:894
@@ -6143,7 +6156,7 @@ msgstr "コメントを検索..."
 msgid "Search content..."
 msgstr "コンテンツを検索..."
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:155
+#: packages/admin/src/components/settings/SeoSettings.tsx:122
 msgid "Search Engine Optimization"
 msgstr "検索エンジン最適化"
 
@@ -6292,7 +6305,7 @@ msgstr "セキュリティエラー。安全な接続であることを確認し
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:243
 #: packages/admin/src/components/Header.tsx:85
-#: packages/admin/src/components/settings/SecuritySettings.tsx:104
+#: packages/admin/src/components/settings/SecuritySettings.tsx:95
 msgid "Security Settings"
 msgstr "セキュリティ設定"
 
@@ -6330,12 +6343,12 @@ msgstr "{0}のコメントを選択"
 msgid "Select Content"
 msgstr "コンテンツを選択"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:268
+#: packages/admin/src/components/settings/SeoSettings.tsx:235
 msgid "Select Default Social Image"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:283
-#: packages/admin/src/components/settings/GeneralSettings.tsx:344
+#: packages/admin/src/components/settings/GeneralSettings.tsx:260
+#: packages/admin/src/components/settings/GeneralSettings.tsx:321
 msgid "Select Favicon"
 msgstr "ファビコンを選択"
 
@@ -6354,12 +6367,12 @@ msgstr "画像を選択"
 #: packages/admin/src/components/MediaPickerModal.tsx:145
 #: packages/admin/src/components/PortableTextEditor.tsx:2583
 #: packages/admin/src/components/PortableTextEditor.tsx:3270
-#: packages/admin/src/components/settings/SeoSettings.tsx:221
+#: packages/admin/src/components/settings/SeoSettings.tsx:188
 msgid "Select Image"
 msgstr "画像を選択"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:229
-#: packages/admin/src/components/settings/GeneralSettings.tsx:336
+#: packages/admin/src/components/settings/GeneralSettings.tsx:206
+#: packages/admin/src/components/settings/GeneralSettings.tsx:313
 msgid "Select Logo"
 msgstr "ロゴを選択"
 
@@ -6390,11 +6403,11 @@ msgid "Selected:"
 msgstr "選択中:"
 
 #: packages/admin/src/components/Settings.tsx:98
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:167
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:152
 msgid "Self-Signup Domains"
 msgstr "セルフサインアップドメイン"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:139
+#: packages/admin/src/components/settings/EmailSettings.tsx:113
 msgid "Send a test email through the full pipeline to verify your email configuration."
 msgstr "メール設定を確認するために、完全なパイプラインを通してテストメールを送信します。"
 
@@ -6414,16 +6427,16 @@ msgstr "マジックリンクを送信"
 msgid "Send Recovery Link"
 msgstr "回復リンクを送信"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:153
+#: packages/admin/src/components/settings/EmailSettings.tsx:127
 msgid "Send Test"
 msgstr "テストを送信"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:136
+#: packages/admin/src/components/settings/EmailSettings.tsx:110
 msgid "Send Test Email"
 msgstr "テストメールを送信"
 
 #: packages/admin/src/components/LoginPage.tsx:149
-#: packages/admin/src/components/settings/EmailSettings.tsx:153
+#: packages/admin/src/components/settings/EmailSettings.tsx:127
 #: packages/admin/src/components/SignupPage.tsx:88
 #: packages/admin/src/components/SignupPage.tsx:151
 #: packages/admin/src/components/users/InviteUserModal.tsx:203
@@ -6437,8 +6450,8 @@ msgstr "送信中..."
 msgid "SEO"
 msgstr "SEO"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:105
-#: packages/admin/src/components/settings/SeoSettings.tsx:130
+#: packages/admin/src/components/settings/SeoSettings.tsx:90
+#: packages/admin/src/components/settings/SeoSettings.tsx:115
 msgid "SEO Settings"
 msgstr "SEO設定"
 
@@ -6446,7 +6459,7 @@ msgstr "SEO設定"
 msgid "SEO settings (Yoast)"
 msgstr "SEO設定（Yoast）"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:57
+#: packages/admin/src/components/settings/SeoSettings.tsx:40
 msgid "SEO settings saved"
 msgstr "SEO設定を保存しました"
 
@@ -6498,7 +6511,7 @@ msgstr ""
 msgid "Settings Read"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:53
+#: packages/admin/src/components/settings/GeneralSettings.tsx:43
 msgid "Settings saved successfully"
 msgstr "設定を保存しました"
 
@@ -6586,7 +6599,7 @@ msgstr "1行テキスト入力"
 msgid "Site"
 msgstr "サイト"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:153
+#: packages/admin/src/components/settings/GeneralSettings.tsx:130
 msgid "Site Identity"
 msgstr "サイト情報"
 
@@ -6598,7 +6611,7 @@ msgstr "サイト情報、ロゴ、ファビコン、閲覧設定"
 msgid "Site Settings"
 msgstr "サイト設定"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:156
+#: packages/admin/src/components/settings/GeneralSettings.tsx:133
 #: packages/admin/src/components/SetupWizard.tsx:116
 msgid "Site Title"
 msgstr "サイトタイトル"
@@ -6611,7 +6624,7 @@ msgstr "サイトタイトルとキャッチフレーズ"
 msgid "Site title is required"
 msgstr "サイトタイトルは必須です"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:168
+#: packages/admin/src/components/settings/GeneralSettings.tsx:145
 msgid "Site URL"
 msgstr "サイトURL"
 
@@ -6661,12 +6674,12 @@ msgid "Small section heading"
 msgstr "小見出し"
 
 #: packages/admin/src/components/Settings.tsx:75
-#: packages/admin/src/components/settings/SocialSettings.tsx:78
-#: packages/admin/src/components/settings/SocialSettings.tsx:103
+#: packages/admin/src/components/settings/SocialSettings.tsx:70
+#: packages/admin/src/components/settings/SocialSettings.tsx:95
 msgid "Social Links"
 msgstr "ソーシャルリンク"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:48
+#: packages/admin/src/components/settings/SocialSettings.tsx:38
 msgid "Social links saved"
 msgstr "ソーシャルリンクを保存しました"
 
@@ -6674,7 +6687,7 @@ msgstr "ソーシャルリンクを保存しました"
 msgid "Social media profile links"
 msgstr "ソーシャルメディアのプロフィールリンク"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:126
+#: packages/admin/src/components/settings/SocialSettings.tsx:100
 msgid "Social Profiles"
 msgstr "ソーシャルプロフィール"
 
@@ -6801,7 +6814,7 @@ msgstr ""
 msgid "Table"
 msgstr "テーブル"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:162
+#: packages/admin/src/components/settings/GeneralSettings.tsx:139
 #: packages/admin/src/components/SetupWizard.tsx:127
 msgid "Tagline"
 msgstr "キャッチフレーズ"
@@ -6864,7 +6877,7 @@ msgstr ""
 msgid "Term deleted"
 msgstr "タームを削除しました"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:148
+#: packages/admin/src/components/settings/EmailSettings.tsx:122
 msgid "test@example.com"
 msgstr "test@example.com"
 
@@ -6901,7 +6914,7 @@ msgstr "マーケットプレイスは空です。新しいプラグインを後
 msgid "The menu has been deleted."
 msgstr "メニューを削除しました。"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:159
+#: packages/admin/src/components/settings/GeneralSettings.tsx:136
 msgid "The name of your site, used in the header and metadata"
 msgstr "サイトの名前。ヘッダーとメタデータに使用されます"
 
@@ -6913,15 +6926,15 @@ msgstr ""
 msgid "The plugin field widget failed to render."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:172
+#: packages/admin/src/components/settings/GeneralSettings.tsx:149
 msgid "The public URL of your site (used for canonical links and sitemaps)"
 msgstr "サイトの公開URL（正規リンクとサイトマップに使用）"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:189
+#: packages/admin/src/components/settings/SeoSettings.tsx:156
 msgid "The referenced image is no longer available. Pick a new one or remove the reference."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:197
+#: packages/admin/src/components/settings/GeneralSettings.tsx:174
 msgid "The referenced logo is no longer available. Pick a new one or remove the reference."
 msgstr ""
 
@@ -7062,11 +7075,11 @@ msgstr "公開済みバージョンに戻ります。下書きの変更は失わ
 msgid "Thoughts, tutorials, and more"
 msgstr "記事、チュートリアルなど"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:310
+#: packages/admin/src/components/settings/GeneralSettings.tsx:287
 msgid "Timezone"
 msgstr "タイムゾーン"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:313
+#: packages/admin/src/components/settings/GeneralSettings.tsx:290
 msgid "Timezone for displaying dates (e.g., America/New_York)"
 msgstr "日付表示のタイムゾーン（例: Asia/Tokyo）"
 
@@ -7083,7 +7096,7 @@ msgstr "タイトル"
 msgid "Title (Tooltip)"
 msgstr "タイトル（ツールチップ）"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:159
+#: packages/admin/src/components/settings/SeoSettings.tsx:126
 msgid "Title Separator"
 msgstr "タイトル区切り文字"
 
@@ -7241,7 +7254,7 @@ msgstr ""
 msgid "Turn into"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:132
+#: packages/admin/src/components/settings/SocialSettings.tsx:106
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -7382,7 +7395,7 @@ msgid "Update Field"
 msgstr "フィールドを更新"
 
 #. placeholder {0}: editingDomain?.domain
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:367
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:334
 msgid "Update settings for {0}"
 msgstr "{0}の設定を更新"
 
@@ -7559,7 +7572,7 @@ msgstr "デバイスの生体認証、セキュリティキー、またはPINで
 msgid "Use your registered passkey to sign in securely."
 msgstr "登録済みのパスキーで安全にサインインできます。"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:173
+#: packages/admin/src/components/settings/SeoSettings.tsx:140
 msgid "Used as the fallback Open Graph image when a page has none. Recommended size: 1200×630."
 msgstr ""
 
@@ -7592,7 +7605,7 @@ msgid "User"
 msgstr "ユーザー"
 
 #. placeholder {0}: manifest?.authMode
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:192
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:177
 msgid "User access is managed by an external provider ({0}). Self-signup domain settings are not available when using external authentication."
 msgstr "ユーザーアクセスは外部プロバイダー（{0}）で管理されています。外部認証を使用している場合、セルフサインアップドメイン設定は利用できません。"
 
@@ -7610,11 +7623,11 @@ msgstr "ユーザーが見つかりません"
 msgid "Users"
 msgstr "ユーザー"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:416
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:383
 msgid "Users from"
 msgstr "ドメインのユーザー:"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:244
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:211
 msgid "Users with email addresses from these domains can sign up without an invite. They will be assigned the specified role automatically."
 msgstr "これらのドメインのメールアドレスを持つユーザーは招待なしで登録できます。指定されたロールが自動的に割り当てられます。"
 
@@ -7842,11 +7855,11 @@ msgstr "幅"
 msgid "Will create"
 msgstr "作成予定"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:417
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:384
 msgid "will no longer be able to sign up without an invite. Existing users are not affected."
 msgstr "は招待なしで登録できなくなります。既存のユーザーには影響しません。"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:184
+#: packages/admin/src/components/settings/EmailSettings.tsx:158
 msgid "Without an email provider, invite links must be shared manually."
 msgstr "メールプロバイダーがない場合、招待リンクは手動で共有する必要があります。"
 
@@ -7973,19 +7986,19 @@ msgstr "お使いのデバイスは必要なセキュリティ機能に対応し
 msgid "Your Email"
 msgstr "メールアドレス"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:147
+#: packages/admin/src/components/settings/SocialSettings.tsx:121
 msgid "Your Facebook page or profile username"
 msgstr "Facebookページまたはプロフィールのユーザー名"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:141
+#: packages/admin/src/components/settings/SocialSettings.tsx:115
 msgid "Your GitHub username"
 msgstr "GitHubのユーザー名"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:153
+#: packages/admin/src/components/settings/SocialSettings.tsx:127
 msgid "Your Instagram username"
 msgstr "Instagramのユーザー名"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:159
+#: packages/admin/src/components/settings/SocialSettings.tsx:133
 msgid "Your LinkedIn profile username"
 msgstr "LinkedInのプロフィールユーザー名"
 
@@ -8007,7 +8020,7 @@ msgstr "あなたのロール"
 msgid "Your site requires releases to be at least {0} old before they can be installed. This release will become installable later."
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:135
+#: packages/admin/src/components/settings/SocialSettings.tsx:109
 msgid "Your Twitter/X handle (e.g., @username)"
 msgstr "Twitter/Xのハンドル名（例: @username）"
 
@@ -8016,10 +8029,10 @@ msgstr "Twitter/Xのハンドル名（例: @username）"
 msgid "Your WordPress export contains {0} media files."
 msgstr "WordPressのエクスポートには{0}件のメディアファイルが含まれています。"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:165
+#: packages/admin/src/components/settings/SocialSettings.tsx:139
 msgid "Your YouTube channel ID or handle"
 msgstr "YouTubeチャンネルIDまたはハンドル"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:162
+#: packages/admin/src/components/settings/SocialSettings.tsx:136
 msgid "YouTube"
 msgstr "YouTube"

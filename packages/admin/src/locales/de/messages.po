@@ -486,7 +486,7 @@ msgstr "Eine kurze Beschreibung dieses Inhaltstyps"
 msgid "A full-width hero banner with heading, text, and CTA button"
 msgstr "Ein Hero-Banner in voller Breite mit Überschrift, Text und CTA-Button"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:165
+#: packages/admin/src/components/settings/GeneralSettings.tsx:142
 msgid "A short description of your site"
 msgstr "Eine kurze Beschreibung deiner Webseite"
 
@@ -565,11 +565,11 @@ msgstr "{0} hinzufügen"
 msgid "Add {label}"
 msgstr "{label} hinzufügen"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:204
+#: packages/admin/src/components/settings/SecuritySettings.tsx:177
 msgid "Add a new passkey"
 msgstr "Neuen Passkey hinzufügen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:304
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:271
 msgid "Add an allowed domain"
 msgstr "Erlaubte Domain hinzufügen"
 
@@ -596,8 +596,8 @@ msgstr "Inhalt hinzufügen"
 msgid "Add Custom Link"
 msgstr "Benutzerdefinierten Link hinzufügen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:349
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:311
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:316
 msgid "Add Domain"
 msgstr "Domain hinzufügen"
 
@@ -660,7 +660,7 @@ msgstr "{0} hinzufügen"
 msgid "Add noindex meta tag"
 msgstr "noindex-Meta-Tag hinzufügen"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:225
+#: packages/admin/src/components/settings/SecuritySettings.tsx:200
 msgid "Add Passkey"
 msgstr "Passkey hinzufügen"
 
@@ -692,12 +692,12 @@ msgstr "Schlagwörter hinzufügen..."
 msgid "Add Widget Area"
 msgstr "Widget-Bereich hinzufügen"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:128
+#: packages/admin/src/components/settings/SocialSettings.tsx:102
 msgid "Add your social media profiles. These are available to your site's theme and can be displayed in headers, footers, or author bios."
 msgstr "Füge deine Social-Media-Profile hinzu. Sie stehen dem Design deiner Webseite zur Verfügung und können in Kopfzeilen, Fußzeilen oder Autorenbeschreibungen angezeigt werden."
 
 #: packages/admin/src/components/MenuEditor.tsx:362
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:311
 msgid "Adding..."
 msgstr "Hinzufügen..."
 
@@ -719,7 +719,7 @@ msgstr "Admin-Navigation"
 msgid "Administrator"
 msgstr "Administrator"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:224
+#: packages/admin/src/components/settings/EmailSettings.tsx:198
 msgid "After send:"
 msgstr "Nach dem Senden:"
 
@@ -800,7 +800,7 @@ msgstr "Benutzern von bestimmten Domains die Registrierung erlauben"
 msgid "Allow visitors to leave comments on this collection's content"
 msgstr "Erlaube Besuchern, Kommentare zu den Inhalten dieser Kollektion hinzuzufügen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:240
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:207
 msgid "Allowed Domains"
 msgstr "Erlaubte Domains"
 
@@ -839,6 +839,15 @@ msgstr "Alternativ kannst du den Export in WordPress unter Werkzeuge → Export 
 #: packages/admin/src/components/MarketplaceBrowse.tsx:133
 #: packages/admin/src/components/PluginManager.tsx:98
 #: packages/admin/src/components/PluginManager.tsx:117
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:71
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:95
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:113
+#: packages/admin/src/components/settings/EmailSettings.tsx:51
+#: packages/admin/src/components/settings/GeneralSettings.tsx:51
+#: packages/admin/src/components/settings/SecuritySettings.tsx:54
+#: packages/admin/src/components/settings/SecuritySettings.tsx:71
+#: packages/admin/src/components/settings/SeoSettings.tsx:45
+#: packages/admin/src/components/settings/SocialSettings.tsx:43
 #: packages/admin/src/components/TaxonomySidebar.tsx:350
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:114
 #: packages/admin/src/router.tsx:399
@@ -993,7 +1002,7 @@ msgid "Authentication failed"
 msgstr "Anmeldung fehlgeschlagen"
 
 #. placeholder {0}: manifest?.authMode
-#: packages/admin/src/components/settings/SecuritySettings.tsx:129
+#: packages/admin/src/components/settings/SecuritySettings.tsx:120
 msgid "Authentication is managed by an external provider ({0}). Passkey settings are not available when using external authentication."
 msgstr "Die Anmeldung wird von einem externen Anbieter ({0}) verwaltet. Passkey-Einstellungen sind bei externer Authentifizierung nicht verfügbar."
 
@@ -1064,7 +1073,7 @@ msgstr "Status der automatischen Speicherung"
 msgid "Available media"
 msgstr "Verfügbare Medien"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:233
+#: packages/admin/src/components/settings/EmailSettings.tsx:207
 msgid "Available Providers"
 msgstr "Verfügbare Anbieter"
 
@@ -1127,11 +1136,11 @@ msgstr "Zurück zu Designs"
 msgid "Bash"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:219
+#: packages/admin/src/components/settings/EmailSettings.tsx:193
 msgid "Before send:"
 msgstr "Vor dem Senden:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:233
+#: packages/admin/src/components/settings/SeoSettings.tsx:200
 msgid "Bing Verification"
 msgstr "Bing-Verifizierung"
 
@@ -1256,11 +1265,11 @@ msgstr "Kann Inhalte ansehen"
 #: packages/admin/src/components/Redirects.tsx:182
 #: packages/admin/src/components/SectionPickerModal.tsx:130
 #: packages/admin/src/components/Sections.tsx:209
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:313
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:423
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:280
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:390
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:325
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:453
-#: packages/admin/src/components/settings/SecuritySettings.tsx:206
+#: packages/admin/src/components/settings/SecuritySettings.tsx:179
 #: packages/admin/src/components/TaxonomyManager.tsx:187
 #: packages/admin/src/components/TaxonomyManager.tsx:472
 #: packages/admin/src/components/TaxonomyManager.tsx:686
@@ -1338,15 +1347,15 @@ msgstr "Ändern"
 msgid "Change <0>{0}</0> from <1>{1}</1> to <2>{2}</2>? They will lose access to higher-level features."
 msgstr "<0>{0}</0> von <1>{1}</1> zu <2>{2}</2> ändern? Die Person verliert dadurch Zugriff auf Funktionen, die höhere Berechtigungen erfordern."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:262
+#: packages/admin/src/components/settings/GeneralSettings.tsx:239
 msgid "Change Favicon"
 msgstr "Favicon ändern"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:200
+#: packages/admin/src/components/settings/SeoSettings.tsx:167
 msgid "Change Image"
 msgstr "Bild ändern"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:208
+#: packages/admin/src/components/settings/GeneralSettings.tsx:185
 msgid "Change Logo"
 msgstr "Logo ändern"
 
@@ -1358,7 +1367,7 @@ msgstr ""
 msgid "Changes discarded"
 msgstr "Änderungen verworfen"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:162
+#: packages/admin/src/components/settings/SeoSettings.tsx:129
 msgid "Character between page title and site name (e.g., \"My Post | My Site\")"
 msgstr "Trennzeichen zwischen Seitentitel und Webseitenname (z. B. Mein Beitrag | Meine Webseite)"
 
@@ -1450,9 +1459,9 @@ msgstr "Klicke auf den Link in der E-Mail, um dich anzumelden."
 #: packages/admin/src/components/Sections.tsx:153
 #: packages/admin/src/components/Sections.tsx:159
 #: packages/admin/src/components/Sections.tsx:163
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:371
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:377
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:381
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:338
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:348
 #: packages/admin/src/components/TaxonomyManager.tsx:164
 #: packages/admin/src/components/TaxonomyManager.tsx:371
 #: packages/admin/src/components/TaxonomyManager.tsx:377
@@ -1964,7 +1973,7 @@ msgstr "Benutzerdefiniert"
 msgid "Custom Fields"
 msgstr "Benutzerdefinierte Felder"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:243
+#: packages/admin/src/components/settings/SeoSettings.tsx:210
 msgid "Custom robots.txt content. Leave empty to use the default."
 msgstr "Benutzerdefinierte robots.txt-Datei. Leer lassen, um den Standard zu nutzen."
 
@@ -2006,7 +2015,7 @@ msgstr "Datums- und Uhrzeitauswahl"
 msgid "Date field to filter on"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:304
+#: packages/admin/src/components/settings/GeneralSettings.tsx:281
 msgid "Date Format"
 msgstr "Datumsformat"
 
@@ -2018,20 +2027,20 @@ msgstr "Dezimalzahl"
 msgid "Declared permissions"
 msgstr "Deklarierte Berechtigungen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:327
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:389
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:294
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:356
 msgid "Default Role"
 msgstr "Standardrolle"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:266
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:233
 msgid "Default role:"
 msgstr "Standardrolle:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:180
+#: packages/admin/src/components/settings/SeoSettings.tsx:147
 msgid "Default social image"
 msgstr "Standardbild für soziale Medien"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:171
+#: packages/admin/src/components/settings/SeoSettings.tsx:138
 msgid "Default Social Image"
 msgstr "Standardbild für soziale Medien"
 
@@ -2083,7 +2092,7 @@ msgstr "\"{0}\" entfernen? Dies kann nicht rückgängig gemacht werden."
 #. placeholder {0}: field.label
 #: packages/admin/src/components/ContentTypeList.tsx:229
 #: packages/admin/src/components/Sections.tsx:408
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:285
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:252
 #: packages/admin/src/components/TaxonomyManager.tsx:97
 #: packages/admin/src/components/Widgets.tsx:737
 #: packages/admin/src/routes/byline-schema.tsx:458
@@ -2407,19 +2416,19 @@ msgstr ""
 msgid "Documents"
 msgstr "Dokumente"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:319
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:286
 msgid "Domain"
 msgstr "Domain"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:85
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:66
 msgid "Domain added successfully"
 msgstr "Domain erfolgreich hinzugefügt"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:124
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:108
 msgid "Domain removed"
 msgstr "Domain entfernt"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:107
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:90
 msgid "Domain updated"
 msgstr "Domain aktualisiert"
 
@@ -2541,7 +2550,7 @@ msgstr ""
 #. placeholder {0}: domain.domain
 #: packages/admin/src/components/ContentTypeList.tsx:220
 #: packages/admin/src/components/PortableTextEditor.tsx:1438
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:276
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:243
 #: packages/admin/src/components/TaxonomyManager.tsx:89
 #: packages/admin/src/components/TaxonomyManager.tsx:361
 #: packages/admin/src/routes/byline-schema.tsx:449
@@ -2570,7 +2579,7 @@ msgstr "Autorenzeile bearbeiten"
 msgid "Edit byline field"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:364
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:331
 msgid "Edit Domain"
 msgstr "Domain bearbeiten"
 
@@ -2642,20 +2651,20 @@ msgstr "E-Mail-Adresse"
 msgid "Email is required"
 msgstr "E-Mail-Adresse ist erforderlich"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:215
+#: packages/admin/src/components/settings/EmailSettings.tsx:189
 msgid "Email Middleware"
 msgstr "E-Mail-Middleware"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:125
+#: packages/admin/src/components/settings/EmailSettings.tsx:99
 msgid "Email Pipeline"
 msgstr "E-Mail-Pipeline"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:199
+#: packages/admin/src/components/settings/EmailSettings.tsx:173
 msgid "Email provider active"
 msgstr "E-Mail-Anbieter aktiv"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:85
-#: packages/admin/src/components/settings/EmailSettings.tsx:100
+#: packages/admin/src/components/settings/EmailSettings.tsx:77
+#: packages/admin/src/components/settings/EmailSettings.tsx:92
 msgid "Email Settings"
 msgstr "E-Mail-Einstellungen"
 
@@ -2834,7 +2843,7 @@ msgstr "Manueller Export von WordPress"
 msgid "Export your content from WordPress to import everything including drafts."
 msgstr "Exportiere deine Inhalte aus WordPress, um alles einschließlich der Entwürfe zu importieren."
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:144
+#: packages/admin/src/components/settings/SocialSettings.tsx:118
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -2850,9 +2859,13 @@ msgstr "Fehlgeschlagen"
 msgid "Failed security audit"
 msgstr "Sicherheitsüberprüfung nicht bestanden"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:90
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:70
 msgid "Failed to add domain"
 msgstr "Hinzufügen der Domain fehlgeschlagen"
+
+#: packages/admin/src/components/settings/SecuritySettings.tsx:188
+msgid "Failed to add passkey"
+msgstr ""
 
 #: packages/admin/src/components/WordPressImport.tsx:367
 msgid "Failed to analyze WordPress site"
@@ -3141,7 +3154,7 @@ msgstr ""
 msgid "Failed to load admin"
 msgstr "Laden des Adminbereichs fehlgeschlagen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:207
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:192
 msgid "Failed to load allowed domains"
 msgstr "Laden erlaubter Domains fehlgeschlagen"
 
@@ -3150,7 +3163,7 @@ msgstr "Laden erlaubter Domains fehlgeschlagen"
 msgid "Failed to load bylines: {0}"
 msgstr "Laden der Autorenzeilen fehlgeschlagen: {0}"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:89
+#: packages/admin/src/components/settings/EmailSettings.tsx:81
 msgid "Failed to load email settings"
 msgstr "Laden der E-Mail-Einstellungen fehlgeschlagen"
 
@@ -3158,7 +3171,7 @@ msgstr "Laden der E-Mail-Einstellungen fehlgeschlagen"
 msgid "Failed to load image"
 msgstr "Laden des Bildes fehlgeschlagen"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:144
+#: packages/admin/src/components/settings/SecuritySettings.tsx:135
 msgid "Failed to load passkeys"
 msgstr "Laden der Passkeys fehlgeschlagen"
 
@@ -3216,16 +3229,16 @@ msgstr "Publizieren fehlgeschlagen"
 msgid "Failed to read byline field usage"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:130
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:112
 msgid "Failed to remove domain"
 msgstr "Entfernen der Domain fehlgeschlagen"
 
 #: packages/admin/src/components/settings/PasskeyItem.tsx:99
-#: packages/admin/src/components/settings/SecuritySettings.tsx:82
+#: packages/admin/src/components/settings/SecuritySettings.tsx:70
 msgid "Failed to remove passkey"
 msgstr "Entfernen des Passkeys fehlgeschlagen"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:66
+#: packages/admin/src/components/settings/SecuritySettings.tsx:53
 msgid "Failed to rename passkey"
 msgstr "Umbenennen des Passkeys fehlgeschlagen"
 
@@ -3272,9 +3285,9 @@ msgstr "Speichern fehlgeschlagen"
 msgid "Failed to save field"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:58
-#: packages/admin/src/components/settings/SeoSettings.tsx:62
-#: packages/admin/src/components/settings/SocialSettings.tsx:53
+#: packages/admin/src/components/settings/GeneralSettings.tsx:50
+#: packages/admin/src/components/settings/SeoSettings.tsx:44
+#: packages/admin/src/components/settings/SocialSettings.tsx:42
 msgid "Failed to save settings"
 msgstr "Speichern der Einstellungen fehlgeschlagen"
 
@@ -3291,7 +3304,7 @@ msgstr "Senden des Anmeldelinks fehlgeschlagen"
 msgid "Failed to send recovery link"
 msgstr "Senden des Wiederherstellungs-Links fehlgeschlagen"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:61
+#: packages/admin/src/components/settings/EmailSettings.tsx:50
 #: packages/admin/src/lib/api/email-settings.ts:45
 msgid "Failed to send test email"
 msgstr "Senden der Test-E-Mail fehlgeschlagen"
@@ -3330,7 +3343,7 @@ msgstr "Aktualisieren der Autorenzeile fehlgeschlagen"
 msgid "Failed to update byline field"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:113
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:94
 msgid "Failed to update domain"
 msgstr "Aktualisieren der Domain fehlgeschlagen"
 
@@ -3379,8 +3392,8 @@ msgstr "Verifizieren der Registrierung fehlgeschlagen"
 msgid "FAQ"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:236
-#: packages/admin/src/components/settings/GeneralSettings.tsx:242
+#: packages/admin/src/components/settings/GeneralSettings.tsx:213
+#: packages/admin/src/components/settings/GeneralSettings.tsx:219
 msgid "Favicon"
 msgstr "Favicon"
 
@@ -3529,8 +3542,8 @@ msgstr "Uneingeschränkter Zugriff"
 msgid "General"
 msgstr "Allgemein"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:101
-#: packages/admin/src/components/settings/GeneralSettings.tsx:129
+#: packages/admin/src/components/settings/GeneralSettings.tsx:96
+#: packages/admin/src/components/settings/GeneralSettings.tsx:124
 msgid "General Settings"
 msgstr "Allgemeine Einstellungen"
 
@@ -3542,7 +3555,7 @@ msgstr "Genres"
 msgid "Get Started"
 msgstr "Los geht's"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:138
+#: packages/admin/src/components/settings/SocialSettings.tsx:112
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -3559,7 +3572,7 @@ msgstr ""
 msgid "Go to Dashboard"
 msgstr "Zum Dashboard"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:227
+#: packages/admin/src/components/settings/SeoSettings.tsx:194
 msgid "Google Verification"
 msgstr "Google-Verifizierung"
 
@@ -3877,7 +3890,7 @@ msgstr "Abschnitt einfügen"
 msgid "Insert Table"
 msgstr "Tabelle einfügen"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:150
+#: packages/admin/src/components/settings/SocialSettings.tsx:124
 msgid "Instagram"
 msgstr "Instagram"
 
@@ -3886,7 +3899,7 @@ msgstr "Instagram"
 msgid "Install"
 msgstr "Installieren"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:181
+#: packages/admin/src/components/settings/EmailSettings.tsx:155
 msgid "Install and activate an email provider plugin to enable email features like invitations, magic links, and password recovery."
 msgstr "Installiere und aktiviere eine E-Mail-Anbieter-Erweiterung, um E-Mail-Funktionen wie Einladungen, Anmeldelinks und die Passwortwiederherstellung zu nutzen."
 
@@ -4138,7 +4151,7 @@ msgstr "Nur Zugeordnete"
 msgid "Linked user"
 msgstr "Zugeordneter Benutzer"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:156
+#: packages/admin/src/components/settings/SocialSettings.tsx:130
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -4215,9 +4228,9 @@ msgstr "Lade Weiterleitungen..."
 msgid "Loading sections..."
 msgstr "Lade Abschnitte..."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:104
-#: packages/admin/src/components/settings/SeoSettings.tsx:108
-#: packages/admin/src/components/settings/SocialSettings.tsx:81
+#: packages/admin/src/components/settings/GeneralSettings.tsx:99
+#: packages/admin/src/components/settings/SeoSettings.tsx:93
+#: packages/admin/src/components/settings/SocialSettings.tsx:73
 msgid "Loading settings..."
 msgstr "Lade Einstellungen..."
 
@@ -4243,8 +4256,8 @@ msgstr "Lade Widgets..."
 #: packages/admin/src/components/MediaPickerModal.tsx:723
 #: packages/admin/src/components/PortableTextEditor.tsx:1946
 #: packages/admin/src/components/RegistryBrowse.tsx:143
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:176
-#: packages/admin/src/components/settings/SecuritySettings.tsx:113
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:161
+#: packages/admin/src/components/settings/SecuritySettings.tsx:104
 #: packages/admin/src/components/TaxonomyManager.tsx:779
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:170
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:252
@@ -4275,8 +4288,8 @@ msgstr ""
 msgid "Log out"
 msgstr "Abmelden"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:182
-#: packages/admin/src/components/settings/GeneralSettings.tsx:188
+#: packages/admin/src/components/settings/GeneralSettings.tsx:159
+#: packages/admin/src/components/settings/GeneralSettings.tsx:165
 msgid "Logo"
 msgstr "Logo"
 
@@ -4514,11 +4527,11 @@ msgstr "Menüs verwalten"
 msgid "Meta Description"
 msgstr "Meta-Beschreibung"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:236
+#: packages/admin/src/components/settings/SeoSettings.tsx:203
 msgid "Meta tag content for Bing Webmaster Tools verification"
 msgstr "Inhalt des Meta-Tags für die Verifizierung in den Bing Webmaster Tools"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:230
+#: packages/admin/src/components/settings/SeoSettings.tsx:197
 msgid "Meta tag content for Google Search Console verification"
 msgstr "Inhalt des Meta-Tags für die Verifizierung in der Google Search Console"
 
@@ -4821,11 +4834,11 @@ msgstr "Noch keine benutzerdefinierten Felder"
 msgid "No detailed description available."
 msgstr "Keine detaillierte Beschreibung verfügbar."
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:295
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:262
 msgid "No domains configured. Users must be invited individually."
 msgstr "Keine Domains konfiguriert. Benutzer müssen einzeln eingeladen werden."
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:178
+#: packages/admin/src/components/settings/EmailSettings.tsx:152
 msgid "No email provider configured"
 msgstr "Kein E-Mail-Anbieter konfiguriert"
 
@@ -4922,7 +4935,7 @@ msgstr "Keine Moderation (alle automatisch freigeben)"
 msgid "No passkeys registered"
 msgstr "Keine Passkeys registriert"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:195
+#: packages/admin/src/components/settings/SecuritySettings.tsx:168
 msgid "No passkeys registered yet."
 msgstr "Noch keine Passkeys registriert."
 
@@ -5028,7 +5041,7 @@ msgstr ""
 msgid "Number"
 msgstr "Zahl"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:301
+#: packages/admin/src/components/settings/GeneralSettings.tsx:278
 msgid "Number of posts to show per page on list views"
 msgstr "Anzahl der Beiträge, die pro Seite in der Listenansicht angezeigt werden sollen"
 
@@ -5185,7 +5198,7 @@ msgstr "Teil einer Weiterleitungsschleife"
 msgid "Pass"
 msgstr "Bestanden"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:98
+#: packages/admin/src/components/settings/SecuritySettings.tsx:89
 msgid "Passkey added successfully"
 msgstr "Passkey erfolgreich hinzugefügt"
 
@@ -5201,15 +5214,15 @@ msgstr "Passkey-Name (optional)"
 msgid "Passkey registered successfully!"
 msgstr "Passkey erfolgreich registriert!"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:76
+#: packages/admin/src/components/settings/SecuritySettings.tsx:66
 msgid "Passkey removed"
 msgstr "Passkey entfernt"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:60
+#: packages/admin/src/components/settings/SecuritySettings.tsx:49
 msgid "Passkey renamed"
 msgstr "Passkey umbenannt"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:177
+#: packages/admin/src/components/settings/SecuritySettings.tsx:150
 #: packages/admin/src/components/users/UserList.tsx:110
 msgid "Passkeys"
 msgstr "Passkeys"
@@ -5219,7 +5232,7 @@ msgstr "Passkeys"
 msgid "Passkeys ({0})"
 msgstr "Passkeys ({0})"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:181
+#: packages/admin/src/components/settings/SecuritySettings.tsx:154
 msgid "Passkeys are a secure, passwordless way to sign in to your account. You can register multiple passkeys for different devices."
 msgstr "Passkeys sind eine sichere, passwortlose Methode, sich bei deinem Benutzerkonto anzumelden. Du kannst mehrere Passkeys für verschiedene Geräte registrieren."
 
@@ -5415,7 +5428,7 @@ msgstr ""
 msgid "Posts"
 msgstr "Beiträge"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:295
+#: packages/admin/src/components/settings/GeneralSettings.tsx:272
 msgid "Posts Per Page"
 msgstr "Beiträge pro Seite"
 
@@ -5467,7 +5480,7 @@ msgstr "Vorheriges Bildschirmfoto"
 msgid "Primary Navigation"
 msgstr "Hauptnavigation"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:202
+#: packages/admin/src/components/settings/EmailSettings.tsx:176
 msgid "Provider:"
 msgstr "Anbieter:"
 
@@ -5551,7 +5564,7 @@ msgstr "Benutzerkonten lesen"
 msgid "Read your content"
 msgstr "Deine Inhalte lesen"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:292
+#: packages/admin/src/components/settings/GeneralSettings.tsx:269
 msgid "Reading"
 msgstr "Lesen"
 
@@ -5568,7 +5581,7 @@ msgstr "Neueste Aktivitäten"
 msgid "Recently Updated"
 msgstr "Kürzlich aktualisiert"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:144
+#: packages/admin/src/components/settings/EmailSettings.tsx:118
 msgid "Recipient email"
 msgstr "E-Mail-Adresse des Empfängers"
 
@@ -5599,7 +5612,7 @@ msgstr "Wiederholen"
 msgid "Reference"
 msgstr "Referenz"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:251
+#: packages/admin/src/components/settings/GeneralSettings.tsx:228
 msgid "Referenced favicon unavailable."
 msgstr "Das angegebene Favicon ist nicht verfügbar."
 
@@ -5608,7 +5621,7 @@ msgid "Register"
 msgstr "Registrieren"
 
 #: packages/admin/src/components/auth/PasskeyRegistration.tsx:146
-#: packages/admin/src/components/settings/SecuritySettings.tsx:220
+#: packages/admin/src/components/settings/SecuritySettings.tsx:195
 msgid "Register Passkey"
 msgstr "Passkey registrieren"
 
@@ -5637,11 +5650,11 @@ msgstr "Die Version ist zu neu, um installiert zu werden"
 #: packages/admin/src/components/ContentEditor.tsx:1965
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:199
 #: packages/admin/src/components/PortableTextEditor.tsx:3196
-#: packages/admin/src/components/settings/GeneralSettings.tsx:217
-#: packages/admin/src/components/settings/GeneralSettings.tsx:271
+#: packages/admin/src/components/settings/GeneralSettings.tsx:194
+#: packages/admin/src/components/settings/GeneralSettings.tsx:248
 #: packages/admin/src/components/settings/PasskeyItem.tsx:187
 #: packages/admin/src/components/settings/PasskeyItem.tsx:209
-#: packages/admin/src/components/settings/SeoSettings.tsx:209
+#: packages/admin/src/components/settings/SeoSettings.tsx:176
 msgid "Remove"
 msgstr "Entfernen"
 
@@ -5660,11 +5673,11 @@ msgstr "{entry} entfernen"
 msgid "Remove {label}"
 msgstr "{label} entfernen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:430
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:397
 msgid "Remove Domain"
 msgstr "Domain entfernen"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:414
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:381
 msgid "Remove Domain?"
 msgstr "Domain entfernen?"
 
@@ -5958,18 +5971,18 @@ msgstr "Inhalt vor dem Publizieren als Entwurf speichern"
 msgid "Save name"
 msgstr "Name speichern"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:126
-#: packages/admin/src/components/settings/SeoSettings.tsx:251
+#: packages/admin/src/components/settings/SeoSettings.tsx:111
+#: packages/admin/src/components/settings/SeoSettings.tsx:218
 msgid "Save SEO Settings"
 msgstr "SEO-Einstellungen speichern"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:321
+#: packages/admin/src/components/settings/GeneralSettings.tsx:120
+#: packages/admin/src/components/settings/GeneralSettings.tsx:298
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:99
-#: packages/admin/src/components/settings/SocialSettings.tsx:173
+#: packages/admin/src/components/settings/SocialSettings.tsx:91
+#: packages/admin/src/components/settings/SocialSettings.tsx:147
 msgid "Save Social Links"
 msgstr "Social-Media-Links speichern"
 
@@ -5991,12 +6004,12 @@ msgstr ""
 #: packages/admin/src/components/MenuEditor.tsx:533
 #: packages/admin/src/components/Redirects.tsx:187
 #: packages/admin/src/components/SaveButton.tsx:42
-#: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:321
-#: packages/admin/src/components/settings/SeoSettings.tsx:126
-#: packages/admin/src/components/settings/SeoSettings.tsx:251
-#: packages/admin/src/components/settings/SocialSettings.tsx:99
-#: packages/admin/src/components/settings/SocialSettings.tsx:173
+#: packages/admin/src/components/settings/GeneralSettings.tsx:120
+#: packages/admin/src/components/settings/GeneralSettings.tsx:298
+#: packages/admin/src/components/settings/SeoSettings.tsx:111
+#: packages/admin/src/components/settings/SeoSettings.tsx:218
+#: packages/admin/src/components/settings/SocialSettings.tsx:91
+#: packages/admin/src/components/settings/SocialSettings.tsx:147
 #: packages/admin/src/components/TaxonomyManager.tsx:476
 #: packages/admin/src/components/users/UserDetail.tsx:311
 #: packages/admin/src/components/Widgets.tsx:894
@@ -6146,7 +6159,7 @@ msgstr "Kommentare durchsuchen..."
 msgid "Search content..."
 msgstr "Inhalte durchsuchen..."
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:155
+#: packages/admin/src/components/settings/SeoSettings.tsx:122
 msgid "Search Engine Optimization"
 msgstr "Suchmaschinenoptimierung"
 
@@ -6295,7 +6308,7 @@ msgstr "Sicherheitsfehler. Bitte stelle sicher, dass du eine sichere Verbindung 
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:243
 #: packages/admin/src/components/Header.tsx:85
-#: packages/admin/src/components/settings/SecuritySettings.tsx:104
+#: packages/admin/src/components/settings/SecuritySettings.tsx:95
 msgid "Security Settings"
 msgstr "Sicherheitseinstellungen"
 
@@ -6333,12 +6346,12 @@ msgstr "Kommentar von {0} auswählen"
 msgid "Select Content"
 msgstr "Inhalt auswählen"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:268
+#: packages/admin/src/components/settings/SeoSettings.tsx:235
 msgid "Select Default Social Image"
 msgstr "Standardbild für soziale Medien auswählen"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:283
-#: packages/admin/src/components/settings/GeneralSettings.tsx:344
+#: packages/admin/src/components/settings/GeneralSettings.tsx:260
+#: packages/admin/src/components/settings/GeneralSettings.tsx:321
 msgid "Select Favicon"
 msgstr "Favicon auswählen"
 
@@ -6357,12 +6370,12 @@ msgstr "Bild auswählen"
 #: packages/admin/src/components/MediaPickerModal.tsx:145
 #: packages/admin/src/components/PortableTextEditor.tsx:2583
 #: packages/admin/src/components/PortableTextEditor.tsx:3270
-#: packages/admin/src/components/settings/SeoSettings.tsx:221
+#: packages/admin/src/components/settings/SeoSettings.tsx:188
 msgid "Select Image"
 msgstr "Bild auswählen"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:229
-#: packages/admin/src/components/settings/GeneralSettings.tsx:336
+#: packages/admin/src/components/settings/GeneralSettings.tsx:206
+#: packages/admin/src/components/settings/GeneralSettings.tsx:313
 msgid "Select Logo"
 msgstr "Logo auswählen"
 
@@ -6393,11 +6406,11 @@ msgid "Selected:"
 msgstr "Ausgewählt:"
 
 #: packages/admin/src/components/Settings.tsx:98
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:167
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:152
 msgid "Self-Signup Domains"
 msgstr "Selbstregistrierungs-Domains"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:139
+#: packages/admin/src/components/settings/EmailSettings.tsx:113
 msgid "Send a test email through the full pipeline to verify your email configuration."
 msgstr "Teste deine Installation und den Versandprozess, indem du eine Test-E-Mail sendest."
 
@@ -6417,16 +6430,16 @@ msgstr "Anmeldelink senden"
 msgid "Send Recovery Link"
 msgstr "Wiederherstellungs-Link senden"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:153
+#: packages/admin/src/components/settings/EmailSettings.tsx:127
 msgid "Send Test"
 msgstr "Test senden"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:136
+#: packages/admin/src/components/settings/EmailSettings.tsx:110
 msgid "Send Test Email"
 msgstr "Test-E-Mail senden"
 
 #: packages/admin/src/components/LoginPage.tsx:149
-#: packages/admin/src/components/settings/EmailSettings.tsx:153
+#: packages/admin/src/components/settings/EmailSettings.tsx:127
 #: packages/admin/src/components/SignupPage.tsx:88
 #: packages/admin/src/components/SignupPage.tsx:151
 #: packages/admin/src/components/users/InviteUserModal.tsx:203
@@ -6440,8 +6453,8 @@ msgstr "Senden..."
 msgid "SEO"
 msgstr "SEO"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:105
-#: packages/admin/src/components/settings/SeoSettings.tsx:130
+#: packages/admin/src/components/settings/SeoSettings.tsx:90
+#: packages/admin/src/components/settings/SeoSettings.tsx:115
 msgid "SEO Settings"
 msgstr "SEO-Einstellungen"
 
@@ -6449,7 +6462,7 @@ msgstr "SEO-Einstellungen"
 msgid "SEO settings (Yoast)"
 msgstr "SEO-Einstellungen (Yoast)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:57
+#: packages/admin/src/components/settings/SeoSettings.tsx:40
 msgid "SEO settings saved"
 msgstr "SEO-Einstellungen gespeichert"
 
@@ -6501,7 +6514,7 @@ msgstr "Einstellungen verwalten"
 msgid "Settings Read"
 msgstr "Einstellungen lesen"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:53
+#: packages/admin/src/components/settings/GeneralSettings.tsx:43
 msgid "Settings saved successfully"
 msgstr "Einstellungen erfolgreich gespeichert"
 
@@ -6589,7 +6602,7 @@ msgstr "Einzeilige Texteingabe"
 msgid "Site"
 msgstr "Webseite"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:153
+#: packages/admin/src/components/settings/GeneralSettings.tsx:130
 msgid "Site Identity"
 msgstr "Webseiten-Identität"
 
@@ -6601,7 +6614,7 @@ msgstr "Webseiten-Identität, Logo, Favicon und Leseeinstellungen"
 msgid "Site Settings"
 msgstr "Webseiten-Einstellungen"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:156
+#: packages/admin/src/components/settings/GeneralSettings.tsx:133
 #: packages/admin/src/components/SetupWizard.tsx:116
 msgid "Site Title"
 msgstr "Webseitentitel"
@@ -6614,7 +6627,7 @@ msgstr "Webseitentitel & Slogan"
 msgid "Site title is required"
 msgstr "Webseitentitel ist erforderlich"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:168
+#: packages/admin/src/components/settings/GeneralSettings.tsx:145
 msgid "Site URL"
 msgstr "Webseiten-URL"
 
@@ -6664,12 +6677,12 @@ msgid "Small section heading"
 msgstr "Eine kleine Abschnittsüberschrift einfügen"
 
 #: packages/admin/src/components/Settings.tsx:75
-#: packages/admin/src/components/settings/SocialSettings.tsx:78
-#: packages/admin/src/components/settings/SocialSettings.tsx:103
+#: packages/admin/src/components/settings/SocialSettings.tsx:70
+#: packages/admin/src/components/settings/SocialSettings.tsx:95
 msgid "Social Links"
 msgstr "Soziale Netzwerke"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:48
+#: packages/admin/src/components/settings/SocialSettings.tsx:38
 msgid "Social links saved"
 msgstr "Links zu sozialen Medien gespeichert"
 
@@ -6677,7 +6690,7 @@ msgstr "Links zu sozialen Medien gespeichert"
 msgid "Social media profile links"
 msgstr "Links zu Profilen in sozialen Netzwerken"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:126
+#: packages/admin/src/components/settings/SocialSettings.tsx:100
 msgid "Social Profiles"
 msgstr "Profile in sozialen Netzwerken"
 
@@ -6804,7 +6817,7 @@ msgstr "Systemfelder"
 msgid "Table"
 msgstr "Tabelle"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:162
+#: packages/admin/src/components/settings/GeneralSettings.tsx:139
 #: packages/admin/src/components/SetupWizard.tsx:127
 msgid "Tagline"
 msgstr "Slogan"
@@ -6867,7 +6880,7 @@ msgstr "Begriff \"{0}\" in {1} erstellt."
 msgid "Term deleted"
 msgstr "Begriff entfernt"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:148
+#: packages/admin/src/components/settings/EmailSettings.tsx:122
 msgid "test@example.com"
 msgstr "test@beispiel.de"
 
@@ -6904,7 +6917,7 @@ msgstr "Der Marktplatz ist leer. Bitte versuche es später erneut, um neue Erwei
 msgid "The menu has been deleted."
 msgstr "Das Menü wurde entfernt."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:159
+#: packages/admin/src/components/settings/GeneralSettings.tsx:136
 msgid "The name of your site, used in the header and metadata"
 msgstr "Der Name deiner Webseite, der in der Kopfzeile und in den Metadaten verwendet wird"
 
@@ -6916,15 +6929,15 @@ msgstr "Diese Seite existiert nicht."
 msgid "The plugin field widget failed to render."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:172
+#: packages/admin/src/components/settings/GeneralSettings.tsx:149
 msgid "The public URL of your site (used for canonical links and sitemaps)"
 msgstr "Die öffentliche URL deiner Webseite (wird für kanonische Links und Sitemaps verwendet)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:189
+#: packages/admin/src/components/settings/SeoSettings.tsx:156
 msgid "The referenced image is no longer available. Pick a new one or remove the reference."
 msgstr "Das angegebene Bild ist nicht mehr verfügbar. Wähle ein neues Bild aus oder entferne den Verweis."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:197
+#: packages/admin/src/components/settings/GeneralSettings.tsx:174
 msgid "The referenced logo is no longer available. Pick a new one or remove the reference."
 msgstr "Das angegebene Logo ist nicht mehr verfügbar. Wähle ein neues Logo aus oder entferne den Verweis."
 
@@ -7065,11 +7078,11 @@ msgstr "Dies setzt den Inhalt auf die bereits publizierte Version zurück. Deine
 msgid "Thoughts, tutorials, and more"
 msgstr "Gedanken, Anleitungen und mehr"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:310
+#: packages/admin/src/components/settings/GeneralSettings.tsx:287
 msgid "Timezone"
 msgstr "Zeitzone"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:313
+#: packages/admin/src/components/settings/GeneralSettings.tsx:290
 msgid "Timezone for displaying dates (e.g., America/New_York)"
 msgstr "Zeitzone für die Anzeige von Datumsangaben (z. B. Europe/Berlin)"
 
@@ -7086,7 +7099,7 @@ msgstr "Titel"
 msgid "Title (Tooltip)"
 msgstr "Titel (Tooltip)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:159
+#: packages/admin/src/components/settings/SeoSettings.tsx:126
 msgid "Title Separator"
 msgstr "Titel-Trennzeichen"
 
@@ -7244,7 +7257,7 @@ msgstr ""
 msgid "Turn into"
 msgstr "Umwandeln in"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:132
+#: packages/admin/src/components/settings/SocialSettings.tsx:106
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -7385,7 +7398,7 @@ msgid "Update Field"
 msgstr "Feld aktualisieren"
 
 #. placeholder {0}: editingDomain?.domain
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:367
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:334
 msgid "Update settings for {0}"
 msgstr "Einstellungen für {0} ändern"
 
@@ -7562,7 +7575,7 @@ msgstr "Nutze die biometrische Authentifizierung, den Sicherheitsschlüssel oder
 msgid "Use your registered passkey to sign in securely."
 msgstr "Verwende deinen registrierten Passkey, um dich sicher anzumelden."
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:173
+#: packages/admin/src/components/settings/SeoSettings.tsx:140
 msgid "Used as the fallback Open Graph image when a page has none. Recommended size: 1200×630."
 msgstr "Wird als Standard-Open-Graph-Bild verwendet, wenn eine Seite kein Bild enthält. Empfohlene Größe: 1200×630."
 
@@ -7595,7 +7608,7 @@ msgid "User"
 msgstr "Benutzer"
 
 #. placeholder {0}: manifest?.authMode
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:192
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:177
 msgid "User access is managed by an external provider ({0}). Self-signup domain settings are not available when using external authentication."
 msgstr "Der Benutzerzugriff wird von einem externen Anbieter verwaltet ({0}). Domain-Einstellungen für die Selbstregistrierung sind bei externer Authentifizierung nicht verfügbar."
 
@@ -7613,11 +7626,11 @@ msgstr "Benutzer nicht gefunden"
 msgid "Users"
 msgstr "Benutzer"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:416
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:383
 msgid "Users from"
 msgstr "Benutzer von"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:244
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:211
 msgid "Users with email addresses from these domains can sign up without an invite. They will be assigned the specified role automatically."
 msgstr "Benutzer mit E-Mail-Adressen dieser Domains können sich ohne Einladung registrieren. Ihnen wird anschließend die angegebene Rolle automatisch zugewiesen."
 
@@ -7845,11 +7858,11 @@ msgstr "Breite"
 msgid "Will create"
 msgstr "Wird erstellt"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:417
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:384
 msgid "will no longer be able to sign up without an invite. Existing users are not affected."
 msgstr "können sich nicht mehr ohne Einladung registrieren. Bereits registrierte Benutzer sind hiervon nicht betroffen."
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:184
+#: packages/admin/src/components/settings/EmailSettings.tsx:158
 msgid "Without an email provider, invite links must be shared manually."
 msgstr "Ohne E-Mail-Anbieter müssen Einladungslinks eigenhändig geteilt werden."
 
@@ -7976,19 +7989,19 @@ msgstr "Dein Gerät unterstützt die erforderlichen Sicherheitsfunktionen nicht.
 msgid "Your Email"
 msgstr "Deine E-Mail-Adresse"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:147
+#: packages/admin/src/components/settings/SocialSettings.tsx:121
 msgid "Your Facebook page or profile username"
 msgstr "Deine Facebook-Seite oder dein Profilname"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:141
+#: packages/admin/src/components/settings/SocialSettings.tsx:115
 msgid "Your GitHub username"
 msgstr "Dein GitHub-Benutzername"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:153
+#: packages/admin/src/components/settings/SocialSettings.tsx:127
 msgid "Your Instagram username"
 msgstr "Dein Instagram-Benutzername"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:159
+#: packages/admin/src/components/settings/SocialSettings.tsx:133
 msgid "Your LinkedIn profile username"
 msgstr "Dein LinkedIn-Profil-Benutzername"
 
@@ -8010,7 +8023,7 @@ msgstr "Deine Rolle"
 msgid "Your site requires releases to be at least {0} old before they can be installed. This release will become installable later."
 msgstr "Deine Webseite erlaubt die Installation von Versionen erst, wenn diese mindestens {0} alt sind. Diese Version wird zu einem späteren Zeitpunkt installierbar sein."
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:135
+#: packages/admin/src/components/settings/SocialSettings.tsx:109
 msgid "Your Twitter/X handle (e.g., @username)"
 msgstr "Dein Twitter-/X-Benutzername (z. B. @benutzername)"
 
@@ -8019,10 +8032,10 @@ msgstr "Dein Twitter-/X-Benutzername (z. B. @benutzername)"
 msgid "Your WordPress export contains {0} media files."
 msgstr "Dein WordPress-Export enthält {0} Mediendateien."
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:165
+#: packages/admin/src/components/settings/SocialSettings.tsx:139
 msgid "Your YouTube channel ID or handle"
 msgstr "Deine YouTube-Kanal-ID oder dein Benutzername"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:162
+#: packages/admin/src/components/settings/SocialSettings.tsx:136
 msgid "YouTube"
 msgstr "YouTube"

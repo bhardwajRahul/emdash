@@ -486,7 +486,7 @@ msgstr ""
 msgid "A full-width hero banner with heading, text, and CTA button"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:165
+#: packages/admin/src/components/settings/GeneralSettings.tsx:142
 msgid "A short description of your site"
 msgstr "사이트에 대한 간단한 설명"
 
@@ -565,11 +565,11 @@ msgstr ""
 msgid "Add {label}"
 msgstr "{label} 추가"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:204
+#: packages/admin/src/components/settings/SecuritySettings.tsx:177
 msgid "Add a new passkey"
 msgstr "새 패스키 추가"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:304
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:271
 msgid "Add an allowed domain"
 msgstr "허용된 도메인 추가"
 
@@ -596,8 +596,8 @@ msgstr "콘텐츠 추가"
 msgid "Add Custom Link"
 msgstr "맞춤 링크 추가"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:349
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:311
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:316
 msgid "Add Domain"
 msgstr "도메인 추가"
 
@@ -660,7 +660,7 @@ msgstr "새 {0} 추가"
 msgid "Add noindex meta tag"
 msgstr "noindex 메타 태그 추가"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:225
+#: packages/admin/src/components/settings/SecuritySettings.tsx:200
 msgid "Add Passkey"
 msgstr "패스키 추가"
 
@@ -692,12 +692,12 @@ msgstr "태그 추가..."
 msgid "Add Widget Area"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:128
+#: packages/admin/src/components/settings/SocialSettings.tsx:102
 msgid "Add your social media profiles. These are available to your site's theme and can be displayed in headers, footers, or author bios."
 msgstr "소셜 미디어 프로필을 추가하세요. 사이트 테마에서 사용하여 헤더, 푸터 또는 작성자 소개에 표시할 수 있습니다."
 
 #: packages/admin/src/components/MenuEditor.tsx:362
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:311
 msgid "Adding..."
 msgstr "추가 중..."
 
@@ -719,7 +719,7 @@ msgstr "관리자 탐색 메뉴"
 msgid "Administrator"
 msgstr "관리자"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:224
+#: packages/admin/src/components/settings/EmailSettings.tsx:198
 msgid "After send:"
 msgstr "발송 후:"
 
@@ -800,7 +800,7 @@ msgstr "특정 도메인의 사용자가 가입하도록 허용"
 msgid "Allow visitors to leave comments on this collection's content"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:240
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:207
 msgid "Allowed Domains"
 msgstr "허용된 도메인"
 
@@ -839,6 +839,15 @@ msgstr "또는 WordPress(도구 → 내보내기)에서 내보내고 파일을 �
 #: packages/admin/src/components/MarketplaceBrowse.tsx:133
 #: packages/admin/src/components/PluginManager.tsx:98
 #: packages/admin/src/components/PluginManager.tsx:117
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:71
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:95
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:113
+#: packages/admin/src/components/settings/EmailSettings.tsx:51
+#: packages/admin/src/components/settings/GeneralSettings.tsx:51
+#: packages/admin/src/components/settings/SecuritySettings.tsx:54
+#: packages/admin/src/components/settings/SecuritySettings.tsx:71
+#: packages/admin/src/components/settings/SeoSettings.tsx:45
+#: packages/admin/src/components/settings/SocialSettings.tsx:43
 #: packages/admin/src/components/TaxonomySidebar.tsx:350
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:114
 #: packages/admin/src/router.tsx:399
@@ -993,7 +1002,7 @@ msgid "Authentication failed"
 msgstr ""
 
 #. placeholder {0}: manifest?.authMode
-#: packages/admin/src/components/settings/SecuritySettings.tsx:129
+#: packages/admin/src/components/settings/SecuritySettings.tsx:120
 msgid "Authentication is managed by an external provider ({0}). Passkey settings are not available when using external authentication."
 msgstr "인증은 외부 공급자({0})에 의해 관리됩니다. 외부 인증을 사용하는 경우 패스키 설정을 사용할 수 없습니다."
 
@@ -1064,7 +1073,7 @@ msgstr ""
 msgid "Available media"
 msgstr "사용 가능한 미디어"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:233
+#: packages/admin/src/components/settings/EmailSettings.tsx:207
 msgid "Available Providers"
 msgstr "이용 가능한 제공업체"
 
@@ -1127,11 +1136,11 @@ msgstr "테마로 돌아가기"
 msgid "Bash"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:219
+#: packages/admin/src/components/settings/EmailSettings.tsx:193
 msgid "Before send:"
 msgstr "보내기 전:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:233
+#: packages/admin/src/components/settings/SeoSettings.tsx:200
 msgid "Bing Verification"
 msgstr "빙 확인"
 
@@ -1256,11 +1265,11 @@ msgstr "콘텐츠 조회 가능"
 #: packages/admin/src/components/Redirects.tsx:182
 #: packages/admin/src/components/SectionPickerModal.tsx:130
 #: packages/admin/src/components/Sections.tsx:209
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:313
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:423
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:280
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:390
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:325
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:453
-#: packages/admin/src/components/settings/SecuritySettings.tsx:206
+#: packages/admin/src/components/settings/SecuritySettings.tsx:179
 #: packages/admin/src/components/TaxonomyManager.tsx:187
 #: packages/admin/src/components/TaxonomyManager.tsx:472
 #: packages/admin/src/components/TaxonomyManager.tsx:686
@@ -1338,15 +1347,15 @@ msgstr "변경"
 msgid "Change <0>{0}</0> from <1>{1}</1> to <2>{2}</2>? They will lose access to higher-level features."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:262
+#: packages/admin/src/components/settings/GeneralSettings.tsx:239
 msgid "Change Favicon"
 msgstr "파비콘 변경"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:200
+#: packages/admin/src/components/settings/SeoSettings.tsx:167
 msgid "Change Image"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:208
+#: packages/admin/src/components/settings/GeneralSettings.tsx:185
 msgid "Change Logo"
 msgstr "로고 변경"
 
@@ -1358,7 +1367,7 @@ msgstr ""
 msgid "Changes discarded"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:162
+#: packages/admin/src/components/settings/SeoSettings.tsx:129
 msgid "Character between page title and site name (e.g., \"My Post | My Site\")"
 msgstr "페이지 제목과 사이트 이름 사이의 문자(예: \"내 게시물 | 내 사이트\")"
 
@@ -1450,9 +1459,9 @@ msgstr "이메일에 있는 링크를 클릭하여 로그인하세요."
 #: packages/admin/src/components/Sections.tsx:153
 #: packages/admin/src/components/Sections.tsx:159
 #: packages/admin/src/components/Sections.tsx:163
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:371
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:377
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:381
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:338
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:344
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:348
 #: packages/admin/src/components/TaxonomyManager.tsx:164
 #: packages/admin/src/components/TaxonomyManager.tsx:371
 #: packages/admin/src/components/TaxonomyManager.tsx:377
@@ -1964,7 +1973,7 @@ msgstr "커스텀"
 msgid "Custom Fields"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:243
+#: packages/admin/src/components/settings/SeoSettings.tsx:210
 msgid "Custom robots.txt content. Leave empty to use the default."
 msgstr "robots.txt 내용을 직접 입력하세요. 비워 두면 기본값이 사용됩니다."
 
@@ -2006,7 +2015,7 @@ msgstr "날짜 및 시간 선택기"
 msgid "Date field to filter on"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:304
+#: packages/admin/src/components/settings/GeneralSettings.tsx:281
 msgid "Date Format"
 msgstr "날짜 형식"
 
@@ -2018,20 +2027,20 @@ msgstr "소수"
 msgid "Declared permissions"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:327
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:389
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:294
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:356
 msgid "Default Role"
 msgstr "기본 역할"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:266
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:233
 msgid "Default role:"
 msgstr "기본 역할:"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:180
+#: packages/admin/src/components/settings/SeoSettings.tsx:147
 msgid "Default social image"
 msgstr ""
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:171
+#: packages/admin/src/components/settings/SeoSettings.tsx:138
 msgid "Default Social Image"
 msgstr ""
 
@@ -2083,7 +2092,7 @@ msgstr "\"{0}\"을(를) 삭제하시겠습니까? 이 작업은 취소할 수 �
 #. placeholder {0}: field.label
 #: packages/admin/src/components/ContentTypeList.tsx:229
 #: packages/admin/src/components/Sections.tsx:408
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:285
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:252
 #: packages/admin/src/components/TaxonomyManager.tsx:97
 #: packages/admin/src/components/Widgets.tsx:737
 #: packages/admin/src/routes/byline-schema.tsx:458
@@ -2407,19 +2416,19 @@ msgstr ""
 msgid "Documents"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:319
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:286
 msgid "Domain"
 msgstr "도메인"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:85
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:66
 msgid "Domain added successfully"
 msgstr "도메인이 추가되었습니다."
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:124
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:108
 msgid "Domain removed"
 msgstr "도메인이 삭제됨"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:107
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:90
 msgid "Domain updated"
 msgstr "도메인이 업데이트되었습니다."
 
@@ -2541,7 +2550,7 @@ msgstr "편집"
 #. placeholder {0}: domain.domain
 #: packages/admin/src/components/ContentTypeList.tsx:220
 #: packages/admin/src/components/PortableTextEditor.tsx:1438
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:276
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:243
 #: packages/admin/src/components/TaxonomyManager.tsx:89
 #: packages/admin/src/components/TaxonomyManager.tsx:361
 #: packages/admin/src/routes/byline-schema.tsx:449
@@ -2570,7 +2579,7 @@ msgstr "작성자 편집"
 msgid "Edit byline field"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:364
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:331
 msgid "Edit Domain"
 msgstr "도메인 편집"
 
@@ -2642,20 +2651,20 @@ msgstr "이메일 주소"
 msgid "Email is required"
 msgstr "이메일은 필수입니다"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:215
+#: packages/admin/src/components/settings/EmailSettings.tsx:189
 msgid "Email Middleware"
 msgstr "이메일 미들웨어"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:125
+#: packages/admin/src/components/settings/EmailSettings.tsx:99
 msgid "Email Pipeline"
 msgstr "이메일 파이프라인"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:199
+#: packages/admin/src/components/settings/EmailSettings.tsx:173
 msgid "Email provider active"
 msgstr "이메일 제공업체 활성"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:85
-#: packages/admin/src/components/settings/EmailSettings.tsx:100
+#: packages/admin/src/components/settings/EmailSettings.tsx:77
+#: packages/admin/src/components/settings/EmailSettings.tsx:92
 msgid "Email Settings"
 msgstr "이메일 설정"
 
@@ -2834,7 +2843,7 @@ msgstr "WordPress에서 수동으로 내보내기"
 msgid "Export your content from WordPress to import everything including drafts."
 msgstr "초안을 포함한 모든 것을 가져오려면 WordPress에서 콘텐츠를 내보내세요."
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:144
+#: packages/admin/src/components/settings/SocialSettings.tsx:118
 msgid "Facebook"
 msgstr "페이스북"
 
@@ -2850,9 +2859,13 @@ msgstr "실패"
 msgid "Failed security audit"
 msgstr "보안 감사 실패"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:90
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:70
 msgid "Failed to add domain"
 msgstr "도메인을 추가하지 못했습니다."
+
+#: packages/admin/src/components/settings/SecuritySettings.tsx:188
+msgid "Failed to add passkey"
+msgstr ""
 
 #: packages/admin/src/components/WordPressImport.tsx:367
 msgid "Failed to analyze WordPress site"
@@ -3141,7 +3154,7 @@ msgstr ""
 msgid "Failed to load admin"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:207
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:192
 msgid "Failed to load allowed domains"
 msgstr "허용된 도메인을 로드하지 못했습니다."
 
@@ -3150,7 +3163,7 @@ msgstr "허용된 도메인을 로드하지 못했습니다."
 msgid "Failed to load bylines: {0}"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:89
+#: packages/admin/src/components/settings/EmailSettings.tsx:81
 msgid "Failed to load email settings"
 msgstr "이메일 설정을 로드하지 못했습니다."
 
@@ -3158,7 +3171,7 @@ msgstr "이메일 설정을 로드하지 못했습니다."
 msgid "Failed to load image"
 msgstr ""
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:144
+#: packages/admin/src/components/settings/SecuritySettings.tsx:135
 msgid "Failed to load passkeys"
 msgstr "패스키를 로드하지 못했습니다."
 
@@ -3216,16 +3229,16 @@ msgstr ""
 msgid "Failed to read byline field usage"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:130
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:112
 msgid "Failed to remove domain"
 msgstr "도메인을 제거하지 못했습니다."
 
 #: packages/admin/src/components/settings/PasskeyItem.tsx:99
-#: packages/admin/src/components/settings/SecuritySettings.tsx:82
+#: packages/admin/src/components/settings/SecuritySettings.tsx:70
 msgid "Failed to remove passkey"
 msgstr "패스키를 제거하지 못했습니다."
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:66
+#: packages/admin/src/components/settings/SecuritySettings.tsx:53
 msgid "Failed to rename passkey"
 msgstr "패스키 이름을 바꾸지 못했습니다."
 
@@ -3272,9 +3285,9 @@ msgstr "저장하지 못했습니다."
 msgid "Failed to save field"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:58
-#: packages/admin/src/components/settings/SeoSettings.tsx:62
-#: packages/admin/src/components/settings/SocialSettings.tsx:53
+#: packages/admin/src/components/settings/GeneralSettings.tsx:50
+#: packages/admin/src/components/settings/SeoSettings.tsx:44
+#: packages/admin/src/components/settings/SocialSettings.tsx:42
 msgid "Failed to save settings"
 msgstr "설정을 저장하지 못했습니다."
 
@@ -3291,7 +3304,7 @@ msgstr "매직 링크를 보내지 못했습니다."
 msgid "Failed to send recovery link"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:61
+#: packages/admin/src/components/settings/EmailSettings.tsx:50
 #: packages/admin/src/lib/api/email-settings.ts:45
 msgid "Failed to send test email"
 msgstr "테스트 이메일을 보내지 못했습니다."
@@ -3330,7 +3343,7 @@ msgstr "바이라인을 업데이트하지 못했습니다."
 msgid "Failed to update byline field"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:113
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:94
 msgid "Failed to update domain"
 msgstr "도메인을 업데이트하지 못했습니다."
 
@@ -3379,8 +3392,8 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:236
-#: packages/admin/src/components/settings/GeneralSettings.tsx:242
+#: packages/admin/src/components/settings/GeneralSettings.tsx:213
+#: packages/admin/src/components/settings/GeneralSettings.tsx:219
 msgid "Favicon"
 msgstr "파비콘"
 
@@ -3529,8 +3542,8 @@ msgstr "관리자 전체 권한"
 msgid "General"
 msgstr "일반"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:101
-#: packages/admin/src/components/settings/GeneralSettings.tsx:129
+#: packages/admin/src/components/settings/GeneralSettings.tsx:96
+#: packages/admin/src/components/settings/GeneralSettings.tsx:124
 msgid "General Settings"
 msgstr "일반 설정"
 
@@ -3542,7 +3555,7 @@ msgstr ""
 msgid "Get Started"
 msgstr "시작하기"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:138
+#: packages/admin/src/components/settings/SocialSettings.tsx:112
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -3559,7 +3572,7 @@ msgstr ""
 msgid "Go to Dashboard"
 msgstr "대시보드로 이동"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:227
+#: packages/admin/src/components/settings/SeoSettings.tsx:194
 msgid "Google Verification"
 msgstr "Google 인증"
 
@@ -3877,7 +3890,7 @@ msgstr "섹션 삽입"
 msgid "Insert Table"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:150
+#: packages/admin/src/components/settings/SocialSettings.tsx:124
 msgid "Instagram"
 msgstr "인스타그램"
 
@@ -3886,7 +3899,7 @@ msgstr "인스타그램"
 msgid "Install"
 msgstr "설치"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:181
+#: packages/admin/src/components/settings/EmailSettings.tsx:155
 msgid "Install and activate an email provider plugin to enable email features like invitations, magic links, and password recovery."
 msgstr "초대, 매직 링크, 비밀번호 복구와 같은 이메일 기능을 활성화하려면 이메일 공급자 플러그인을 설치하고 활성화하세요."
 
@@ -4138,7 +4151,7 @@ msgstr ""
 msgid "Linked user"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:156
+#: packages/admin/src/components/settings/SocialSettings.tsx:130
 msgid "LinkedIn"
 msgstr "링크드인"
 
@@ -4215,9 +4228,9 @@ msgstr "리디렉션 로드 중..."
 msgid "Loading sections..."
 msgstr "섹션 로드 중..."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:104
-#: packages/admin/src/components/settings/SeoSettings.tsx:108
-#: packages/admin/src/components/settings/SocialSettings.tsx:81
+#: packages/admin/src/components/settings/GeneralSettings.tsx:99
+#: packages/admin/src/components/settings/SeoSettings.tsx:93
+#: packages/admin/src/components/settings/SocialSettings.tsx:73
 msgid "Loading settings..."
 msgstr "설정 로드 중..."
 
@@ -4243,8 +4256,8 @@ msgstr ""
 #: packages/admin/src/components/MediaPickerModal.tsx:723
 #: packages/admin/src/components/PortableTextEditor.tsx:1946
 #: packages/admin/src/components/RegistryBrowse.tsx:143
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:176
-#: packages/admin/src/components/settings/SecuritySettings.tsx:113
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:161
+#: packages/admin/src/components/settings/SecuritySettings.tsx:104
 #: packages/admin/src/components/TaxonomyManager.tsx:779
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:170
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:252
@@ -4275,8 +4288,8 @@ msgstr ""
 msgid "Log out"
 msgstr "로그아웃"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:182
-#: packages/admin/src/components/settings/GeneralSettings.tsx:188
+#: packages/admin/src/components/settings/GeneralSettings.tsx:159
+#: packages/admin/src/components/settings/GeneralSettings.tsx:165
 msgid "Logo"
 msgstr "로고"
 
@@ -4514,11 +4527,11 @@ msgstr "메뉴 관리"
 msgid "Meta Description"
 msgstr "메타 설명"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:236
+#: packages/admin/src/components/settings/SeoSettings.tsx:203
 msgid "Meta tag content for Bing Webmaster Tools verification"
 msgstr "Bing 웹마스터 도구 확인을 위한 메타태그 콘텐츠"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:230
+#: packages/admin/src/components/settings/SeoSettings.tsx:197
 msgid "Meta tag content for Google Search Console verification"
 msgstr "Google Search Console 확인을 위한 메타태그 콘텐츠"
 
@@ -4821,11 +4834,11 @@ msgstr ""
 msgid "No detailed description available."
 msgstr "자세한 설명이 없습니다."
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:295
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:262
 msgid "No domains configured. Users must be invited individually."
 msgstr "구성된 도메인이 없습니다. 사용자는 개별적으로 초대되어야 합니다."
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:178
+#: packages/admin/src/components/settings/EmailSettings.tsx:152
 msgid "No email provider configured"
 msgstr "이메일 제공업체가 구성되지 않았습니다."
 
@@ -4922,7 +4935,7 @@ msgstr ""
 msgid "No passkeys registered"
 msgstr "등록된 패스키가 없습니다"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:195
+#: packages/admin/src/components/settings/SecuritySettings.tsx:168
 msgid "No passkeys registered yet."
 msgstr "아직 등록된 패스키가 없습니다."
 
@@ -5028,7 +5041,7 @@ msgstr ""
 msgid "Number"
 msgstr "숫자"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:301
+#: packages/admin/src/components/settings/GeneralSettings.tsx:278
 msgid "Number of posts to show per page on list views"
 msgstr "목록 보기에서 페이지당 표시할 게시물 수"
 
@@ -5182,7 +5195,7 @@ msgstr "리디렉션 루프의 일부"
 msgid "Pass"
 msgstr "통과"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:98
+#: packages/admin/src/components/settings/SecuritySettings.tsx:89
 msgid "Passkey added successfully"
 msgstr "패스키가 성공적으로 추가되었습니다"
 
@@ -5198,15 +5211,15 @@ msgstr "패스키 이름(선택사항)"
 msgid "Passkey registered successfully!"
 msgstr "패스키가 성공적으로 등록되었습니다!"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:76
+#: packages/admin/src/components/settings/SecuritySettings.tsx:66
 msgid "Passkey removed"
 msgstr "패스키가 삭제되었습니다."
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:60
+#: packages/admin/src/components/settings/SecuritySettings.tsx:49
 msgid "Passkey renamed"
 msgstr "패스키 이름이 변경됨"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:177
+#: packages/admin/src/components/settings/SecuritySettings.tsx:150
 #: packages/admin/src/components/users/UserList.tsx:110
 msgid "Passkeys"
 msgstr "패스키"
@@ -5216,7 +5229,7 @@ msgstr "패스키"
 msgid "Passkeys ({0})"
 msgstr "패스키({0})"
 
-#: packages/admin/src/components/settings/SecuritySettings.tsx:181
+#: packages/admin/src/components/settings/SecuritySettings.tsx:154
 msgid "Passkeys are a secure, passwordless way to sign in to your account. You can register multiple passkeys for different devices."
 msgstr "패스키는 비밀번호 없이 안전하게 계정에 로그인할 수 있는 방법입니다. 여러 기기에 각각 패스키를 등록할 수 있습니다."
 
@@ -5412,7 +5425,7 @@ msgstr ""
 msgid "Posts"
 msgstr "게시물"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:295
+#: packages/admin/src/components/settings/GeneralSettings.tsx:272
 msgid "Posts Per Page"
 msgstr "페이지당 게시물 수"
 
@@ -5464,7 +5477,7 @@ msgstr "이전 스크린샷"
 msgid "Primary Navigation"
 msgstr "기본 탐색"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:202
+#: packages/admin/src/components/settings/EmailSettings.tsx:176
 msgid "Provider:"
 msgstr "공급자:"
 
@@ -5548,7 +5561,7 @@ msgstr ""
 msgid "Read your content"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:292
+#: packages/admin/src/components/settings/GeneralSettings.tsx:269
 msgid "Reading"
 msgstr "읽기 설정"
 
@@ -5565,7 +5578,7 @@ msgstr "최근 활동"
 msgid "Recently Updated"
 msgstr ""
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:144
+#: packages/admin/src/components/settings/EmailSettings.tsx:118
 msgid "Recipient email"
 msgstr "수신자 이메일"
 
@@ -5596,7 +5609,7 @@ msgstr ""
 msgid "Reference"
 msgstr "참조"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:251
+#: packages/admin/src/components/settings/GeneralSettings.tsx:228
 msgid "Referenced favicon unavailable."
 msgstr ""
 
@@ -5605,7 +5618,7 @@ msgid "Register"
 msgstr "등록"
 
 #: packages/admin/src/components/auth/PasskeyRegistration.tsx:146
-#: packages/admin/src/components/settings/SecuritySettings.tsx:220
+#: packages/admin/src/components/settings/SecuritySettings.tsx:195
 msgid "Register Passkey"
 msgstr "패스키 등록"
 
@@ -5634,11 +5647,11 @@ msgstr ""
 #: packages/admin/src/components/ContentEditor.tsx:1965
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:199
 #: packages/admin/src/components/PortableTextEditor.tsx:3196
-#: packages/admin/src/components/settings/GeneralSettings.tsx:217
-#: packages/admin/src/components/settings/GeneralSettings.tsx:271
+#: packages/admin/src/components/settings/GeneralSettings.tsx:194
+#: packages/admin/src/components/settings/GeneralSettings.tsx:248
 #: packages/admin/src/components/settings/PasskeyItem.tsx:187
 #: packages/admin/src/components/settings/PasskeyItem.tsx:209
-#: packages/admin/src/components/settings/SeoSettings.tsx:209
+#: packages/admin/src/components/settings/SeoSettings.tsx:176
 msgid "Remove"
 msgstr "제거"
 
@@ -5657,11 +5670,11 @@ msgstr ""
 msgid "Remove {label}"
 msgstr ""
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:430
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:397
 msgid "Remove Domain"
 msgstr "도메인 제거"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:414
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:381
 msgid "Remove Domain?"
 msgstr "도메인을 제거하시겠습니까?"
 
@@ -5955,18 +5968,18 @@ msgstr "게시하기 전에 콘텐츠를 초안으로 저장"
 msgid "Save name"
 msgstr "이름 저장"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:126
-#: packages/admin/src/components/settings/SeoSettings.tsx:251
+#: packages/admin/src/components/settings/SeoSettings.tsx:111
+#: packages/admin/src/components/settings/SeoSettings.tsx:218
 msgid "Save SEO Settings"
 msgstr "SEO 설정 저장"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:321
+#: packages/admin/src/components/settings/GeneralSettings.tsx:120
+#: packages/admin/src/components/settings/GeneralSettings.tsx:298
 msgid "Save Settings"
 msgstr "설정 저장"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:99
-#: packages/admin/src/components/settings/SocialSettings.tsx:173
+#: packages/admin/src/components/settings/SocialSettings.tsx:91
+#: packages/admin/src/components/settings/SocialSettings.tsx:147
 msgid "Save Social Links"
 msgstr "소셜 링크 저장"
 
@@ -5988,12 +6001,12 @@ msgstr ""
 #: packages/admin/src/components/MenuEditor.tsx:533
 #: packages/admin/src/components/Redirects.tsx:187
 #: packages/admin/src/components/SaveButton.tsx:42
-#: packages/admin/src/components/settings/GeneralSettings.tsx:125
-#: packages/admin/src/components/settings/GeneralSettings.tsx:321
-#: packages/admin/src/components/settings/SeoSettings.tsx:126
-#: packages/admin/src/components/settings/SeoSettings.tsx:251
-#: packages/admin/src/components/settings/SocialSettings.tsx:99
-#: packages/admin/src/components/settings/SocialSettings.tsx:173
+#: packages/admin/src/components/settings/GeneralSettings.tsx:120
+#: packages/admin/src/components/settings/GeneralSettings.tsx:298
+#: packages/admin/src/components/settings/SeoSettings.tsx:111
+#: packages/admin/src/components/settings/SeoSettings.tsx:218
+#: packages/admin/src/components/settings/SocialSettings.tsx:91
+#: packages/admin/src/components/settings/SocialSettings.tsx:147
 #: packages/admin/src/components/TaxonomyManager.tsx:476
 #: packages/admin/src/components/users/UserDetail.tsx:311
 #: packages/admin/src/components/Widgets.tsx:894
@@ -6143,7 +6156,7 @@ msgstr "댓글 검색..."
 msgid "Search content..."
 msgstr "콘텐츠 검색..."
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:155
+#: packages/admin/src/components/settings/SeoSettings.tsx:122
 msgid "Search Engine Optimization"
 msgstr "검색 엔진 최적화"
 
@@ -6292,7 +6305,7 @@ msgstr "보안 오류입니다. 보안 연결 상태인지 확인하세요."
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:243
 #: packages/admin/src/components/Header.tsx:85
-#: packages/admin/src/components/settings/SecuritySettings.tsx:104
+#: packages/admin/src/components/settings/SecuritySettings.tsx:95
 msgid "Security Settings"
 msgstr "보안 설정"
 
@@ -6330,12 +6343,12 @@ msgstr "{0}의 댓글 선택"
 msgid "Select Content"
 msgstr "콘텐츠 선택"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:268
+#: packages/admin/src/components/settings/SeoSettings.tsx:235
 msgid "Select Default Social Image"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:283
-#: packages/admin/src/components/settings/GeneralSettings.tsx:344
+#: packages/admin/src/components/settings/GeneralSettings.tsx:260
+#: packages/admin/src/components/settings/GeneralSettings.tsx:321
 msgid "Select Favicon"
 msgstr "파비콘 선택"
 
@@ -6354,12 +6367,12 @@ msgstr "이미지 선택"
 #: packages/admin/src/components/MediaPickerModal.tsx:145
 #: packages/admin/src/components/PortableTextEditor.tsx:2583
 #: packages/admin/src/components/PortableTextEditor.tsx:3270
-#: packages/admin/src/components/settings/SeoSettings.tsx:221
+#: packages/admin/src/components/settings/SeoSettings.tsx:188
 msgid "Select Image"
 msgstr "이미지 선택"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:229
-#: packages/admin/src/components/settings/GeneralSettings.tsx:336
+#: packages/admin/src/components/settings/GeneralSettings.tsx:206
+#: packages/admin/src/components/settings/GeneralSettings.tsx:313
 msgid "Select Logo"
 msgstr "로고 선택"
 
@@ -6390,11 +6403,11 @@ msgid "Selected:"
 msgstr "선택된:"
 
 #: packages/admin/src/components/Settings.tsx:98
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:167
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:152
 msgid "Self-Signup Domains"
 msgstr "자체 가입 도메인"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:139
+#: packages/admin/src/components/settings/EmailSettings.tsx:113
 msgid "Send a test email through the full pipeline to verify your email configuration."
 msgstr "전체 파이프라인을 통해 테스트 이메일을 보내 이메일 구성을 확인하세요."
 
@@ -6414,16 +6427,16 @@ msgstr "로그인 링크 보내기"
 msgid "Send Recovery Link"
 msgstr "복구 링크 보내기"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:153
+#: packages/admin/src/components/settings/EmailSettings.tsx:127
 msgid "Send Test"
 msgstr "테스트 보내기"
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:136
+#: packages/admin/src/components/settings/EmailSettings.tsx:110
 msgid "Send Test Email"
 msgstr "테스트 이메일 보내기"
 
 #: packages/admin/src/components/LoginPage.tsx:149
-#: packages/admin/src/components/settings/EmailSettings.tsx:153
+#: packages/admin/src/components/settings/EmailSettings.tsx:127
 #: packages/admin/src/components/SignupPage.tsx:88
 #: packages/admin/src/components/SignupPage.tsx:151
 #: packages/admin/src/components/users/InviteUserModal.tsx:203
@@ -6437,8 +6450,8 @@ msgstr "보내는 중..."
 msgid "SEO"
 msgstr "SEO"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:105
-#: packages/admin/src/components/settings/SeoSettings.tsx:130
+#: packages/admin/src/components/settings/SeoSettings.tsx:90
+#: packages/admin/src/components/settings/SeoSettings.tsx:115
 msgid "SEO Settings"
 msgstr "SEO 설정"
 
@@ -6446,7 +6459,7 @@ msgstr "SEO 설정"
 msgid "SEO settings (Yoast)"
 msgstr "SEO 설정 (Yoast)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:57
+#: packages/admin/src/components/settings/SeoSettings.tsx:40
 msgid "SEO settings saved"
 msgstr "SEO 설정이 저장되었습니다"
 
@@ -6498,7 +6511,7 @@ msgstr "설정 관리"
 msgid "Settings Read"
 msgstr "설정 읽기"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:53
+#: packages/admin/src/components/settings/GeneralSettings.tsx:43
 msgid "Settings saved successfully"
 msgstr "설정이 성공적으로 저장되었습니다."
 
@@ -6586,7 +6599,7 @@ msgstr "한 줄 텍스트 입력"
 msgid "Site"
 msgstr "사이트"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:153
+#: packages/admin/src/components/settings/GeneralSettings.tsx:130
 msgid "Site Identity"
 msgstr "사이트 기본 정보"
 
@@ -6598,7 +6611,7 @@ msgstr "사이트 기본 정보, 로고, 파비콘, 읽기 설정"
 msgid "Site Settings"
 msgstr "사이트 설정"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:156
+#: packages/admin/src/components/settings/GeneralSettings.tsx:133
 #: packages/admin/src/components/SetupWizard.tsx:116
 msgid "Site Title"
 msgstr "사이트 제목"
@@ -6611,7 +6624,7 @@ msgstr "사이트 제목 및 태그라인"
 msgid "Site title is required"
 msgstr "사이트 제목이 필요합니다"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:168
+#: packages/admin/src/components/settings/GeneralSettings.tsx:145
 msgid "Site URL"
 msgstr "사이트 URL"
 
@@ -6661,12 +6674,12 @@ msgid "Small section heading"
 msgstr "소제목"
 
 #: packages/admin/src/components/Settings.tsx:75
-#: packages/admin/src/components/settings/SocialSettings.tsx:78
-#: packages/admin/src/components/settings/SocialSettings.tsx:103
+#: packages/admin/src/components/settings/SocialSettings.tsx:70
+#: packages/admin/src/components/settings/SocialSettings.tsx:95
 msgid "Social Links"
 msgstr "소셜 링크"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:48
+#: packages/admin/src/components/settings/SocialSettings.tsx:38
 msgid "Social links saved"
 msgstr "소셜 링크가 저장되었습니다."
 
@@ -6674,7 +6687,7 @@ msgstr "소셜 링크가 저장되었습니다."
 msgid "Social media profile links"
 msgstr "소셜 미디어 프로필 링크"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:126
+#: packages/admin/src/components/settings/SocialSettings.tsx:100
 msgid "Social Profiles"
 msgstr "소셜 프로필"
 
@@ -6801,7 +6814,7 @@ msgstr ""
 msgid "Table"
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:162
+#: packages/admin/src/components/settings/GeneralSettings.tsx:139
 #: packages/admin/src/components/SetupWizard.tsx:127
 msgid "Tagline"
 msgstr "사이트 설명"
@@ -6864,7 +6877,7 @@ msgstr ""
 msgid "Term deleted"
 msgstr "항목이 삭제되었습니다."
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:148
+#: packages/admin/src/components/settings/EmailSettings.tsx:122
 msgid "test@example.com"
 msgstr "test@example.com"
 
@@ -6901,7 +6914,7 @@ msgstr "마켓플레이스가 비어 있습니다. 나중에 새 플러그인이
 msgid "The menu has been deleted."
 msgstr "메뉴가 삭제되었습니다."
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:159
+#: packages/admin/src/components/settings/GeneralSettings.tsx:136
 msgid "The name of your site, used in the header and metadata"
 msgstr "헤더 및 메타데이터에 사용되는 사이트 이름"
 
@@ -6913,15 +6926,15 @@ msgstr ""
 msgid "The plugin field widget failed to render."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:172
+#: packages/admin/src/components/settings/GeneralSettings.tsx:149
 msgid "The public URL of your site (used for canonical links and sitemaps)"
 msgstr "사이트의 공개 URL(표준 링크 및 사이트맵에 사용됨)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:189
+#: packages/admin/src/components/settings/SeoSettings.tsx:156
 msgid "The referenced image is no longer available. Pick a new one or remove the reference."
 msgstr ""
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:197
+#: packages/admin/src/components/settings/GeneralSettings.tsx:174
 msgid "The referenced logo is no longer available. Pick a new one or remove the reference."
 msgstr ""
 
@@ -7062,11 +7075,11 @@ msgstr "게시된 버전으로 되돌아갑니다. 초안 변경사항이 손실
 msgid "Thoughts, tutorials, and more"
 msgstr "생각, 튜토리얼 등"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:310
+#: packages/admin/src/components/settings/GeneralSettings.tsx:287
 msgid "Timezone"
 msgstr "시간대"
 
-#: packages/admin/src/components/settings/GeneralSettings.tsx:313
+#: packages/admin/src/components/settings/GeneralSettings.tsx:290
 msgid "Timezone for displaying dates (e.g., America/New_York)"
 msgstr "날짜 표시를 위한 시간대(예: America/New_York)"
 
@@ -7083,7 +7096,7 @@ msgstr "제목"
 msgid "Title (Tooltip)"
 msgstr "제목(도구 설명)"
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:159
+#: packages/admin/src/components/settings/SeoSettings.tsx:126
 msgid "Title Separator"
 msgstr "제목 구분 기호"
 
@@ -7241,7 +7254,7 @@ msgstr ""
 msgid "Turn into"
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:132
+#: packages/admin/src/components/settings/SocialSettings.tsx:106
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -7382,7 +7395,7 @@ msgid "Update Field"
 msgstr "필드 업데이트"
 
 #. placeholder {0}: editingDomain?.domain
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:367
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:334
 msgid "Update settings for {0}"
 msgstr "{0}에 대한 설정 업데이트"
 
@@ -7559,7 +7572,7 @@ msgstr "기기의 생체 인증, 보안 키 또는 PIN을 사용하여 로그인
 msgid "Use your registered passkey to sign in securely."
 msgstr "등록된 패스키를 사용하여 안전하게 로그인하세요."
 
-#: packages/admin/src/components/settings/SeoSettings.tsx:173
+#: packages/admin/src/components/settings/SeoSettings.tsx:140
 msgid "Used as the fallback Open Graph image when a page has none. Recommended size: 1200×630."
 msgstr ""
 
@@ -7592,7 +7605,7 @@ msgid "User"
 msgstr "사용자"
 
 #. placeholder {0}: manifest?.authMode
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:192
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:177
 msgid "User access is managed by an external provider ({0}). Self-signup domain settings are not available when using external authentication."
 msgstr "사용자 액세스는 외부 공급자({0})에 의해 관리됩니다. 외부 인증을 사용하는 경우 자체 가입 도메인 설정을 사용할 수 없습니다."
 
@@ -7610,11 +7623,11 @@ msgstr "사용자를 찾을 수 없습니다"
 msgid "Users"
 msgstr "사용자"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:416
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:383
 msgid "Users from"
 msgstr "허가된 사용자"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:244
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:211
 msgid "Users with email addresses from these domains can sign up without an invite. They will be assigned the specified role automatically."
 msgstr "해당 도메인의 이메일 주소를 가진 사용자는 초대 없이 가입할 수 있습니다. 지정된 역할이 자동으로 할당됩니다."
 
@@ -7842,11 +7855,11 @@ msgstr "너비"
 msgid "Will create"
 msgstr "생성 예정"
 
-#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:417
+#: packages/admin/src/components/settings/AllowedDomainsSettings.tsx:384
 msgid "will no longer be able to sign up without an invite. Existing users are not affected."
 msgstr "초대 없이는 더 이상 가입할 수 없습니다. 기존 사용자는 영향을 받지 않습니다."
 
-#: packages/admin/src/components/settings/EmailSettings.tsx:184
+#: packages/admin/src/components/settings/EmailSettings.tsx:158
 msgid "Without an email provider, invite links must be shared manually."
 msgstr "이메일 제공업체가 없으면 초대 링크를 수동으로 공유해야 합니다."
 
@@ -7973,19 +7986,19 @@ msgstr "기기가 필수 보안 기능을 지원하지 않습니다."
 msgid "Your Email"
 msgstr "이메일"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:147
+#: packages/admin/src/components/settings/SocialSettings.tsx:121
 msgid "Your Facebook page or profile username"
 msgstr "Facebook 페이지 또는 프로필 사용자 이름"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:141
+#: packages/admin/src/components/settings/SocialSettings.tsx:115
 msgid "Your GitHub username"
 msgstr "GitHub 사용자 이름"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:153
+#: packages/admin/src/components/settings/SocialSettings.tsx:127
 msgid "Your Instagram username"
 msgstr "Instagram 사용자 이름"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:159
+#: packages/admin/src/components/settings/SocialSettings.tsx:133
 msgid "Your LinkedIn profile username"
 msgstr "LinkedIn 프로필 사용자 이름"
 
@@ -8007,7 +8020,7 @@ msgstr "내 권한"
 msgid "Your site requires releases to be at least {0} old before they can be installed. This release will become installable later."
 msgstr ""
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:135
+#: packages/admin/src/components/settings/SocialSettings.tsx:109
 msgid "Your Twitter/X handle (e.g., @username)"
 msgstr "Twitter/X 핸들 (예: @username)"
 
@@ -8016,10 +8029,10 @@ msgstr "Twitter/X 핸들 (예: @username)"
 msgid "Your WordPress export contains {0} media files."
 msgstr "WordPress 내보내기에는 {0}개의 미디어 파일이 포함되어 있습니다."
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:165
+#: packages/admin/src/components/settings/SocialSettings.tsx:139
 msgid "Your YouTube channel ID or handle"
 msgstr "YouTube 채널 ID 또는 핸들"
 
-#: packages/admin/src/components/settings/SocialSettings.tsx:162
+#: packages/admin/src/components/settings/SocialSettings.tsx:136
 msgid "YouTube"
 msgstr "YouTube"

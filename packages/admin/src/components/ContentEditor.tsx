@@ -620,7 +620,7 @@ export function ContentEditor({
 						className={cn(
 							"flex flex-wrap items-center justify-between gap-y-2",
 							isDistractionFree
-								? "opacity-0 hover:opacity-100 transition-opacity duration-200 fixed top-0 start-0 end-0 bg-kumo-elevated/95 backdrop-blur p-4 z-10"
+								? "opacity-0 hover:opacity-100 transition-opacity duration-200 fixed top-0 start-0 end-0 mx-auto w-[calc(100%-4rem)] max-w-3xl bg-kumo-elevated/95 py-4 backdrop-blur z-10"
 								: cn(
 										"mx-auto mb-6 max-w-3xl",
 										isBelowLg && "bg-kumo-elevated/95 py-3 backdrop-blur",
@@ -638,16 +638,6 @@ export function ContentEditor({
 									shape="square"
 									icon={<ArrowPrev />}
 								/>
-							)}
-							{isDistractionFree && (
-								<Button
-									variant="ghost"
-									shape="square"
-									onClick={() => setIsDistractionFree(false)}
-									aria-label={t`Exit distraction-free mode`}
-								>
-									<ArrowsInSimple className="h-5 w-5" aria-hidden="true" />
-								</Button>
 							)}
 							<h1 className="min-w-0 truncate text-lg font-semibold">
 								{isNew ? t`New ${itemLabel}` : t`Edit ${itemLabel}`}
@@ -712,15 +702,9 @@ export function ContentEditor({
 							) : (
 								// Distraction-free: this overlay is the only save/exit surface.
 								<>
-									{!isNew && supportsPreview && (
-										<PreviewButton
-											hasPendingChanges={hasPendingChanges}
-											isLoadingPreview={isLoadingPreview}
-											onPreview={handlePreview}
-										/>
-									)}
 									<SaveButton
 										type="submit"
+										size="sm"
 										isDirty={isDirty}
 										isSaving={Boolean(saveFeedbackActive || autosaveFeedbackActive)}
 										disabled={isContentOperationPending}
@@ -730,15 +714,28 @@ export function ContentEditor({
 											href={liveViewUrl}
 											external
 											variant="outline"
+											size="sm"
 											icon={<ArrowSquareOut />}
 										>
 											{t`Live View`}
 										</LinkButton>
 									)}
+									{!isNew && supportsPreview && (
+										<PreviewButton
+											size="sm"
+											hasPendingChanges={hasPendingChanges}
+											isLoadingPreview={isLoadingPreview}
+											onPreview={handlePreview}
+										/>
+									)}
 									{!isNew && (
 										<>
 											{supportsDrafts && hasPendingChanges && onDiscardDraft && (
-												<DiscardDraftDialog onDiscard={onDiscardDraft} triggerVariant="outline" />
+												<DiscardDraftDialog
+													onDiscard={onDiscardDraft}
+													triggerVariant="outline"
+													triggerSize="sm"
+												/>
 											)}
 											<PublishActions
 												collectionLabel={collectionLabel}
@@ -746,9 +743,19 @@ export function ContentEditor({
 												hasPendingChanges={hasPendingChanges}
 												onPublish={onPublish}
 												onUnpublish={onUnpublish}
+												size="sm"
 											/>
 										</>
 									)}
+									<Button
+										variant="ghost"
+										shape="square"
+										type="button"
+										onClick={() => setIsDistractionFree(false)}
+										aria-label={t`Exit distraction-free mode`}
+									>
+										<ArrowsInSimple className="h-5 w-5" aria-hidden="true" />
+									</Button>
 								</>
 							)}
 						</div>
@@ -756,7 +763,7 @@ export function ContentEditor({
 
 					<div
 						className={cn(
-							isDistractionFree ? "max-w-4xl mx-auto pt-16" : "mx-auto max-w-3xl space-y-6",
+							isDistractionFree ? "mx-auto max-w-3xl pt-16" : "mx-auto max-w-3xl space-y-6",
 						)}
 					>
 						<div className="space-y-6">
@@ -780,7 +787,6 @@ export function ContentEditor({
 												? setPortableTextEditor
 												: undefined
 										}
-										minimal={isDistractionFree}
 										pluginBlocks={pluginBlocks}
 										onBlockSidebarOpen={
 											field.kind === "portableText" ? handleBlockSidebarOpen : undefined
@@ -1178,6 +1184,10 @@ function FieldRenderer({
 						onChange={handleChange}
 						placeholder={t`Start writing, or type '/' for commands`}
 						aria-labelledby={labelId}
+						className={cn(
+							!minimal &&
+								"bg-kumo-control focus-within:ring-kumo-focus/50 focus-within:ring-[1.5px]",
+						)}
 						pluginBlocks={pluginBlocks}
 						onEditorReady={onEditorReady}
 						minimal={minimal}

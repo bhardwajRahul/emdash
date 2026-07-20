@@ -1325,6 +1325,66 @@ describe("ContentEditor", () => {
 	});
 
 	describe("distraction-free mode", () => {
+		it("keeps the normal editor width and field chrome", async () => {
+			const screen = await renderEditor({
+				fields: {
+					title: { kind: "string", label: "Title", required: true },
+					featured_image: { kind: "image", label: "Featured image" },
+					content: { kind: "portableText", label: "Content" },
+				},
+			});
+
+			await screen.getByRole("button", { name: "Enter distraction-free mode" }).click();
+
+			const titleInput = screen.getByLabelText("Title").element();
+			const imagePicker = screen.getByRole("button", { name: "Select image" }).element();
+			const portableTextEditor = screen.getByTestId("portable-text-editor").element();
+			const editorCanvas = portableTextEditor.closest(".mx-auto");
+
+			expect(editorCanvas).toHaveClass("max-w-3xl");
+			expect(editorCanvas).not.toHaveClass("max-w-4xl");
+			expect(titleInput).not.toHaveClass("px-0", "text-lg");
+			expect(imagePicker).toHaveClass("bg-kumo-control");
+			expect(portableTextProps.current?.minimal).not.toBe(true);
+			expect(portableTextProps.current?.className).toContain("bg-kumo-control");
+			expect(portableTextProps.current?.className).toContain("focus-within:ring-kumo-focus/50");
+			expect(portableTextProps.current?.className).toContain("focus-within:ring-[1.5px]");
+		});
+
+		it("matches the settings action order and size", async () => {
+			const item = makeItem({
+				status: "published",
+				liveRevisionId: "rev-1",
+				draftRevisionId: "rev-1",
+			});
+			const screen = await renderEditor({
+				isNew: false,
+				item,
+				supportsDrafts: true,
+				supportsPreview: true,
+			});
+
+			await screen.getByRole("button", { name: "Enter distraction-free mode" }).click();
+
+			const heading = screen.getByRole("heading", { name: "Edit Post" }).element();
+			const actionContainer = heading.parentElement?.parentElement?.lastElementChild;
+			const actions = [...(actionContainer?.querySelectorAll("button, a") ?? [])];
+			const actionNames = actions.map(
+				(action) => action.getAttribute("aria-label") ?? action.textContent?.trim(),
+			);
+
+			expect(actionNames).toEqual([
+				"Saved",
+				"Live View",
+				"Preview",
+				"Unpublish Post",
+				"Exit distraction-free mode",
+			]);
+			for (const action of actions.slice(0, -1)) expect(action).toHaveClass("h-6.5");
+			expect(actions.at(-1)).toHaveClass("size-9");
+			expect(heading.parentElement?.querySelector("button")).toBeNull();
+		});
+
 		it("keeps the editor canvas and header overlay on the elevated surface", async () => {
 			const screen = await renderEditor({ isNew: true });
 			const form = document.querySelector("form");
@@ -1338,6 +1398,15 @@ describe("ContentEditor", () => {
 			const header = heading.parentElement?.parentElement;
 			expect(form).toHaveClass("bg-kumo-elevated");
 			expect(header).toHaveClass("bg-kumo-elevated/95");
+			expect(header).toHaveClass(
+				"start-0",
+				"end-0",
+				"mx-auto",
+				"w-[calc(100%-4rem)]",
+				"max-w-3xl",
+				"py-4",
+			);
+			expect(header).not.toHaveClass("start-8", "end-8", "w-full", "p-4");
 		});
 
 		it("toggle adds fixed class for distraction-free mode", async () => {

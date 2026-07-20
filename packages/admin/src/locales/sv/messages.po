@@ -3224,7 +3224,7 @@ msgstr "Det gick inte att aktivera användaren"
 msgid "Failed to execute import"
 msgstr "Det gick inte att köra importen"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "Det gick inte att hämta autentiseringsläge"
 
@@ -3249,7 +3249,7 @@ msgstr "Det gick inte att hämta e-postinställningar"
 msgid "Failed to fetch entry terms"
 msgstr "Det gick inte att hämta termer för posten"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Det gick inte att hämta manifestet"
 
@@ -6178,7 +6178,7 @@ msgstr "Kodarkiv"
 msgid "Request a new link"
 msgstr "Begär en ny länk"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "Begäran misslyckades"
 

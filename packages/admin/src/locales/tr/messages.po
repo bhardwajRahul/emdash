@@ -3224,7 +3224,7 @@ msgstr "Kullanıcı etkinleştirilemedi"
 msgid "Failed to execute import"
 msgstr "İçe aktarma yürütülemedi"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "Kimlik doğrulama modu getirilemedi"
 
@@ -3249,7 +3249,7 @@ msgstr "E-posta ayarları getirilemedi"
 msgid "Failed to fetch entry terms"
 msgstr "Kayıt terimleri getirilemedi"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Manifest getirilemedi"
 
@@ -6178,7 +6178,7 @@ msgstr "Depo"
 msgid "Request a new link"
 msgstr "Yeni bir bağlantı isteyin"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "İstek başarısız oldu"
 

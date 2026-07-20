@@ -3221,7 +3221,7 @@ msgstr ""
 msgid "Failed to execute import"
 msgstr ""
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr ""
 
@@ -3246,7 +3246,7 @@ msgstr ""
 msgid "Failed to fetch entry terms"
 msgstr ""
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr ""
 
@@ -6172,7 +6172,7 @@ msgstr "Repozytorium"
 msgid "Request a new link"
 msgstr "Poproś o nowy link"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr ""
 

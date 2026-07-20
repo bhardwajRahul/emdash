@@ -3224,7 +3224,7 @@ msgstr "Nem sikerült felhasználót engedélyezni"
 msgid "Failed to execute import"
 msgstr "Nem sikerült importot végrehajtani"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "Nem sikerült hitelesítési módot lekérni"
 
@@ -3249,7 +3249,7 @@ msgstr "Nem sikerült e-mail beállításokat lekérni"
 msgid "Failed to fetch entry terms"
 msgstr "Nem sikerült bejegyzés kifejezéseit lekérni"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Nem sikerült manifestet lekérni"
 
@@ -6178,7 +6178,7 @@ msgstr "Tároló"
 msgid "Request a new link"
 msgstr "Új link kérése"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "A kérés sikertelen"
 

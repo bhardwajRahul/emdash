@@ -3224,7 +3224,7 @@ msgstr "Inschakelen van gebruiker mislukt"
 msgid "Failed to execute import"
 msgstr "Uitvoeren van import mislukt"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "Ophalen van authenticatiemodus mislukt"
 
@@ -3249,7 +3249,7 @@ msgstr "Ophalen van e-mailinstellingen mislukt"
 msgid "Failed to fetch entry terms"
 msgstr "Ophalen van termen van item mislukt"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Ophalen van manifest mislukt"
 
@@ -6178,7 +6178,7 @@ msgstr "Repository"
 msgid "Request a new link"
 msgstr "Nieuwe link aanvragen"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "Verzoek mislukt"
 

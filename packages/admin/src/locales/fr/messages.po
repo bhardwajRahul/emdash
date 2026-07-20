@@ -3224,7 +3224,7 @@ msgstr "Échec lors de l'activation de l'utilisateur"
 msgid "Failed to execute import"
 msgstr "Échec lors de l'exécution de l'importation"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "Échec lors de la récupération du mode d'authentification"
 
@@ -3249,7 +3249,7 @@ msgstr "Échec lors de la récupération des paramètres de messagerie"
 msgid "Failed to fetch entry terms"
 msgstr "Échec lors de la récupération des termes d'entrée"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Échec lors de la récupération du manifeste"
 
@@ -6178,7 +6178,7 @@ msgstr "Dépôt"
 msgid "Request a new link"
 msgstr "Demander un nouveau lien"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "La requête a échoué"
 

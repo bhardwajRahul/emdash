@@ -3224,7 +3224,7 @@ msgstr "Не вдалося увімкнути користувача"
 msgid "Failed to execute import"
 msgstr "Не вдалося виконати імпорт"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "Не вдалося отримати режим автентифікації"
 
@@ -3249,7 +3249,7 @@ msgstr "Не вдалося отримати налаштування email"
 msgid "Failed to fetch entry terms"
 msgstr "Не вдалося отримати терміни запису"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Не вдалося отримати маніфест"
 
@@ -6178,7 +6178,7 @@ msgstr "Репозиторій"
 msgid "Request a new link"
 msgstr "Запросити нове посилання"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "Запит не вдався"
 

@@ -3221,7 +3221,7 @@ msgstr "Aktivieren des Benutzers fehlgeschlagen"
 msgid "Failed to execute import"
 msgstr "Ausführen des Imports fehlgeschlagen"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr ""
 
@@ -3246,7 +3246,7 @@ msgstr ""
 msgid "Failed to fetch entry terms"
 msgstr "Abrufen der Begriffe des Eintrags fehlgeschlagen"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "Abrufen des Manifests fehlgeschlagen"
 
@@ -6175,7 +6175,7 @@ msgstr "Repository"
 msgid "Request a new link"
 msgstr "Einen neuen Link anfragen"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr ""
 

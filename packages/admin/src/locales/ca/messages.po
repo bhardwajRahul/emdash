@@ -3224,7 +3224,7 @@ msgstr "No s'ha pogut activar l'usuari"
 msgid "Failed to execute import"
 msgstr "No s'ha pogut executar la importació"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr "No s'ha pogut obtenir el mode d'autenticació"
 
@@ -3249,7 +3249,7 @@ msgstr "No s'ha pogut obtenir la configuració de correu"
 msgid "Failed to fetch entry terms"
 msgstr "No s'han pogut obtenir els termes de l'entrada"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "No s'ha pogut obtenir el manifest"
 
@@ -6178,7 +6178,7 @@ msgstr "Dipòsit"
 msgid "Request a new link"
 msgstr "Sol·licita un enllaç nou"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr "Ha fallat la sol·licitud"
 

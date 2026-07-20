@@ -3221,7 +3221,7 @@ msgstr "เปิดใช้งานผู้ใช้ไม่สำเร็
 msgid "Failed to execute import"
 msgstr "ดำเนินการนำเข้าไม่สำเร็จ"
 
-#: packages/admin/src/lib/api/client.ts:227
+#: packages/admin/src/lib/api/client.ts:255
 msgid "Failed to fetch auth mode"
 msgstr ""
 
@@ -3246,7 +3246,7 @@ msgstr ""
 msgid "Failed to fetch entry terms"
 msgstr "ดึงข้อมูลเทอมของรายการไม่สำเร็จ"
 
-#: packages/admin/src/lib/api/client.ts:210
+#: packages/admin/src/lib/api/client.ts:238
 msgid "Failed to fetch manifest"
 msgstr "ดึงข้อมูล manifest ไม่สำเร็จ"
 
@@ -6175,7 +6175,7 @@ msgstr "ที่เก็บข้อมูล"
 msgid "Request a new link"
 msgstr "ขอลิงก์ใหม่"
 
-#: packages/admin/src/lib/api/client.ts:198
+#: packages/admin/src/lib/api/client.ts:226
 msgid "Request failed"
 msgstr ""
 

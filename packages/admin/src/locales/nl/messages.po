@@ -2522,7 +2522,7 @@ msgstr "Sluiten"
 
 #: packages/admin/src/components/Widgets.tsx:125
 msgid "Display a list of recent posts"
-msgstr ""
+msgstr "Een lijst met recente berichten weergeven"
 
 #: packages/admin/src/components/Widgets.tsx:103
 msgid "Display a navigation menu"
@@ -2530,7 +2530,7 @@ msgstr "Een navigatiemenu weergeven"
 
 #: packages/admin/src/components/Widgets.tsx:134
 msgid "Display category list"
-msgstr ""
+msgstr "Een lijst met categorieën weergeven"
 
 #: packages/admin/src/components/ContentSettingsPanel.tsx:914
 #: packages/admin/src/components/ContentSettingsPanel.tsx:976
@@ -2549,7 +2549,7 @@ msgstr "Weergavegrootte"
 
 #: packages/admin/src/components/Widgets.tsx:142
 msgid "Display tag cloud"
-msgstr ""
+msgstr "Een tagwolk weergeven"
 
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:356
 #: packages/admin/src/components/editor/ImageDetailPanel.tsx:545
@@ -3812,7 +3812,7 @@ msgstr "Groep (optioneel)"
 
 #: packages/admin/src/components/Widgets.tsx:160
 msgid "Group by"
-msgstr ""
+msgstr "Groeperen op"
 
 #: packages/admin/src/routes/bylines.tsx:556
 msgid "Guest byline"
@@ -4411,7 +4411,7 @@ msgstr "Licht"
 
 #: packages/admin/src/components/Widgets.tsx:163
 msgid "Limit"
-msgstr ""
+msgstr "Limiet"
 
 #: packages/admin/src/components/SignupPage.tsx:258
 msgid "Link expired"
@@ -4715,7 +4715,7 @@ msgstr "Max. waarde"
 
 #: packages/admin/src/components/Widgets.tsx:145
 msgid "Maximum tags"
-msgstr ""
+msgstr "Maximumaantal tags"
 
 #: packages/admin/src/components/editor/codeBlockLanguages.ts:45
 msgid "MDX"
@@ -4878,11 +4878,11 @@ msgstr "Collectieschema's wijzigen"
 
 #: packages/admin/src/components/Widgets.tsx:161
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 #: packages/admin/src/components/Widgets.tsx:157
 msgid "Monthly/yearly archives"
-msgstr ""
+msgstr "Maandelijkse/jaarlijkse archieven"
 
 #: packages/admin/src/components/ImageFieldRenderer.tsx:111
 msgid "More information about {label}"
@@ -5390,7 +5390,7 @@ msgstr "Getal"
 
 #: packages/admin/src/components/Widgets.tsx:127
 msgid "Number of posts"
-msgstr ""
+msgstr "Aantal berichten"
 
 #: packages/admin/src/components/settings/GeneralSettings.tsx:278
 msgid "Number of posts to show per page on list views"
@@ -5682,7 +5682,7 @@ msgstr "Kies een methode om je adminaccount aan te maken."
 
 #: packages/admin/src/components/Widgets.tsx:152
 msgid "Placeholder text"
-msgstr ""
+msgstr "Placeholdertekst"
 
 #: packages/admin/src/components/auth/PasskeyLogin.tsx:311
 #: packages/admin/src/components/auth/PasskeyRegistration.tsx:310
@@ -5981,7 +5981,7 @@ msgstr "Recente activiteit"
 
 #: packages/admin/src/components/Widgets.tsx:124
 msgid "Recent Posts"
-msgstr ""
+msgstr "Recente berichten"
 
 #: packages/admin/src/components/MarketplaceBrowse.tsx:43
 #: packages/admin/src/components/ThemeMarketplaceBrowse.tsx:35
@@ -6580,7 +6580,7 @@ msgstr "Zoekmachineoptimalisatie en verificatie"
 
 #: packages/admin/src/components/Widgets.tsx:150
 msgid "Search form"
-msgstr ""
+msgstr "Zoekformulier"
 
 #: packages/admin/src/components/MediaLibrary.tsx:416
 #: packages/admin/src/components/MediaPickerModal.tsx:578
@@ -6970,23 +6970,23 @@ msgstr "Korte tekst"
 
 #: packages/admin/src/components/Widgets.tsx:144
 msgid "Show count"
-msgstr ""
+msgstr "Aantal tonen"
 
 #: packages/admin/src/components/Widgets.tsx:129
 msgid "Show date"
-msgstr ""
+msgstr "Datum tonen"
 
 #: packages/admin/src/components/Widgets.tsx:137
 msgid "Show hierarchy"
-msgstr ""
+msgstr "Hiërarchie tonen"
 
 #: packages/admin/src/components/Widgets.tsx:136
 msgid "Show post count"
-msgstr ""
+msgstr "Aantal berichten tonen"
 
 #: packages/admin/src/components/Widgets.tsx:128
 msgid "Show thumbnails"
-msgstr ""
+msgstr "Miniaturen tonen"
 
 #: packages/admin/src/components/settings/ApiTokenSettings.tsx:210
 msgid "Show token"
@@ -8433,7 +8433,7 @@ msgstr "YAML"
 
 #: packages/admin/src/components/Widgets.tsx:161
 msgid "Yearly"
-msgstr ""
+msgstr "Jaarlijks"
 
 #: packages/admin/src/components/users/UserDetail.tsx:236
 #: packages/admin/src/routes/byline-schema.tsx:420

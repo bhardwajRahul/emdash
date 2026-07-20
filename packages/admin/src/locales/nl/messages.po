@@ -1431,7 +1431,7 @@ msgstr "Midden"
 
 #: packages/admin/src/components/BlockKitMediaPickerField.tsx:76
 #: packages/admin/src/components/BlockKitMediaPickerField.tsx:107
-#: packages/admin/src/components/ContentEditor.tsx:1649
+#: packages/admin/src/components/ContentEditor.tsx:1659
 #: packages/admin/src/components/FieldEditor.tsx:402
 #: packages/admin/src/components/ImageFieldRenderer.tsx:133
 #: packages/admin/src/components/ImageFieldRenderer.tsx:162
@@ -1597,7 +1597,7 @@ msgstr "Reacties sluiten na (dagen)"
 msgid "Close panel"
 msgstr "Paneel sluiten"
 
-#: packages/admin/src/components/ContentEditor.tsx:1024
+#: packages/admin/src/components/ContentEditor.tsx:1030
 msgid "Close settings"
 msgstr "Instellingen sluiten"
 
@@ -2556,7 +2556,7 @@ msgstr ""
 msgid "Displayed below the image as a visible caption."
 msgstr "Wordt onder de afbeelding weergegeven als zichtbaar bijschrift."
 
-#: packages/admin/src/components/ContentEditor.tsx:707
+#: packages/admin/src/components/ContentEditor.tsx:697
 msgid "Distraction-free mode (⌘⇧\\)"
 msgstr "Afleidingsvrije modus (⌘⇧\\)"
 
@@ -2746,7 +2746,7 @@ msgstr "{0} bewerken"
 msgid "Edit {0} field"
 msgstr "Veld {0} bewerken"
 
-#: packages/admin/src/components/ContentEditor.tsx:653
+#: packages/admin/src/components/ContentEditor.tsx:643
 msgid "Edit {itemLabel}"
 msgstr ""
 
@@ -2913,7 +2913,7 @@ msgstr "Ingeschakeld"
 msgid "Enter a URL (https://…) or a relative path (/…)"
 msgstr "Voer een URL (https://…) of een relatief pad (/…) in"
 
-#: packages/admin/src/components/ContentEditor.tsx:1427
+#: packages/admin/src/components/ContentEditor.tsx:1437
 msgid "Enter a valid URL (e.g. https://example.com)"
 msgstr "Voer een geldige URL in (bijv. https://example.com)"
 
@@ -2921,7 +2921,7 @@ msgstr "Voer een geldige URL in (bijv. https://example.com)"
 msgid "Enter credentials manually"
 msgstr "Inloggegevens handmatig invoeren"
 
-#: packages/admin/src/components/ContentEditor.tsx:706
+#: packages/admin/src/components/ContentEditor.tsx:696
 msgid "Enter distraction-free mode"
 msgstr "Afleidingsvrije modus activeren"
 
@@ -2933,7 +2933,7 @@ msgstr "Voer e-mailadres in"
 msgid "Enter HTML..."
 msgstr "Voer HTML in..."
 
-#: packages/admin/src/components/ContentEditor.tsx:1201
+#: packages/admin/src/components/ContentEditor.tsx:1211
 msgid "Enter markdown content..."
 msgstr "Voer Markdown-content in..."
 
@@ -2995,7 +2995,7 @@ msgstr "Elke gepubliceerde release van deze plugin is ingetrokken of kon niet wo
 msgid "Exists"
 msgstr "Bestaat al"
 
-#: packages/admin/src/components/ContentEditor.tsx:647
+#: packages/admin/src/components/ContentEditor.tsx:755
 msgid "Exit distraction-free mode"
 msgstr "Afleidingsvrije modus verlaten"
 
@@ -4211,7 +4211,7 @@ msgstr "Geheel getal"
 msgid "Invalid invite link"
 msgstr "Ongeldige uitnodigingslink"
 
-#: packages/admin/src/components/ContentEditor.tsx:1496
+#: packages/admin/src/components/ContentEditor.tsx:1506
 msgid "Invalid JSON"
 msgstr "Ongeldige JSON"
 
@@ -4446,8 +4446,8 @@ msgstr "Links"
 msgid "List view"
 msgstr "Lijstweergave"
 
-#: packages/admin/src/components/ContentEditor.tsx:687
-#: packages/admin/src/components/ContentEditor.tsx:735
+#: packages/admin/src/components/ContentEditor.tsx:677
+#: packages/admin/src/components/ContentEditor.tsx:720
 #: packages/admin/src/components/ContentSettingsPanel.tsx:250
 msgid "Live View"
 msgstr "Live weergave"
@@ -5005,7 +5005,7 @@ msgstr "NIEUW"
 msgid "New {0}"
 msgstr "Nieuwe {0}"
 
-#: packages/admin/src/components/ContentEditor.tsx:653
+#: packages/admin/src/components/ContentEditor.tsx:643
 msgid "New {itemLabel}"
 msgstr ""
 
@@ -6080,7 +6080,7 @@ msgstr "{0} verwijderen"
 msgid "Remove {entry}"
 msgstr "{entry} verwijderen"
 
-#: packages/admin/src/components/ContentEditor.tsx:1657
+#: packages/admin/src/components/ContentEditor.tsx:1667
 msgid "Remove {label}"
 msgstr "{label} verwijderen"
 
@@ -6730,8 +6730,8 @@ msgid "Select"
 msgstr "Selecteren"
 
 #: packages/admin/src/components/BlockKitMediaPickerField.tsx:140
-#: packages/admin/src/components/ContentEditor.tsx:1669
-#: packages/admin/src/components/ContentEditor.tsx:1685
+#: packages/admin/src/components/ContentEditor.tsx:1679
+#: packages/admin/src/components/ContentEditor.tsx:1695
 #: packages/admin/src/components/ImageFieldRenderer.tsx:198
 msgid "Select {label}"
 msgstr "{label} selecteren"
@@ -6774,7 +6774,7 @@ msgstr "Standaard sociale afbeelding selecteren"
 msgid "Select Favicon"
 msgstr "Favicon selecteren"
 
-#: packages/admin/src/components/ContentEditor.tsx:1673
+#: packages/admin/src/components/ContentEditor.tsx:1683
 msgid "Select file"
 msgstr "Bestand selecteren"
 
@@ -6924,8 +6924,8 @@ msgid "Setting up..."
 msgstr "Instellen..."
 
 #: packages/admin/src/components/AdminCommandPalette.tsx:241
-#: packages/admin/src/components/ContentEditor.tsx:803
-#: packages/admin/src/components/ContentEditor.tsx:1010
+#: packages/admin/src/components/ContentEditor.tsx:809
+#: packages/admin/src/components/ContentEditor.tsx:1016
 #: packages/admin/src/components/ContentTypeEditor.tsx:381
 #: packages/admin/src/components/Header.tsx:101
 #: packages/admin/src/components/PluginManager.tsx:437
@@ -7209,7 +7209,7 @@ msgstr "SQL"
 msgid "Start Import"
 msgstr "Import starten"
 
-#: packages/admin/src/components/ContentEditor.tsx:1179
+#: packages/admin/src/components/ContentEditor.tsx:1185
 #: packages/admin/src/components/PortableTextEditor.tsx:2201
 #: packages/admin/src/components/PortableTextEditor.tsx:2202
 msgid "Start writing, or type '/' for commands"
@@ -7472,7 +7472,7 @@ msgstr "Dit lijkt geen geldige migratiesleutel. Genereer een nieuwe in de plugin
 msgid "This field does not accept {sniffedMime} files."
 msgstr "Dit veld accepteert geen {sniffedMime}-bestanden."
 
-#: packages/admin/src/components/ContentEditor.tsx:1688
+#: packages/admin/src/components/ContentEditor.tsx:1698
 #: packages/admin/src/components/ImageFieldRenderer.tsx:201
 msgid "This field is required"
 msgstr "Dit veld is verplicht"
@@ -7877,7 +7877,7 @@ msgstr "Niet-ondersteund elementtype voor widget: {0}"
 msgid "Untitled"
 msgstr "Zonder titel"
 
-#: packages/admin/src/components/ContentEditor.tsx:1591
+#: packages/admin/src/components/ContentEditor.tsx:1601
 msgid "Untitled file"
 msgstr "Bestand zonder titel"
 
@@ -8087,7 +8087,7 @@ msgstr "Wordt gebruikt als fallback Open Graph-afbeelding wanneer een pagina er 
 msgid "Used as the identifier. Lowercase letters, numbers, and underscores only."
 msgstr "Wordt gebruikt als identifier. Alleen kleine letters, cijfers en underscores."
 
-#: packages/admin/src/components/ContentEditor.tsx:1278
+#: packages/admin/src/components/ContentEditor.tsx:1288
 msgid "Used as the main visual for this post on listing pages and at the top of the post"
 msgstr "Wordt gebruikt als hoofdafbeelding voor dit bericht op overzichtspagina's en bovenaan het bericht"
 
